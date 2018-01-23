@@ -1,0 +1,8 @@
+{
+  "name": "MotEasyWeb",
+  "app_id": "75e1f694",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
