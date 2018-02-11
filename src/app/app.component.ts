@@ -4,13 +4,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { AdministracionPage } from '../pages/administracion/administracion';
 //import { LoginPage } from '../pages/login/login';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = HomePage;
+  rootPage:any = AdministracionPage;
 
 
   pages: Array<{ title: string, component: any, icon: string, id: number}>;
@@ -31,7 +32,7 @@ export class MyApp {
 
   cargarMenu(){
     this.pages = [
-      {title: "Habitaciones", component: HomePage, icon: "speedometer", id: 1}
+      {title: "Habitaciones", component: AdministracionPage, icon: "speedometer", id: 1}
       , {title: "Configuracion", component: HomePage, icon: "speedometer", id: 2}
     ]
   }
