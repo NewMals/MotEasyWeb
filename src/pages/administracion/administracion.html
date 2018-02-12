@@ -13,12 +13,17 @@
 </ion-header>
 
 <ion-content padding>
-  <div style="max-width: 20%; background-color: #800000; position: relative; height: 100%; font-size: 20px; color:white;">
-    <ion-row *ngFor="let tipo of tiposHabitacion" >
-      <ion-col>
-        <button  class="item">{{tipo.TIHdescripcion}}</button>
-      </ion-col>
-    </ion-row>
-  </div>
+  <ion-row style="height: 100%">
+    <ion-col class="panelIzquierdo">
+        <ion-row *ngFor="let tipo of tiposHabitacion" >
+          <ion-col>
+            <button  class="item">{{tipo.TIHdescripcion}}</button>
+          </ion-col>
+        </ion-row>
+    </ion-col>
+    <ion-col class="panelDerecho">
+      <habitaciones></habitaciones>
+    </ion-col>
+  </ion-row>  
 </ion-content>
 

@@ -1,4 +1,21 @@
 page-administracion {
+    .panelIzquierdo{
+        max-width: 250px; 
+        background-color: #800000; 
+        position: relative; 
+        height: 100%; 
+        font-size: 20px; 
+        //color:white;
+        border-radius: 10px;
+    }
+
+    .panelDerecho {
+        //max-width: 80%; 
+        background-color: #800000; 
+        left: 10px;
+        border-radius: 10px;
+    }
+
     .item{
         color: #fff;
         background-color: #a24444;
