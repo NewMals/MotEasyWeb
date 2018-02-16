@@ -1,0 +1,77 @@
+<!--
+  Generated template for the EstablecimientoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Establecimiento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card style="width: 500px; float:left" >
+    <ion-card-header>
+          Informacion General
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Nombre del Establecimiento</ion-label>
+          <ion-input [(ngModel)]="est" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Nombre de contacto</ion-label>
+          <ion-input [(ngModel)]="contacto" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Correo Electronico</ion-label>
+          <ion-input [(ngModel)]="email" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Numero de contacto</ion-label>
+          <ion-input [(ngModel)]="tel" type="number"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="width: 500px; float:left">
+      <ion-card-header>
+            Ubicacion
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item>
+            <ion-label>Ciudad</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Localidad</ion-label>
+              <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Direccion</ion-label>
+            <ion-input type="number"></ion-input>
+          </ion-item>
+      </ion-card-content>
+    </ion-card>
+  <ion-card style="width: 500px; float:left">
+      <ion-card-header>
+
+            Informacion visualizada por los usuarios
+
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item>
+            <ion-label>Nombre para salir en la app</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Telefono de recepcion</ion-label>
+            <ion-input type="number"></ion-input>
+          </ion-item>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
