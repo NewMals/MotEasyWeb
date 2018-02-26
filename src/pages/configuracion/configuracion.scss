@@ -1,0 +1,17 @@
+page-configuracion {
+    
+    
+    
+    ion-card:hover {
+        transition:all .1s ease-in-out;
+        background-color: grey;
+    }
+
+    .general {
+        width: 50%; 
+        box-sizing: border-box; 
+        text-align:center; 
+        padding:10px;
+        margin: auto;
+    }
+}

@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPageModule } from '../pages/login/login.module';
 import { AdministracionPageModule } from '../pages/administracion/administracion.module';
 import { EstablecimientoPageModule } from '../pages/establecimiento/establecimiento.module';
+import { ConfiguracionPageModule } from '../pages/configuracion/configuracion.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EstablecimientoPageModule } from '../pages/establecimiento/establecimie
     LoginPageModule,
     AdministracionPageModule,
     EstablecimientoPageModule,
+    ConfiguracionPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
