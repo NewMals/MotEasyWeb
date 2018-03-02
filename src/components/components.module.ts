@@ -3,7 +3,14 @@ import { HabitacionesComponent } from './habitaciones/habitaciones';
 import { IonicModule, IonicPageModule } from 'ionic-angular';
 import { ProgressBarComponent } from './configuracion/progress-bar/progress-bar';
 import { TipoHabitacionComponent } from './configuracion/tipo-habitacion/tipo-habitacion';
-import { EstablecimientoComponent } from './configuracion/establecimiento/establecimiento';
+
+import { WizardComponent } from './wizard/wizard';
+import { InformacionGeneralComponent } from './configuracion/establecimiento/informacion-general/informacion-general';
+import { UbicacionComponent } from './configuracion/ubicacion/ubicacion';
+import { AdDirective } from './wizard/wizard.directive';
+
+
+
 
 
 @NgModule({
@@ -11,7 +18,10 @@ import { EstablecimientoComponent } from './configuracion/establecimiento/establ
         HabitacionesComponent,
         ProgressBarComponent,
         TipoHabitacionComponent,
-        EstablecimientoComponent
+        WizardComponent,
+        InformacionGeneralComponent,
+    UbicacionComponent,
+    AdDirective
     ],
     imports: [
         IonicModule,
@@ -21,7 +31,16 @@ import { EstablecimientoComponent } from './configuracion/establecimiento/establ
         HabitacionesComponent,
         ProgressBarComponent,
         TipoHabitacionComponent,
-        EstablecimientoComponent
+        WizardComponent,
+        InformacionGeneralComponent,
+    UbicacionComponent
+    ],entryComponents: [
+        HabitacionesComponent,
+        ProgressBarComponent,
+        TipoHabitacionComponent,
+        WizardComponent,
+        InformacionGeneralComponent,
+        UbicacionComponent
     ]
 })
 export class ComponentsModule { }

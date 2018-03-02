@@ -8,8 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPageModule } from '../pages/login/login.module';
 import { AdministracionPageModule } from '../pages/administracion/administracion.module';
-import { EstablecimientoPageModule } from '../pages/establecimiento/establecimiento.module';
-import { ConfiguracionPageModule } from '../pages/configuracion/configuracion.module';
+import { ConfiguracionPageModule } from '../pages/configuracionGeneral/configuracion/configuracion.module';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,6 @@ import { ConfiguracionPageModule } from '../pages/configuracion/configuracion.mo
     BrowserModule,
     LoginPageModule,
     AdministracionPageModule,
-    EstablecimientoPageModule,
     ConfiguracionPageModule,
     IonicModule.forRoot(MyApp)
   ],

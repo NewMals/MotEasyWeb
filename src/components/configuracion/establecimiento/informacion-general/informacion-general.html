@@ -1,0 +1,33 @@
+<!-- Generated template for the InformaconGeneralComponent component -->
+<ion-card>
+  <ion-card-title style="text-align: center;">
+    Informacion General
+  </ion-card-title>
+  <ion-card-content>
+    <ion-row>
+      <ion-col>
+        <h2>Establecimiento</h2>
+        <ion-item>
+          <ion-label floating>Nombre del Establecimiento</ion-label>
+          <ion-input [(ngModel)]="est" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Correo Electronico</ion-label>
+          <ion-input [(ngModel)]="email" type="email"></ion-input>
+        </ion-item>
+        
+      </ion-col>
+      <ion-col>
+        <h2>Contacto</h2>
+        <ion-item>
+          <ion-label floating>Nombre</ion-label>
+          <ion-input [(ngModel)]="contacto" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Telefono o celular</ion-label>
+            <ion-input [(ngModel)]="tel" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>

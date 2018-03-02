@@ -5,8 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { AdministracionPage } from '../pages/administracion/administracion';
-import { EstablecimientoPage } from '../pages/establecimiento/establecimiento';
-import { ConfiguracionPage } from '../pages/configuracion/configuracion';
+import { ConfiguracionPage } from '../pages/configuracionGeneral/configuracion/configuracion';
+
 //import { LoginPage } from '../pages/login/login';
 @Component({
   templateUrl: 'app.html'
@@ -34,7 +34,7 @@ export class MyApp {
 
   cargarMenu(){
     this.pages = [
-      {title: "Habitaciones", component: AdministracionPage, icon: "speedometer", id: 1}
+      {title: "Administrar habitaciones", component: AdministracionPage, icon: "speedometer", id: 1}
       , {title: "Configuracion", component: ConfiguracionPage, icon: "speedometer", id: 2}
     ]
   }

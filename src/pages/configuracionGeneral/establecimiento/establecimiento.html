@@ -12,33 +12,10 @@
 
 
 <ion-content padding>
-  <ion-card style="width: 500px; float:left" >
-    <ion-card-header>
-          Informacion General
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-label floating>Nombre del Establecimiento</ion-label>
-          <ion-input [(ngModel)]="est" type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>Nombre de contacto</ion-label>
-          <ion-input [(ngModel)]="contacto" type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>Correo Electronico</ion-label>
-          <ion-input [(ngModel)]="email" type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>Numero de contacto</ion-label>
-          <ion-input [(ngModel)]="tel" type="number"></ion-input>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card style="width: 500px; float:left">
+    <wizard [ads]="ArrayConfiguracionEST"></wizard>
+    <!-- <informacion-general></informacion-general> -->
+    
+  <!-- <ion-card style="width: 500px; float:left">
       <ion-card-header>
             Ubicacion
       </ion-card-header>
@@ -73,5 +50,5 @@
             <ion-input type="number"></ion-input>
           </ion-item>
       </ion-card-content>
-    </ion-card>
+    </ion-card> -->
 </ion-content>

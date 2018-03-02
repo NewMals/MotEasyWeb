@@ -15,11 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ConfiguracionPage {
 
+  text: string = 'progress-bar'
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConfiguracionPage');
+  }
+
+  configurarEstablecimiento(){
+    this.navCtrl.setRoot("EstablecimientoPage");
+  }
+
+  configurarHabitacion(){
+    this.navCtrl.setRoot("");
   }
 
 }
