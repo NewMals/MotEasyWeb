@@ -2,60 +2,27 @@
 <div>
   <ion-list padding>
     <ion-item>
-      <ion-row style="margin: auto; "> 
-          <ion-col *ngFor="let pagina of ads" style="margin: auto; max-width: 80px;">
-            <button ion-fab title="{{pagina.titulo}}" id="btnInfGeneral" (click)="mostrarComponent()">
-              <ion-icon name="{{pagina.iconName}}" color="primary" style="font-size: 40px;"></ion-icon>
-            </button>
-            <label style=" border: 10px solid transparent; border-bottom-color: #5bc0de;"></label>
-          </ion-col>
-        
-        <!-- <ion-col style="margin: auto;max-width: 80px">
-          <button ion-fab title="Step 1">
-            <ion-icon name="pin" color="primary" style="font-size: 40px;"></ion-icon>
-          </button>
-          <label style="border: 10px solid transparent; border-bottom-color: #5bc0de;"></label>
+      <ion-row style="margin: auto; ">
+        <ion-col *ngFor="let pagina of paginas" style="margin: auto; max-width: 80px;">
+          <label ion-fab [ngStyle]="{'border': (pagina.activo) ? '3px solid blue' : '' }" title="{{pagina.titulo}}" id="btnInfGeneral" >
+            <ion-icon name="{{pagina.iconName}}" color="primary" style="font-size: 40px;"></ion-icon>
+          </label>
+          <label style=" border: 10px solid transparent; border-bottom-color: #5bc0de;"></label>
         </ion-col>
-        <ion-col style="margin: auto; max-width: 80px">
-          <button ion-fab title="Step 1">
-            <ion-icon name="images" color="primary" style="font-size: 40px;"></ion-icon>
-          </button>
-          <label style="border: 10px solid transparent; border-bottom-color: #5bc0de;"></label>
-        </ion-col>
-        <ion-col style="margin: auto;max-width: 80px">
-          <button ion-fab title="Step 1">
-            <ion-icon name="archive" color="primary" style="font-size: 40px;"></ion-icon>
-          </button>
-          <label style="border: 10px solid transparent; border-bottom-color: #5bc0de;"></label>
-        </ion-col> -->
-        <!-- <ion-col style="margin: auto; max-width: 80px">
-          <button ion-fab title="Step 1">
-            <ion-icon name="folder-open" color="primary"></ion-icon>
-          </button>
-          <label style=" position: relative; left: -4%;border: 10px solid transparent; border-bottom-color: #5bc0de;"></label>
-        </ion-col>
-        <ion-col style="margin: auto;max-width: 80px">
-          <button ion-fab title="Step 1">
-            <ion-icon name="folder-open" color="primary"></ion-icon>
-          </button>
-          <label style=" position: relative; left: -4%;border: 10px solid transparent; border-bottom-color: #5bc0de;"></label>
-        </ion-col> -->
       </ion-row>
     </ion-item>
   </ion-list>
-
-  <ng-template paso-paso></ng-template>
-
   <ion-row>
     <ion-col>
-      <button ion-button>
-          Regresar
+      <button ion-button (click)="Regresar()">
+        Regresar
       </button>
     </ion-col>
-    <ion-col  style="text-align: right">
-      <button ion-button (click)="CambiarComponente()">
-          Continuar
+    <ion-col style="text-align: right">
+      <button ion-button (click)="Continuar()">
+        Continuar
       </button>
     </ion-col>
   </ion-row>
+  <ng-template paso-paso></ng-template>
 </div>

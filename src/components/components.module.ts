@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { HabitacionesComponent } from './habitaciones/habitaciones';
 import { IonicModule, IonicPageModule } from 'ionic-angular';
 import { ProgressBarComponent } from './configuracion/progress-bar/progress-bar';
-import { TipoHabitacionComponent } from './configuracion/tipo-habitacion/tipo-habitacion';
+
 
 import { WizardComponent } from './wizard/wizard';
 import { InformacionGeneralComponent } from './configuracion/establecimiento/informacion-general/informacion-general';
-import { UbicacionComponent } from './configuracion/ubicacion/ubicacion';
-import { AdDirective } from './wizard/wizard.directive';
+
+import { WizardDirective } from './wizard/wizard.directive';
+import { TipoHabitacionComponent } from './configuracion/TiposHabitaciones/tipo-habitacion/tipo-habitacion';
+import { UbicacionComponent } from './configuracion/establecimiento/ubicacion/ubicacion';
+import { ImagenesComponent } from './configuracion/imagenes/imagenes';
+
+
 
 
 
@@ -21,7 +26,8 @@ import { AdDirective } from './wizard/wizard.directive';
         WizardComponent,
         InformacionGeneralComponent,
     UbicacionComponent,
-    AdDirective
+    WizardDirective,
+    ImagenesComponent
     ],
     imports: [
         IonicModule,
@@ -33,14 +39,17 @@ import { AdDirective } from './wizard/wizard.directive';
         TipoHabitacionComponent,
         WizardComponent,
         InformacionGeneralComponent,
-    UbicacionComponent
+        UbicacionComponent,
+        ImagenesComponent,
+        ImagenesComponent
     ],entryComponents: [
-        HabitacionesComponent,
+        HabitacionesComponent,  
         ProgressBarComponent,
         TipoHabitacionComponent,
         WizardComponent,
         InformacionGeneralComponent,
-        UbicacionComponent
+        UbicacionComponent,
+        ImagenesComponent
     ]
 })
 export class ComponentsModule { }

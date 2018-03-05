@@ -1,5 +1,6 @@
 import { Component, Input, ViewChild, ComponentFactoryResolver } from '@angular/core';
-import { AdDirective } from './wizard.directive';
+import { WizardDirective } from './wizard.directive';
+
 
 /**
  * Generated class for the WizardComponent component.
@@ -13,26 +14,20 @@ import { AdDirective } from './wizard.directive';
 })
 export class WizardComponent {
 
-  @Input() ads : Array<any>;
-
-  currentAdIndex: number = -1;
-  @ViewChild(AdDirective) adHost: AdDirective;
+  @Input() paginas : Array<any>;
+  posicion: number;
+  @ViewChild(WizardDirective) adHost: WizardDirective;
+  
   interval: any;
+  componenteActual: number
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {
     console.log('Hello WizardComponent Component');
   }
 
-  mostrarComponent(){
-
-  }
-
-  CambiarComponente(){
-
-  }
-
   ngOnInit() {
-    this.loadComponent();
+    this.ComponenteInicial();
+    //this.loadComponent();
     //this.getAds();
   }
 
@@ -40,22 +35,46 @@ export class WizardComponent {
     clearInterval(this.interval);
   }
 
-  loadComponent() {
-    this.currentAdIndex = (this.currentAdIndex + 1) % this.ads.length;
-    let adItem = this.ads[this.currentAdIndex];
+  ComponenteInicial(){
+      this.posicion = this.paginas.findIndex(index => index.activo === true);
+      let componenteActual = this.paginas[this.posicion];
+      this.cargarComponente(componenteActual);
+  }
 
-    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(adItem.component);
+  Continuar(){
+      this.paginas[this.posicion].activo = false;
+
+      this.posicion = (this.posicion + 1) % this.paginas.length;
+      this.paginas[this.posicion].activo = true;
+      this.cargarComponente(this.paginas[this.posicion]);
+  }
+
+  Regresar(){
+    this.paginas[this.posicion].activo = false;
+
+    this.posicion = (this.posicion - 1) % this.paginas.length;
+    this.paginas[this.posicion].activo = true;
+    this.cargarComponente(this.paginas[this.posicion]);
+  }
+
+ 
+
+  cargarComponente(ComponenteActual) {
+    // this.currentAdIndex = (this.currentAdIndex + 1) % this.paginas.length;
+    // let adItem = this.paginas[this.currentAdIndex];
+
+    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(ComponenteActual.component);
 
     let viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
 
     let componentRef = viewContainerRef.createComponent(componentFactory);
-    (<any>componentRef.instance).data = adItem.data;
+    (<any>componentRef.instance).data = ComponenteActual.data;
   }
 
   getAds() {
     // this.interval = setInterval(() => {
-      this.loadComponent();
+      //this.loadComponent();
     // }, 3000);
   }
 
