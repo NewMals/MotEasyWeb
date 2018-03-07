@@ -14,7 +14,7 @@
   </ion-list>
   <ion-row>
     <ion-col>
-      <button ion-button (click)="Regresar()">
+      <button ion-button (click)="Regresar()" *ngIf="posicion > 0">
         Regresar
       </button>
     </ion-col>

@@ -13,11 +13,6 @@ import { UbicacionComponent } from './configuracion/establecimiento/ubicacion/ub
 import { ImagenesComponent } from './configuracion/imagenes/imagenes';
 
 
-
-
-
-
-
 @NgModule({
     declarations: [
         HabitacionesComponent,

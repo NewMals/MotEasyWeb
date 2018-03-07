@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.
@@ -15,12 +15,13 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams
-    , public menuCtrl: MenuController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    this.menuCtrl.enable(false);
+    console.log('ionViewDidLoad LoginPage');
   }
+
+  
 
 }

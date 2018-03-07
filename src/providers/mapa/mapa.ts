@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import { DTOposicion } from '../../modelos/DTOposicion';
+import { Observable } from 'rxjs/Observable';
 
 declare var google;
 /*
@@ -12,6 +15,9 @@ export class MapaProvider {
 
   mapElement: any;
   map: any;
+  subject: Subject<DTOposicion> = new Subject<DTOposicion>();
+  posicionActual: Observable<DTOposicion> = this.subject.asObservable();
+  geoUbicacion = new DTOposicion;
 
   constructor() {
     console.log('Hello MapaProvider Provider');
@@ -122,6 +128,8 @@ export class MapaProvider {
   }
 
   Marca(posicion){
+    let that = this;
+
     let marker = new google.maps.Marker({
       position: posicion,
       map: this.map,
@@ -133,7 +141,12 @@ export class MapaProvider {
       content: "<strong>Arrastrame para conocer mejor la ubicación del establecimiento</strong>"
     });
 
-    infowindow.open(this.map, marker);
+    infowindow.open(this.map, marker); 
 
+    google.maps.event.addListener(marker,'dragend',function(event) {
+      that.geoUbicacion.latitude = this.position.lat();
+      that.geoUbicacion.longitude = this.position.lng();
+      that.subject.next(that.geoUbicacion);
+    });
   }
 }

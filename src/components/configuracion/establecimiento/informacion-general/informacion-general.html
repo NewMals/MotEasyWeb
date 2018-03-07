@@ -6,26 +6,37 @@
   <ion-card-content>
     <ion-row>
       <ion-col>
-        <h2>Establecimiento</h2>
+        <h2 style="text-align: center">Establecimiento</h2>
         <ion-item>
-          <ion-label floating>Nombre del Establecimiento</ion-label>
+          <ion-label floating>Nit</ion-label>
+          <ion-input [(ngModel)]="contacto" type="number" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Nombre del establecimiento</ion-label>
           <ion-input [(ngModel)]="est" type="text" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Correo Electronico</ion-label>
-          <ion-input [(ngModel)]="email" type="email"></ion-input>
+          <ion-label floating>Correo electronico</ion-label>
+          <ion-input [(ngModel)]="email" type="email" required></ion-input>
         </ion-item>
-        
+        <ion-item>
+          <ion-label floating>Telefono recepción</ion-label>
+          <ion-input [(ngModel)]="email" type="text" required></ion-input>
+        </ion-item>
       </ion-col>
       <ion-col>
-        <h2>Contacto</h2>
+        <h2 style="text-align: center">Contacto</h2>
         <ion-item>
-          <ion-label floating>Nombre</ion-label>
+          <ion-label floating>Nombre completo</ion-label>
           <ion-input [(ngModel)]="contacto" type="text"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label floating>Telefono o celular</ion-label>
             <ion-input [(ngModel)]="tel" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Correo electronico</ion-label>
+          <ion-input [(ngModel)]="email" type="email" required></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>

@@ -29,6 +29,9 @@ export class UbicacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.googleMaps.posicion(this.mapElement.nativeElement);
+    this.googleMaps.posicionActual.subscribe(valor =>{
+      console.log("Ubicacion", valor);
+    });
   }
 
   getPosition():any{

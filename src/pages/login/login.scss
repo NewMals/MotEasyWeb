@@ -1,3 +1,18 @@
 page-login {
+     .separador {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #e6e6e6;
+        top: 50%;
+        left: 0;
+        position:  relative;
+     }
 
+     .separador::after{
+        background-color: #fff;
+      padding: 0 1em;
+      position: relative;
+      z-index: 1;
+     }
 }
