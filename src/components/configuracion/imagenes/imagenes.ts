@@ -54,11 +54,10 @@ export class ImagenesComponent {
       Foto.FOTprincipal = false;
       Foto.FOTurl = imageData;
       Foto.FOTorden = this.ArrayFotos.length + 1;
-      //Foto.FOTactiva = false;
       this.ArrayFotos.push(Foto);
       this.SeleccionarFoto(Foto);
     };
-    if(event.target.files[0])
+    if (event.target.files[0])
       reader.readAsDataURL(event.target.files[0]);
 
   }
@@ -73,26 +72,36 @@ export class ImagenesComponent {
   }
 
   SeleccionarFoto(foto: DTOfoto) {
-    this.ArrayFotos[this.posicion].FOTactiva = false;
-    this.posicion = this.ArrayFotos.findIndex(index => index === foto);
-    this.ArrayFotos[this.posicion].FOTactiva = true;
-    this.FotoSeleccionada = foto;
+    if (foto) {
+      this.ArrayFotos[this.posicion].FOTactiva = false;
+      this.posicion = this.ArrayFotos.findIndex(index => index === foto);
+      this.ArrayFotos[this.posicion].FOTactiva = true;
+      this.FotoSeleccionada = foto;
+    } else {
+      this.FotoSeleccionada = null;
+    }
   }
 
-  EliminarFoto(){
+  EliminarFoto() {
     let alert = this.alertCtrl.create({
 
       title: '¿ Está seguro de eliminar la foto ?',
       buttons: [{
-          text: 'Cancelar'
+        text: 'Cancelar'
       },
       {
-          text: 'Aceptar',
-          handler: () => {
-             this.ArrayFotos.splice(this.posicion, 1);
+        text: 'Aceptar',
+        handler: () => {
+          this.ArrayFotos.splice(this.posicion, 1);
+          if(this.posicion == 0 && this.ArrayFotos.length == 0){
+              this.SeleccionarFoto(null);
+          }else {
+              this.posicion = 0;
+              this.SeleccionarFoto(this.ArrayFotos[this.posicion]);
           }
-        }]
-      });
-      alert.present();
+        }
+      }]
+    });
+    alert.present();
   }
 }
