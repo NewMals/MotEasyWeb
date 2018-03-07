@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { MapaProvider } from '../../../../providers/mapa/mapa';
 /**
  * Generated class for the UbicacionComponent component.
  *
@@ -12,16 +13,22 @@ declare var google;
   selector: 'ubicacion',
   templateUrl: 'ubicacion.html'
 })
-export class UbicacionComponent {
+export class UbicacionComponent implements OnInit {
 
   text: string;
   map: any;
   MyLocation: any;
 
-  constructor() {
+  @ViewChild('map') mapElement: ElementRef;
+
+  constructor( public googleMaps: MapaProvider ) {
     console.log('Hello UbicacionComponent Component');
     this.text = 'Hello World';
-    this.getPosition();
+    //this.getPosition();
+  }
+
+  ngOnInit(): void {
+    this.googleMaps.posicion(this.mapElement.nativeElement);
   }
 
   getPosition():any{

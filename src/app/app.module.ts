@@ -10,6 +10,7 @@ import { LoginPageModule } from '../pages/login/login.module';
 import { AdministracionPageModule } from '../pages/administracion/administracion.module';
 import { ConfiguracionPageModule } from '../pages/configuracionGeneral/configuracion/configuracion.module';
 import { ComponentsModule } from '../components/components.module';
+import { MapaProvider } from '../providers/mapa/mapa';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ComponentsModule } from '../components/components.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MapaProvider
   ]
 })
 export class AppModule {}
