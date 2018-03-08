@@ -1,0 +1,23 @@
+<!-- Generated template for the RegistroComponent component -->
+<ion-card style="height: 100%; text-align: center">
+  <ion-card-header>
+
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-item>
+      <ion-label  required>Correo electronico</ion-label>
+      <ion-input [(ngModel)]="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label required>Contraseña</ion-label>
+      <ion-input [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+  </ion-card-content>
+  <button ion-button icon-left color="primary" (click)="SignWithEmail()">
+    Crear
+  </button>
+  <button ion-button icon-left color="primary">
+    Cancelar
+  </button>
+</ion-card>

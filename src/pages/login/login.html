@@ -41,8 +41,8 @@
         </ion-col>
         <ion-col>
           <ion-item>
-            <ion-label floating>Correo electronico</ion-label>
-            <ion-input type="email"></ion-input>
+            <ion-label floating required>Correo electronico</ion-label>
+            <ion-input [(ngModel)]="email" type="email"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -53,10 +53,15 @@
         <ion-col>
           <ion-item>
             <ion-label floating>Contraseña</ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-input [(ngModel)]="password" type="password"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
+      <button ion-button icon-left color="primary" [disabled]="(!email || !password)" (click)="SignWithEmail()">
+        Iniciar sesión
+      </button>
+      <ion-label color="danger">{{mensajeError}}</ion-label>
+      <ion-label color="primary" class="Registrarse" (click)="Crear()">Registrarse</ion-label>
     </ion-card-content>
   </ion-card>
 </ion-content>

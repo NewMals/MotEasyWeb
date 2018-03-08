@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
+import { RegistroComponent } from '../../components/registro/registro';
 
 /**
  * Generated class for the LoginPage page.
@@ -15,13 +17,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  mensajeError: string;
+  email: string;
+  password: string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams
+    , private auth: AuthProvider
+    , private modalCtrl: ModalController
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  
+  SignWithEmail(){
+
+    this.auth.signInWithEmail().then(usuario=>{
+      console.log("Login", usuario);
+      if(usuario.code){
+        this.mensajeError = "Correo y/o contraseña incorrectos";
+      }
+    }
+    ).catch(error =>{
+      console.log("error", error);
+        this.mensajeError = "La aplicacion no se encuentra disponible";
+    });
+  }
+
+  Crear(){
+    let modal = this.modalCtrl.create(
+      RegistroComponent 
+    ) 
+    modal.present();
+  }
 
 }

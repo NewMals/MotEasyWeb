@@ -9,10 +9,8 @@ page-login {
         position:  relative;
      }
 
-     .separador::after{
-        background-color: #fff;
-      padding: 0 1em;
-      position: relative;
-      z-index: 1;
+      .Registrarse:hover{
+        cursor: pointer;
+        text-decoration: underline;
      }
 }

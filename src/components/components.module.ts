@@ -11,6 +11,7 @@ import { WizardDirective } from './wizard/wizard.directive';
 import { TipoHabitacionComponent } from './configuracion/TiposHabitaciones/tipo-habitacion/tipo-habitacion';
 import { UbicacionComponent } from './configuracion/establecimiento/ubicacion/ubicacion';
 import { ImagenesComponent } from './configuracion/imagenes/imagenes';
+import { RegistroComponent } from './registro/registro';
 
 
 @NgModule({
@@ -20,9 +21,10 @@ import { ImagenesComponent } from './configuracion/imagenes/imagenes';
         TipoHabitacionComponent,
         WizardComponent,
         InformacionGeneralComponent,
-    UbicacionComponent,
-    WizardDirective,
-    ImagenesComponent
+        UbicacionComponent,
+        WizardDirective,
+        ImagenesComponent,
+        RegistroComponent
     ],
     imports: [
         IonicModule,
@@ -36,7 +38,8 @@ import { ImagenesComponent } from './configuracion/imagenes/imagenes';
         InformacionGeneralComponent,
         UbicacionComponent,
         ImagenesComponent,
-        ImagenesComponent
+        ImagenesComponent,
+    RegistroComponent
     ],entryComponents: [
         HabitacionesComponent,  
         ProgressBarComponent,
@@ -44,7 +47,8 @@ import { ImagenesComponent } from './configuracion/imagenes/imagenes';
         WizardComponent,
         InformacionGeneralComponent,
         UbicacionComponent,
-        ImagenesComponent
+        ImagenesComponent,
+        RegistroComponent
     ]
 })
 export class ComponentsModule { }

@@ -24,6 +24,7 @@ tmp/
 temp/
 hooks/
 platforms/
+deployFirebase/
 plugins/
 plugins/android.json
 plugins/ios.json

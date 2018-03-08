@@ -34,7 +34,7 @@ export class AuthProvider {
         this.navCtrl.setRoot('LoginPage');
         return;
       }
-      this.navCtrl.setRoot('ConfiguracionPage');
+      //this.navCtrl.setRoot('ConfiguracionPage');
     });
   }
 
@@ -119,6 +119,20 @@ export class AuthProvider {
       duration: 3000
     });
     toast.present();
+  }
+
+  signInWithEmail(): Promise<any>{
+    let email = "michaela.lozanos@ecci.edu.co";
+    let password = "1022981042";
+    return firebase.auth().signInWithEmailAndPassword(email,password).then(usuario =>{
+      return usuario;
+    }).catch((error: firebase.FirebaseError) => {
+        return error;
+    });
+  //   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  //     console.log(error.code);
+  //     console.log(error.message);
+  //  });
   }
 }
 
