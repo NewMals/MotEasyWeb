@@ -11,5 +11,8 @@ import { ComponentsModule } from '../../../components/components.module';
     ComponentsModule,
     IonicPageModule.forChild(ConfiguracionPage)
   ],
+  exports:[
+    ConfiguracionPage
+  ]
 })
 export class ConfiguracionPageModule {}

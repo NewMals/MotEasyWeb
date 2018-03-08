@@ -11,6 +11,8 @@ import { MapaProvider } from '../../../providers/mapa/mapa';
   imports: [
     ComponentsModule,
     IonicPageModule.forChild(EstablecimientoPage),
+  ], exports:[
+    EstablecimientoPage
   ],
   providers:[
     MapaProvider
