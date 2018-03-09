@@ -121,9 +121,21 @@ export class AuthProvider {
     toast.present();
   }
 
-  signInWithEmail(): Promise<any>{
-    let email = "michaela.lozanos@ecci.edu.co";
-    let password = "1022981042";
+  createEmail(email: string, password: string){
+    email = "michaela.lozanos@ecci.edu.co";
+    password = "1022981042";
+    return firebase.auth().createUserWithEmailAndPassword(email,password).then(usuario =>{
+      console.log('creado',usuario);
+      return usuario;
+    }).catch((error: firebase.FirebaseError) => {
+        console.log('error',error);
+        return error;
+    });
+  }
+
+  signInWithEmail(email: string, password: string): Promise<any>{
+    email = "michaela.lozanos@ecci.edu.co";
+    password = "1022981042";
     return firebase.auth().signInWithEmailAndPassword(email,password).then(usuario =>{
       return usuario;
     }).catch((error: firebase.FirebaseError) => {

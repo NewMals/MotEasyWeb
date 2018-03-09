@@ -33,7 +33,7 @@ export class LoginPage {
 
   SignWithEmail(){
 
-    this.auth.signInWithEmail().then(usuario=>{
+    this.auth.signInWithEmail("", "").then(usuario=>{
       console.log("Login", usuario);
       if(usuario.code){
         this.mensajeError = "Correo y/o contraseña incorrectos";
@@ -47,7 +47,7 @@ export class LoginPage {
 
   Crear(){
     let modal = this.modalCtrl.create(
-      RegistroComponent 
+      RegistroComponent , null, { enableBackdropDismiss: false}
     ) 
     modal.present();
   }

@@ -1,23 +1,73 @@
 <!-- Generated template for the RegistroComponent component -->
-<ion-card style="height: 100%; text-align: center">
+<ion-card padding style="height: 100%; text-align: center; margin: auto">
+    <button ion-fab mini style="float: right;" (click)="CerrarModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
   <ion-card-header>
-
+    <ion-label>Informacion</ion-label>
   </ion-card-header>
-
   <ion-card-content>
-    <ion-item>
-      <ion-label  required>Correo electronico</ion-label>
-      <ion-input [(ngModel)]="email" type="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label required>Contraseña</ion-label>
-      <ion-input [(ngModel)]="password" type="password"></ion-input>
-    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked required>Nombres</ion-label>
+          <ion-input [(ngModel)]="email" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked required>Apellidos</ion-label>
+          <ion-input [(ngModel)]="email" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked required>Num. identificación</ion-label>
+          <ion-input [(ngModel)]="email" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked required>Ciudad</ion-label>
+          <ion-input [(ngModel)]="email" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked required>Correo electronico</ion-label>
+          <ion-input [(ngModel)]="email" type="email"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked required>Celular</ion-label>
+          <ion-input [(ngModel)]="email" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked required>Contraseña</ion-label>
+          <ion-input [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked required>Confirmar contraseña</ion-label>
+          <ion-input [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
   </ion-card-content>
-  <button ion-button icon-left color="primary" (click)="SignWithEmail()">
-    Crear
-  </button>
-  <button ion-button icon-left color="primary">
-    Cancelar
+  <ion-label color="danger">{{mensajeError}}</ion-label>
+  <button ion-button icon-left color="primary" style="bottom: 0" (click)="RegistrarUsuario()">
+    Registrarme
   </button>
 </ion-card>
