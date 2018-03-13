@@ -12,6 +12,7 @@ import { TipoHabitacionComponent } from './configuracion/TiposHabitaciones/tipo-
 import { UbicacionComponent } from './configuracion/establecimiento/ubicacion/ubicacion';
 import { ImagenesComponent } from './configuracion/imagenes/imagenes';
 import { RegistroComponent } from './registro/registro';
+import { ReestablecerPassComponent } from './reestablecer-pass/reestablecer-pass';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RegistroComponent } from './registro/registro';
         UbicacionComponent,
         WizardDirective,
         ImagenesComponent,
-        RegistroComponent
+        RegistroComponent,
+        ReestablecerPassComponent
     ],
     imports: [
         IonicModule,
@@ -38,8 +40,8 @@ import { RegistroComponent } from './registro/registro';
         InformacionGeneralComponent,
         UbicacionComponent,
         ImagenesComponent,
-        ImagenesComponent,
-    RegistroComponent
+        RegistroComponent,
+        ReestablecerPassComponent
     ],entryComponents: [
         HabitacionesComponent,  
         ProgressBarComponent,
@@ -48,7 +50,8 @@ import { RegistroComponent } from './registro/registro';
         InformacionGeneralComponent,
         UbicacionComponent,
         ImagenesComponent,
-        RegistroComponent
+        RegistroComponent,
+        ReestablecerPassComponent
     ]
 })
 export class ComponentsModule { }

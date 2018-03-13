@@ -30,8 +30,8 @@ export class RegistroComponent {
 
   RegistrarUsuario() {
     this.auth.createEmail("", "").then(usuario => {
-      if (usuario.code) {
-        this.mensajeError = "La dirección de correo electrónico ya está siendo utilizada por otra cuenta.";
+      if (usuario) {
+        this.mensajeError = usuario;
       }
     });
 

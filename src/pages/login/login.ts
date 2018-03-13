@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { RegistroComponent } from '../../components/registro/registro';
+import { ReestablecerPassComponent } from '../../components/reestablecer-pass/reestablecer-pass';
 
 /**
  * Generated class for the LoginPage page.
@@ -25,16 +26,16 @@ export class LoginPage {
     , private auth: AuthProvider
     , private modalCtrl: ModalController
   ) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    this.auth.StateSesion();
   }
 
   SignWithEmail(){
 
     this.auth.signInWithEmail("", "").then(usuario=>{
-      console.log("Login", usuario);
       if(usuario.code){
         this.mensajeError = "Correo y/o contraseña incorrectos";
       }
@@ -48,6 +49,13 @@ export class LoginPage {
   Crear(){
     let modal = this.modalCtrl.create(
       RegistroComponent , null, { enableBackdropDismiss: false}
+    ) 
+    modal.present();
+  }
+
+  Reestablecer(){
+    let modal = this.modalCtrl.create(
+      ReestablecerPassComponent , null, { enableBackdropDismiss: false}
     ) 
     modal.present();
   }

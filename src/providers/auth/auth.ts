@@ -28,20 +28,39 @@ export class AuthProvider {
     this.loading = this.loadingCtrl.create({
       content: 'Iniciando sesión'
     });
-
-    afAuth.authState.subscribe((user: firebase.User) => {
-      if (!user) {
-        this.navCtrl.setRoot('LoginPage');
-        return;
-      }
-      //this.navCtrl.setRoot('ConfiguracionPage');
-    });
+    this.StateSesion();
+    // afAuth.authState.subscribe((user: firebase.User) => {
+    //   if (!user) {
+    //     this.navCtrl.setRoot('LoginPage');
+    //     return;
+    //   }
+    //   //this.navCtrl.setRoot('ConfiguracionPage');
+    // });
   }
 
   get navCtrl(): NavController {
     return this.app.getRootNav();
   }
+  
+  presentToast(message: string) {
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000
+    });
+    toast.present();
+  }
 
+  StateSesion(){
+    firebase.auth().onAuthStateChanged(usuario =>{
+      if(usuario){
+        this.navCtrl.setRoot('ConfiguracionPage');
+        return;
+      }else {
+        this.navCtrl.setRoot('LoginPage');
+        return;
+      }
+    });
+  }
   // signInWithGoogle() {
   //   this.loading.present();
   //   var isWeb = document.URL.startsWith('http');
@@ -99,52 +118,51 @@ export class AuthProvider {
   //   }
   // }
 
-  signOut() {
-    this.navCtrl.push('LoginPage').then(() => {
-      this.afAuth.auth.signOut().then(() => {
-
-      }).catch((err) => {
-        console.log("Error logout", err);
-      });
-    });
-  }
-
-  user(): firebase.User {
-    return this.afAuth.auth.currentUser;
-  }
-
-  presentToast(message: string) {
-    let toast = this.toastCtrl.create({
-      message: message,
-      duration: 3000
-    });
-    toast.present();
-  }
-
   createEmail(email: string, password: string){
+    let respuesta = "";
     email = "michaela.lozanos@ecci.edu.co";
     password = "1022981042";
     return firebase.auth().createUserWithEmailAndPassword(email,password).then(usuario =>{
-      console.log('creado',usuario);
       return usuario;
     }).catch((error: firebase.FirebaseError) => {
-        console.log('error',error);
-        return error;
+        switch (error.code) {
+          case 'auth/email-already-in-use' :{
+            respuesta = "La dirección de correo electrónico ya está siendo utilizada por otra cuenta."
+            break;
+          }
+          case 'auth/invalid-email' : {
+            respuesta = "Correo no valido";
+            break;
+          }
+          default :{
+            respuesta = "Error del servidor, pongase en contacto con el administrador"
+            break;
+          }
+        }        
+        return respuesta;
     });
+  }
+
+  verificarEmail(){
+    let user = firebase.auth().currentUser;
+    user.sendEmailVerification();
   }
 
   signInWithEmail(email: string, password: string): Promise<any>{
     email = "michaela.lozanos@ecci.edu.co";
     password = "1022981042";
     return firebase.auth().signInWithEmailAndPassword(email,password).then(usuario =>{
+      if(!usuario.emailVerified){
+        this.verificarEmail();
+      }
       return usuario;
     }).catch((error: firebase.FirebaseError) => {
         return error;
     });
-  //   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  //     console.log(error.code);
-  //     console.log(error.message);
-  //  });
+  }
+
+  SignOut(){
+    firebase.auth().signOut();
   }
 }
 
