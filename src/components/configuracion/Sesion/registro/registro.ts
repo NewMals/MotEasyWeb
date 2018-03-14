@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
-import { AuthProvider } from '../../providers/auth/auth';
+import { AuthProvider } from '../../../../providers/auth/auth';
+
 
 /**
  * Generated class for the RegistroComponent component.
@@ -30,13 +31,11 @@ export class RegistroComponent {
 
   RegistrarUsuario() {
     this.auth.createEmail("", "").then(usuario => {
-      if (usuario) {
+      if (usuario == "true") {
+        this.CerrarModal();
+      }else {
         this.mensajeError = usuario;
       }
     });
-
-
-
   }
-
 }

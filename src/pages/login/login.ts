@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
-import { RegistroComponent } from '../../components/registro/registro';
-import { ReestablecerPassComponent } from '../../components/reestablecer-pass/reestablecer-pass';
+import { ReestablecerPassComponent } from '../../components/configuracion/Sesion/reestablecer-pass/reestablecer-pass';
+import { RegistroComponent } from '../../components/configuracion/Sesion/registro/registro';
 
 /**
  * Generated class for the LoginPage page.
@@ -30,9 +30,9 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    this.auth.StateSesion();
+    this.auth.StateSesionValid();
   }
-
+  
   SignWithEmail(){
 
     this.auth.signInWithEmail("", "").then(usuario=>{

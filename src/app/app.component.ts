@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { AdministracionPage } from '../pages/administracion/administracion';
 import { ConfiguracionPage } from '../pages/configuracionGeneral/configuracion/configuracion';
 import { LoginPage } from '../pages/login/login';
+import { AuthProvider } from '../providers/auth/auth';
 
 //import { LoginPage } from '../pages/login/login';
 @Component({
@@ -14,12 +15,16 @@ import { LoginPage } from '../pages/login/login';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = LoginPage;
+  rootPage;
 
 
   pages: Array<{ title: string, component: any, icon: string, id: number}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform
+    , public statusBar: StatusBar
+    , public splashScreen: SplashScreen
+    , private auth: AuthProvider 
+  ) {
     this.inicializarApp();
     this.cargarMenu();
   }
@@ -43,5 +48,7 @@ export class MyApp {
   openPage(page) {
     this.nav.setRoot(page.component);
   }
+
+
 }
 

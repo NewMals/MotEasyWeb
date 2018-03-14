@@ -11,8 +11,8 @@ import { WizardDirective } from './wizard/wizard.directive';
 import { TipoHabitacionComponent } from './configuracion/TiposHabitaciones/tipo-habitacion/tipo-habitacion';
 import { UbicacionComponent } from './configuracion/establecimiento/ubicacion/ubicacion';
 import { ImagenesComponent } from './configuracion/imagenes/imagenes';
-import { RegistroComponent } from './registro/registro';
-import { ReestablecerPassComponent } from './reestablecer-pass/reestablecer-pass';
+import { RegistroComponent } from './configuracion/Sesion/registro/registro';
+import { ReestablecerPassComponent } from './configuracion/Sesion/reestablecer-pass/reestablecer-pass';
 
 
 @NgModule({

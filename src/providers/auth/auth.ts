@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoadingController, ToastController, Platform, NavController, App } from 'ionic-angular';
 import * as firebase from 'firebase/app';
@@ -29,19 +28,12 @@ export class AuthProvider {
       content: 'Iniciando sesión'
     });
     this.StateSesion();
-    // afAuth.authState.subscribe((user: firebase.User) => {
-    //   if (!user) {
-    //     this.navCtrl.setRoot('LoginPage');
-    //     return;
-    //   }
-    //   //this.navCtrl.setRoot('ConfiguracionPage');
-    // });
   }
 
   get navCtrl(): NavController {
     return this.app.getRootNav();
   }
-  
+
   presentToast(message: string) {
     let toast = this.toastCtrl.create({
       message: message,
@@ -50,14 +42,20 @@ export class AuthProvider {
     toast.present();
   }
 
-  StateSesion(){
+  StateSesion() {
     firebase.auth().onAuthStateChanged(usuario =>{
       if(usuario){
         this.navCtrl.setRoot('ConfiguracionPage');
-        return;
       }else {
         this.navCtrl.setRoot('LoginPage');
-        return;
+      }
+    });
+  }
+
+  StateSesionValid() {
+    firebase.auth().onAuthStateChanged(usuario =>{
+      if(usuario){
+        this.navCtrl.setRoot('ConfiguracionPage');
       }
     });
   }
@@ -118,50 +116,51 @@ export class AuthProvider {
   //   }
   // }
 
-  createEmail(email: string, password: string){
+  createEmail(email: string, password: string) {
     let respuesta = "";
-    email = "michaela.lozanos@ecci.edu.co";
-    password = "1022981042";
-    return firebase.auth().createUserWithEmailAndPassword(email,password).then(usuario =>{
-      return usuario;
+    email = "michae.lozanos@ecci.edu.co";
+    password = "10281042";
+    return firebase.auth().createUserWithEmailAndPassword(email, password).then(usuario => {
+      this.verificarEmail();
+      return "true";
     }).catch((error: firebase.FirebaseError) => {
-        switch (error.code) {
-          case 'auth/email-already-in-use' :{
-            respuesta = "La dirección de correo electrónico ya está siendo utilizada por otra cuenta."
-            break;
-          }
-          case 'auth/invalid-email' : {
-            respuesta = "Correo no valido";
-            break;
-          }
-          default :{
-            respuesta = "Error del servidor, pongase en contacto con el administrador"
-            break;
-          }
-        }        
-        return respuesta;
+      switch (error.code) {
+        case 'auth/email-already-in-use': {
+          respuesta = "La dirección de correo electrónico ya está siendo utilizada por otra cuenta."
+          break;
+        }
+        case 'auth/invalid-email': {
+          respuesta = "Correo no valido";
+          break;
+        }
+        default: {
+          respuesta = "Error del servidor, pongase en contacto con el administrador"
+          break;
+        }
+      }
+      return respuesta;
     });
   }
 
-  verificarEmail(){
+  verificarEmail() {
+    localStorage.setItem('Verficiado', 'red');
     let user = firebase.auth().currentUser;
     user.sendEmailVerification();
   }
 
-  signInWithEmail(email: string, password: string): Promise<any>{
-    email = "michaela.lozanos@ecci.edu.co";
-    password = "1022981042";
-    return firebase.auth().signInWithEmailAndPassword(email,password).then(usuario =>{
-      if(!usuario.emailVerified){
+  signInWithEmail(email: string, password: string): Promise<any> {
+    email = "michae.lozanos@ecci.edu.co";
+    password = "10281042";
+    return firebase.auth().signInWithEmailAndPassword(email, password).then(usuario => {
+      if (!usuario.emailVerified) {
         this.verificarEmail();
       }
-      return usuario;
     }).catch((error: firebase.FirebaseError) => {
-        return error;
+      return error;
     });
   }
 
-  SignOut(){
+  SignOut() {
     firebase.auth().signOut();
   }
 }
