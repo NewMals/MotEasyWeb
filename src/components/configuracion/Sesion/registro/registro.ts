@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
 import { AuthProvider } from '../../../../providers/auth/auth';
+import { DTOusuario } from '../../../../modelos/DTOusuario';
 
 
 /**
@@ -17,6 +18,11 @@ export class RegistroComponent {
 
   mensajeError: string;
   text: string;
+  usuario = new DTOusuario ;
+  password: string = "";
+  confirPassword: string = "";
+  Habilitar: boolean = false;
+  sizePass: boolean;
 
   constructor(public viewCtrl: ViewController
     , private auth: AuthProvider
@@ -29,13 +35,20 @@ export class RegistroComponent {
     this.viewCtrl.dismiss();
   }
 
+  confirmarPass(event) {
+    this.sizePass = (this.password.length > 7) ? false : true;
+    this.Habilitar = ((this.password == this.confirPassword) && this.password.length > 7) ? true : false;
+  }
+
   RegistrarUsuario() {
-    this.auth.createEmail("", "").then(usuario => {
-      if (usuario == "true") {
-        this.CerrarModal();
-      }else {
-        this.mensajeError = usuario;
-      }
-    });
+    if ((this.password.length > 7) && (this.password == this.confirPassword) && (this.usuario.USUemail)) {
+      this.auth.createEmail(this.usuario, this.password).then(usuario => {
+        if (usuario == "true") {
+          this.CerrarModal();
+        } else {
+          this.mensajeError = usuario;
+        }
+      });
+    }
   }
 }

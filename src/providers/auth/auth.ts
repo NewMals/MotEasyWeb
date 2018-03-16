@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+//import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { LoadingController, ToastController, Platform, NavController, App } from 'ionic-angular';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from "angularfire2/auth";
+import { DTOusuario } from '../../modelos/DTOusuario';
+
 /*
   Generated class for the AuthProvider provider.
 
@@ -12,6 +15,9 @@ import { AngularFireAuth } from "angularfire2/auth";
 export class AuthProvider {
 
   loading;
+  user = new DTOusuario;
+  //Usercolletion: AngularFirestoreCollection<DTOusuario>;
+
 
   constructor(
     protected app: App,
@@ -20,7 +26,8 @@ export class AuthProvider {
     private platform: Platform,
     public loadingCtrl: LoadingController,
     //private googlePlus: GooglePlus,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    //public firebaseAng: AngularFirestore
   ) {
     console.log('Hello AuthProvider Provider');
 
@@ -43,18 +50,19 @@ export class AuthProvider {
   }
 
   StateSesion() {
-    firebase.auth().onAuthStateChanged(usuario =>{
-      if(usuario){
+    //this.afAuth.authState.subscribe(usuario => {
+    firebase.auth().onAuthStateChanged(usuario => {
+      if (usuario) {
         this.navCtrl.setRoot('ConfiguracionPage');
-      }else {
+      } else {
         this.navCtrl.setRoot('LoginPage');
       }
     });
   }
 
   StateSesionValid() {
-    firebase.auth().onAuthStateChanged(usuario =>{
-      if(usuario){
+    firebase.auth().onAuthStateChanged(usuario => {
+      if (usuario) {
         this.navCtrl.setRoot('ConfiguracionPage');
       }
     });
@@ -116,14 +124,17 @@ export class AuthProvider {
   //   }
   // }
 
-  createEmail(email: string, password: string) {
+  createEmail(usuario, password: string) {
     let respuesta = "";
-    email = "michae.lozanos@ecci.edu.co";
-    password = "10281042";
-    return firebase.auth().createUserWithEmailAndPassword(email, password).then(usuario => {
-      this.verificarEmail();
+    // usuario.USUemail = "michae.lozanos@ecci.edu.co";
+    // password = "10281042";
+    return firebase.auth().createUserWithEmailAndPassword(usuario.USUemail, password).then((response: firebase.User) => {
+      usuario.USUid = response.uid;
+      this.crearEstablecimiento(usuario);
+      //this.verificarEmail();
       return "true";
     }).catch((error: firebase.FirebaseError) => {
+      console.log("error", error);
       switch (error.code) {
         case 'auth/email-already-in-use': {
           respuesta = "La dirección de correo electrónico ya está siendo utilizada por otra cuenta."
@@ -138,6 +149,7 @@ export class AuthProvider {
           break;
         }
       }
+      this.SignOut();
       return respuesta;
     });
   }
@@ -162,6 +174,38 @@ export class AuthProvider {
 
   SignOut() {
     firebase.auth().signOut();
+  }
+
+  crearUser(usuario) {
+    // console.log("ingrese al metodo crearUser", usuario);
+
+    // this.firebaseAng.collection('Usuarios').valueChanges()
+    // .subscribe(response =>{
+    //   console.log("crear usuario ",response);
+    // }); 
+
+    firebase.firestore().collection('Usuarios')
+      .doc(usuario.USUid)
+      .set( {
+        USUid:  usuario.USUid,
+        USUnombres: usuario.USUnombres,
+        USUprimerApellido: usuario.USUprimerApellido,
+        USUsegundoApellido: usuario.USUsegundoApellido,
+        USUemail: usuario.USUemail,
+        USUidentificacion: usuario.USUidentificacion,
+        USUcelular: usuario.USUcelular,
+        USUciudad: usuario.USUciudad,
+        USUestablecimiento: usuario.USUestablecimiento
+      });
+  }
+
+  crearEstablecimiento(usuario){
+    firebase.firestore().collection('Establecimientos')
+      .add({}).then(response => {
+          console.log('crearEstablecimiento', response);
+          usuario.USUestablecimiento = response.id;
+          this.crearUser(usuario);
+      }); 
   }
 }
 
