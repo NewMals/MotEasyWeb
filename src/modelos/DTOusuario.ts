@@ -1,11 +1,12 @@
 export class DTOusuario {
     USUid: string;
-    USUnombres: string;
+    USUprimerNombre: string;
+    USUsegundoNombre?: string;
     USUprimerApellido: string;
-    USUsegundoApellido: string;
+    USUsegundoApellido?: string;
     USUemail: string;
     USUidentificacion: string;
-    USUcelular: number;
-    USUciudad: string;
-    USUestablecimiento: string;
+    USUcelular?: number;
+    USUciudad?: string;
+    USUestablecimiento?: string;
 }

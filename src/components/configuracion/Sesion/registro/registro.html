@@ -1,75 +1,92 @@
 <!-- Generated template for the RegistroComponent component -->
-<ion-card padding style="height: 100%; text-align: center; margin: auto">
+<ion-content>
+
+  <ion-card padding style="text-align: center;">
     <button ion-fab mini style="float: right;" (click)="CerrarModal()">
-        <ion-icon name="close"></ion-icon>
-      </button>
-  <ion-card-header>
-    <ion-label>Informacion</ion-label>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label stacked required>Nombres</ion-label>
-          <ion-input [(ngModel)]="usuario.USUnombres" type="text"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label stacked required>Apellidos</ion-label>
-          <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label stacked required>Num. identificación</ion-label>
-          <ion-input [(ngModel)]="usuario.USUidentificacion" type="number"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label stacked required>Ciudad</ion-label>
-          <ion-input [(ngModel)]="usuario.USUciudad" type="text"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+      <ion-icon name="close"></ion-icon>
+    </button>
+    <ion-card-header>
+      <ion-label>Informacion</ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label stacked required>Primer nombre *</ion-label>
+            <ion-input [(ngModel)]="usuario.USUprimerNombre" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label stacked required>Segundo nombre</ion-label>
+            <ion-input [(ngModel)]="usuario.USUsegundoNombre" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label stacked required>Primer apellido *</ion-label>
+            <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label stacked required>Segundo apellido</ion-label>
+            <ion-input [(ngModel)]="usuario.USUsegundoApellido" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label stacked required>Num. identificación *</ion-label>
+            <ion-input [(ngModel)]="usuario.USUidentificacion" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label stacked required>Ciudad</ion-label>
+            <ion-input [(ngModel)]="usuario.USUciudad" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label stacked required>Correo electronico</ion-label>
-          <ion-input [(ngModel)]="usuario.USUemail" type="email"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label stacked required>Celular</ion-label>
-          <ion-input [(ngModel)]="usuario.USUcelular" type="number"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label stacked required>Correo electronico *</ion-label>
+            <ion-input [(ngModel)]="usuario.USUemail" type="email"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label stacked required>Celular *</ion-label>
+            <ion-input [(ngModel)]="usuario.USUcelular" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label stacked required>Contraseña</ion-label>
-          <ion-input [(ngModel)]="password" type="password"  (keyup)="confirmarPass($event)"></ion-input>
-        </ion-item>
-        <ion-label class="mjsError" *ngIf="sizePass"> * Utiliza una contraseña mayor a 8 caracteres</ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label stacked required>Confirmar contraseña</ion-label>          
-          <ion-input [disabled]="!password" [(ngModel)]="confirPassword" type="password" (keyup)="confirmarPass($event)"></ion-input>
-        </ion-item>
-        <ion-label class="mjsError" *ngIf="confirPassword && password != confirPassword"> * La contraseña no es igual</ion-label>
-      </ion-col>
-    </ion-row>
-  </ion-card-content>
-  <ion-label color="danger">{{mensajeError}}</ion-label>
-  <button [disabled]="!Habilitar"  ion-button icon-left color="primary" style="bottom: 5px" (click)="RegistrarUsuario()">
-    Registrarme
-  </button>
-</ion-card>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label stacked required>Contraseña *</ion-label>
+            <ion-input [(ngModel)]="password" type="password" (keyup)="confirmarPass($event)"></ion-input>
+          </ion-item>
+          <ion-label class="mjsError" *ngIf="sizePass"> * Utiliza una contraseña mayor a 8 caracteres</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label stacked required>Confirmar contraseña</ion-label>
+            <ion-input [disabled]="!password" [(ngModel)]="confirPassword" type="password" (keyup)="confirmarPass($event)"></ion-input>
+          </ion-item>
+          <ion-label class="mjsError" *ngIf="confirPassword && password != confirPassword"> * La contraseña no es igual</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <ion-label color="danger">{{mensajeError}}</ion-label>
+    <button [disabled]="!Habilitar" ion-button icon-left color="primary" style="bottom: 5px" (click)="RegistrarUsuario()">
+      Registrarme
+    </button>
+  </ion-card>
+</ion-content>

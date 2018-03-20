@@ -177,26 +177,10 @@ export class AuthProvider {
   }
 
   crearUser(usuario) {
-    // console.log("ingrese al metodo crearUser", usuario);
-
-    // this.firebaseAng.collection('Usuarios').valueChanges()
-    // .subscribe(response =>{
-    //   console.log("crear usuario ",response);
-    // }); 
 
     firebase.firestore().collection('Usuarios')
       .doc(usuario.USUid)
-      .set( {
-        USUid:  usuario.USUid,
-        USUnombres: usuario.USUnombres,
-        USUprimerApellido: usuario.USUprimerApellido,
-        USUsegundoApellido: usuario.USUsegundoApellido,
-        USUemail: usuario.USUemail,
-        USUidentificacion: usuario.USUidentificacion,
-        USUcelular: usuario.USUcelular,
-        USUciudad: usuario.USUciudad,
-        USUestablecimiento: usuario.USUestablecimiento
-      });
+      .set(usuario);
   }
 
   crearEstablecimiento(usuario){
