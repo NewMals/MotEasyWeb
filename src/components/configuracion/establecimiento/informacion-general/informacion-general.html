@@ -8,36 +8,76 @@
       <ion-col>
         <h2 style="text-align: center">Establecimiento</h2>
         <ion-item>
-          <ion-label floating>Nit</ion-label>
-          <ion-input [(ngModel)]="contacto" type="number" required></ion-input>
+          <ion-label stacked required>Nit</ion-label>
+          <ion-input [(ngModel)]="establecimiento.ESTnit" type="number" required (blur)="GuardarEST()"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Nombre del establecimiento</ion-label>
-          <ion-input [(ngModel)]="est" type="text" required></ion-input>
+          <ion-label stacked required>Nombre del establecimiento</ion-label>
+          <ion-input [(ngModel)]="establecimiento.ESTnombre" type="text" required (blur)="GuardarEST()"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Correo electronico</ion-label>
-          <ion-input [(ngModel)]="email" type="email" required></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>Telefono recepción</ion-label>
-          <ion-input [(ngModel)]="email" type="text" required></ion-input>
+          <ion-label stacked required>Telefono recepción</ion-label>
+          <ion-input [(ngModel)]="establecimiento.ESTtelefono" type="text" required (blur)="GuardarEST()"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
         <h2 style="text-align: center">Contacto</h2>
-        <ion-item>
-          <ion-label floating>Nombre completo</ion-label>
-          <ion-input [(ngModel)]="contacto" type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Telefono o celular</ion-label>
-            <ion-input [(ngModel)]="tel" type="number"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>Correo electronico</ion-label>
-          <ion-input [(ngModel)]="email" type="email" required></ion-input>
-        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked required>Primer nombre *</ion-label>
+              <ion-input [(ngModel)]="usuario.USUprimerNombre" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked required>Segundo nombre</ion-label>
+              <ion-input [(ngModel)]="usuario.USUsegundoNombre" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked required>Primer apellido *</ion-label>
+              <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked required>Segundo apellido</ion-label>
+              <ion-input [(ngModel)]="usuario.USUsegundoApellido" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked required>Num. identificación *</ion-label>
+              <ion-input [(ngModel)]="usuario.USUidentificacion" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked required>Ciudad</ion-label>
+              <ion-input [(ngModel)]="usuario.USUciudad" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked required>Correo electronico *</ion-label>
+              <ion-input [(ngModel)]="usuario.USUemail" type="email"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked required>Celular *</ion-label>
+              <ion-input [(ngModel)]="usuario.USUcelular" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
       </ion-col>
     </ion-row>
   </ion-card-content>

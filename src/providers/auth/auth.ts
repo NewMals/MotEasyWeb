@@ -4,6 +4,7 @@ import { LoadingController, ToastController, Platform, NavController, App } from
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from "angularfire2/auth";
 import { DTOusuario } from '../../modelos/DTOusuario';
+import { Storage } from '@ionic/storage';
 
 /*
   Generated class for the AuthProvider provider.
@@ -28,6 +29,7 @@ export class AuthProvider {
     //private googlePlus: GooglePlus,
     public toastCtrl: ToastController,
     //public firebaseAng: AngularFirestore
+    private storage: Storage
   ) {
     console.log('Hello AuthProvider Provider');
 
@@ -53,6 +55,7 @@ export class AuthProvider {
     //this.afAuth.authState.subscribe(usuario => {
     firebase.auth().onAuthStateChanged(usuario => {
       if (usuario) {
+        //this.consultar(usuario.uid);
         this.navCtrl.setRoot('ConfiguracionPage');
       } else {
         this.navCtrl.setRoot('LoginPage');
@@ -126,15 +129,13 @@ export class AuthProvider {
 
   createEmail(usuario, password: string) {
     let respuesta = "";
-    // usuario.USUemail = "michae.lozanos@ecci.edu.co";
-    // password = "10281042";
     return firebase.auth().createUserWithEmailAndPassword(usuario.USUemail, password).then((response: firebase.User) => {
       usuario.USUid = response.uid;
       this.crearEstablecimiento(usuario);
-      //this.verificarEmail();
+      this.verificarEmail();
       return "true";
     }).catch((error: firebase.FirebaseError) => {
-      console.log("error", error);
+      //console.log("error", error);
       switch (error.code) {
         case 'auth/email-already-in-use': {
           respuesta = "La dirección de correo electrónico ya está siendo utilizada por otra cuenta."
@@ -161,14 +162,37 @@ export class AuthProvider {
   }
 
   signInWithEmail(email: string, password: string): Promise<any> {
-    email = "michae.lozanos@ecci.edu.co";
-    password = "10281042";
+    let respuesta = "";
     return firebase.auth().signInWithEmailAndPassword(email, password).then(usuario => {
       if (!usuario.emailVerified) {
         this.verificarEmail();
       }
+      this.consultar(usuario.uid);
+      return "true";
     }).catch((error: firebase.FirebaseError) => {
-      return error;
+      switch (error.code) {
+        case 'auth/invalid-email': {
+          respuesta = "Correo y/o contraseña incorrectos";
+          break;
+        }
+        case 'auth/user-not-found': {
+          respuesta = "Usuario no registrado";
+          break;
+        }
+        case 'auth/wrong-password': {
+          respuesta = "Contraseña incorrecta";
+          break;
+        }
+        case 'auth/too-many-requests': {
+          respuesta = "Cuenta bloqueada temporalmente debido a una actividad inusual";
+          break;
+        }
+        default: {
+          respuesta = "Error del servidor, pongase en contacto con el administrador"
+          break;
+        }
+      }
+      return respuesta;
     });
   }
 
@@ -177,19 +201,31 @@ export class AuthProvider {
   }
 
   crearUser(usuario) {
-
     firebase.firestore().collection('Usuarios')
       .doc(usuario.USUid)
-      .set(usuario);
+      .set(usuario);    
+      this.guardar(usuario);
   }
 
   crearEstablecimiento(usuario){
     firebase.firestore().collection('Establecimientos')
       .add({}).then(response => {
-          console.log('crearEstablecimiento', response);
           usuario.USUestablecimiento = response.id;
           this.crearUser(usuario);
       }); 
+  }
+
+  consultar(id: string){
+    firebase.firestore().collection('Usuarios').doc(id).get()
+        .then(user =>{
+          if(user.exists){
+            this.guardar(user.data() as DTOusuario);
+          }
+        });
+  }
+
+  guardar(usuario :DTOusuario){    
+    this.storage.set("User", JSON.stringify(usuario));
   }
 }
 

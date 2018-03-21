@@ -35,9 +35,9 @@ export class LoginPage {
   
   SignWithEmail(){
 
-    this.auth.signInWithEmail("", "").then(usuario=>{
-      if(usuario.code){
-        this.mensajeError = "Correo y/o contraseña incorrectos";
+    this.auth.signInWithEmail(this.email, this.password).then(usuario=>{
+      if (usuario != "true") {
+        this.mensajeError = usuario;
       }
     }
     ).catch(error =>{
