@@ -15,8 +15,10 @@ import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from "angularfire2/storage";
 import { IonicStorageModule } from '@ionic/storage';
-import { GeneralProvider } from '../providers/general/general';
+import { EstablecimientoProvider } from '../providers/general/Establecimiento';
+import { UserProvider } from '../providers/general/user';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyASR-VQFfepVIDxJz_tLRzK7mrJNz_MtB0",
@@ -43,6 +45,7 @@ export const firebaseConfig = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     //AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
@@ -57,7 +60,8 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     //AngularFireDatabase,
     AuthProvider,
-    GeneralProvider
+    EstablecimientoProvider,
+    UserProvider
   ]
 })
 export class AppModule {}

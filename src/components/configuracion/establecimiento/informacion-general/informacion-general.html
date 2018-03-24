@@ -26,13 +26,13 @@
           <ion-col>
             <ion-item>
               <ion-label stacked required>Primer nombre *</ion-label>
-              <ion-input [(ngModel)]="usuario.USUprimerNombre" type="text"></ion-input>
+              <ion-input [(ngModel)]="usuario.USUprimerNombre" type="text" (blur)="GuardarUSU()"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col>
             <ion-item>
               <ion-label stacked required>Segundo nombre</ion-label>
-              <ion-input [(ngModel)]="usuario.USUsegundoNombre" type="text"></ion-input>
+              <ion-input [(ngModel)]="usuario.USUsegundoNombre" type="text" (blur)="GuardarUSU()"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -40,13 +40,13 @@
           <ion-col>
             <ion-item>
               <ion-label stacked required>Primer apellido *</ion-label>
-              <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text"></ion-input>
+              <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text" (blur)="GuardarUSU()"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col>
             <ion-item>
               <ion-label stacked required>Segundo apellido</ion-label>
-              <ion-input [(ngModel)]="usuario.USUsegundoApellido" type="text"></ion-input>
+              <ion-input [(ngModel)]="usuario.USUsegundoApellido" type="text" (blur)="GuardarUSU()"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -54,13 +54,13 @@
           <ion-col>
             <ion-item>
               <ion-label stacked required>Num. identificación *</ion-label>
-              <ion-input [(ngModel)]="usuario.USUidentificacion" type="number"></ion-input>
+              <ion-input [(ngModel)]="usuario.USUidentificacion" type="number" (blur)="GuardarUSU()"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col>
             <ion-item>
               <ion-label stacked required>Ciudad</ion-label>
-              <ion-input [(ngModel)]="usuario.USUciudad" type="text"></ion-input>
+              <ion-input [(ngModel)]="usuario.USUciudad" type="text" (blur)="GuardarUSU()"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -74,7 +74,7 @@
           <ion-col>
             <ion-item>
               <ion-label stacked required>Celular *</ion-label>
-              <ion-input [(ngModel)]="usuario.USUcelular" type="number"></ion-input>
+              <ion-input [(ngModel)]="usuario.USUcelular" type="number" (blur)="GuardarUSU()"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>

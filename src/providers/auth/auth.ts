@@ -5,6 +5,7 @@ import * as firebase from 'firebase/app';
 import { AngularFireAuth } from "angularfire2/auth";
 import { DTOusuario } from '../../modelos/DTOusuario';
 import { Storage } from '@ionic/storage';
+import { UserProvider } from '../general/user';
 
 /*
   Generated class for the AuthProvider provider.
@@ -29,7 +30,8 @@ export class AuthProvider {
     //private googlePlus: GooglePlus,
     public toastCtrl: ToastController,
     //public firebaseAng: AngularFirestore
-    private storage: Storage
+    private storage: Storage,
+    private USUservice : UserProvider
   ) {
     console.log('Hello AuthProvider Provider');
 
@@ -55,7 +57,7 @@ export class AuthProvider {
     //this.afAuth.authState.subscribe(usuario => {
     firebase.auth().onAuthStateChanged(usuario => {
       if (usuario) {
-        //this.consultar(usuario.uid);
+        this.consultar(usuario.uid);
         this.navCtrl.setRoot('ConfiguracionPage');
       } else {
         this.navCtrl.setRoot('LoginPage');
@@ -200,12 +202,7 @@ export class AuthProvider {
     firebase.auth().signOut();
   }
 
-  crearUser(usuario) {
-    firebase.firestore().collection('Usuarios')
-      .doc(usuario.USUid)
-      .set(usuario);    
-      this.guardar(usuario);
-  }
+ 
 
   crearEstablecimiento(usuario){
     firebase.firestore().collection('Establecimientos')
@@ -215,17 +212,26 @@ export class AuthProvider {
       }); 
   }
 
+  crearUser(usuario) {
+    firebase.firestore().collection('Usuarios')
+      .doc(usuario.USUid)
+      .set(usuario);    
+      this.guardar(usuario);
+  }
+
   consultar(id: string){
-    firebase.firestore().collection('Usuarios').doc(id).get()
-        .then(user =>{
-          if(user.exists){
-            this.guardar(user.data() as DTOusuario);
-          }
-        });
+    // firebase.firestore().collection('Usuarios').doc(id).get()
+    //     .then(user =>{
+    //       if(user.exists){
+    //         this.guardar(user.data() as DTOusuario);
+    //       }
+    //     });
+    this.USUservice.inicializar(id);
   }
 
   guardar(usuario :DTOusuario){    
     this.storage.set("User", JSON.stringify(usuario));
+    this.consultar(usuario.USUid);
   }
 }
 

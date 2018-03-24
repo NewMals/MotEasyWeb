@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { DTOfoto } from '../../../modelos/DTOfoto';
 import { AlertController } from 'ionic-angular';
+import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
+import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
 
 /**
  * Generated class for the ImagenesComponent component.
@@ -19,11 +21,17 @@ export class ImagenesComponent {
   @ViewChild('fileInput') fileInput;
   FotoSeleccionada: DTOfoto;
   posicion: number = 0;
+  establecimiento = new DTOEstablecimiento;
 
-  constructor(private alertCtrl: AlertController) {
+  constructor(private alertCtrl: AlertController
+    , private general: EstablecimientoProvider
+  ) {
     console.log('Hello ImagenesComponent Component');
     this.text = 'Hello World';
     //this.CargarFotos();
+    this.general.consultarBd("Establecimiento").then(data =>{
+      this.establecimiento = data as DTOEstablecimiento;
+    });
   }
 
   CargarFotos() {
@@ -45,7 +53,6 @@ export class ImagenesComponent {
   }
 
   ProcessImage(event) {
-    console.log('foto', event);
     let reader = new FileReader();
     reader.onload = (readerEvent) => {
       let imageData = (readerEvent.target as any).result;
@@ -54,6 +61,7 @@ export class ImagenesComponent {
       Foto.FOTprincipal = false;
       Foto.FOTurl = imageData;
       Foto.FOTorden = this.ArrayFotos.length + 1;
+      //this.general.storageGuardarFb(Foto);
       this.ArrayFotos.push(Foto);
       this.SeleccionarFoto(Foto);
     };
@@ -104,4 +112,12 @@ export class ImagenesComponent {
     });
     alert.present();
   }
+
+  guardar() {
+    this.ArrayFotos.forEach(foto =>{
+      this.general.storageGuardarFb(foto).then(succes =>{
+      });
+    });
+  }
+
 }

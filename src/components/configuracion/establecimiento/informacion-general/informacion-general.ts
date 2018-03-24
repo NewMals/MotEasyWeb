@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DTOusuario } from '../../../../modelos/DTOusuario';
 import { Storage } from '@ionic/storage';
-import { GeneralProvider } from '../../../../providers/general/general';
+import { EstablecimientoProvider } from '../../../../providers/general/Establecimiento';
 import { DTOEstablecimiento } from '../../../../modelos/DTOestablecimiento';
+import { UserProvider } from '../../../../providers/general/user';
 
 
 /**
@@ -15,35 +16,39 @@ import { DTOEstablecimiento } from '../../../../modelos/DTOestablecimiento';
   selector: 'informacion-general',
   templateUrl: 'informacion-general.html'
 })
-export class InformacionGeneralComponent {
+export class InformacionGeneralComponent implements OnInit {
 
   text: string;
   usuario : DTOusuario = {USUid:"", USUemail: "", USUprimerNombre: "", USUprimerApellido: "", USUidentificacion:""};
-  establecimiento = new DTOEstablecimiento //= {ESTnit: 0 , ESTnombre: ""};
+  establecimiento = new DTOEstablecimiento;
 
-  constructor(private storage: Storage, private general: GeneralProvider) {
+  constructor(private storage: Storage
+    , private ESTservice: EstablecimientoProvider
+    , private USUservice: UserProvider
+  ) {
     console.log('Hello InformacionGeneralComponent Component');
     this.text = 'Hello World';
-    this.obtenerUSU();
+  }
+
+  ngOnInit(): void {
     this.obtenerEST();
+    this.obtenerUSU();
   }
 
   obtenerUSU(){
-    this.general.consultarBd("User").then(data =>{
-      this.usuario = data as DTOusuario;
-    })
+    this.usuario = this.USUservice.user;
   }
 
+  // GuardarUSU(){
+  //   this.general.guardarBd();
+  // }
+
   obtenerEST(){ 
-    this.general.consultarBd("Establecimiento").then(data =>{
-      if(data){
-        this.establecimiento = data as DTOEstablecimiento;
-      }      
-    });
+    this.establecimiento = this.ESTservice.establecimiento;
   }
 
   GuardarEST(){
-    this.general.guardarBd("Establecimiento", this.establecimiento);
+    this.ESTservice.guardarBd();
   }
 
 }

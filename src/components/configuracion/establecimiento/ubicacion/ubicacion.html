@@ -9,15 +9,15 @@
       <ion-card-content>
         <ion-item>
           <ion-label floating>Ciudad</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input [(ngModel)]="establecimiento.ESTciudad"  type="text" (blur)="GuardarEST()"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating> Localidad</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input [(ngModel)]="establecimiento.ESTlocalidad" type="text" (blur)="GuardarEST()"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Direccion</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input [(ngModel)]="establecimiento.ESTdireccion" type="text" (blur)="GuardarEST()"></ion-input>
         </ion-item>
       </ion-card-content>
     </ion-card>

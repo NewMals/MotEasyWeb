@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { GeneralProvider } from '../../../providers/general/general';
+import {EstablecimientoProvider } from '../../../providers/general/Establecimiento';
 import { DTOusuario } from '../../../modelos/DTOusuario';
 import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
+import { UserProvider } from '../../../providers/general/user';
 
 /**
  * Generated class for the ConfiguracionPage page.
@@ -21,16 +22,16 @@ export class ConfiguracionPage {
   text: string = 'progress-bar'
 
   constructor(public navCtrl: NavController, public navParams: NavParams
-    , private general: GeneralProvider
+    , private ESTservice: EstablecimientoProvider
+    , private USUservice: UserProvider
   ) {
   }
 
   ionViewDidLoad() {
-    
+    this.obtenerEstablecimiento();
   }
 
   configurarEstablecimiento(){
-    this.obtenerEstablecimiento();
     this.navCtrl.setRoot("EstablecimientoPage");
   }
 
@@ -39,15 +40,9 @@ export class ConfiguracionPage {
   }
 
   obtenerEstablecimiento() {
-    this.general.consultarBd('User')
-      .then(user =>{
-          let usuario = user as DTOusuario;
-          this.general.consultarFb("Establecimiento", usuario.USUestablecimiento)
-          .then(data =>{
-              let establecimiento = data as DTOEstablecimiento;
-              this.general.guardarBd("Establecimiento", establecimiento)
-          });
-      }); 
+    this.USUservice.consultarBd().then(user =>{
+      this.ESTservice.getEstablecimientoFb(user.USUestablecimiento);   
+    });      
   }
 
 }
