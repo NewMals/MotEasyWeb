@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import * as firebase from 'firebase/app';
 import { DTOfoto } from '../../modelos/DTOfoto';
 import { DTOEstablecimiento } from '../../modelos/DTOestablecimiento';
+import { UserProvider } from './user';
 /*
   Generated class for the GeneralProvider provider.
 
@@ -13,47 +14,65 @@ import { DTOEstablecimiento } from '../../modelos/DTOestablecimiento';
 @Injectable()
 export class EstablecimientoProvider {
 
-  establecimiento : DTOEstablecimiento;
+  establecimiento = new DTOEstablecimiento;
+  storageRef = firebase.storage().ref();
 
-  constructor(private storage: Storage) {
+  constructor(private storage: Storage
+    , private USUservice: UserProvider
+  ) {
     console.log('Hello EstablecimientoProvider Provider');
-    this.establecimiento = new DTOEstablecimiento;
   }
 
-  getEstablecimientoFb(id: string){
+  getEstablecimientoFb(id: string) {
     firebase.firestore().collection("Establecimientos").doc(id).get()
-    .then(data => {
-      this.establecimiento = data.data() as DTOEstablecimiento;
-       this.guardarBd();
-    });   
+      .then(data => {
+        this.establecimiento = data.data() as DTOEstablecimiento;
+        this.guardarBd();
+      });
   }
 
 
-  consultarBd(id: string): Promise<any> {
-    return this.storage.get(id).then(data =>{
-      return  JSON.parse(data);
-    });
+  consultarBd(): Promise<any> {
+    return this.storage.get("Establecimiento")
+      .then(data => {
+        this.establecimiento = JSON.parse(data);
+        return this.establecimiento;
+      });
   }
- 
 
-  guardarBd(){
+
+  guardarBd() {
     this.storage.set("Establecimiento", JSON.stringify(this.establecimiento));
   }
 
-  guardarFb(){
+  guardarFb() {
 
+    let EST =  JSON.stringify(this.establecimiento);
+
+    this.USUservice.consultarBd().then(data => {
+      firebase.firestore().collection("Establecimientos")
+        .doc(data.USUestablecimiento)
+        .set(JSON.parse(EST))
+        .then(()=>{
+          this.guardarBd();
+        });
+        // .then(data => {
+        //   this.establecimiento = data.data() as DTOEstablecimiento;
+        //   this.guardarBd();
+        // });
+    });
   }
 
-  storageGuardarFb(foto : DTOfoto): Promise<any>{
-    console.log(foto);
-    let storageRef = firebase.storage().ref();
-    return this.consultarBd("User").then(data =>{
-      storageRef.child("establecimientos/" + data.USUestablecimiento + "/sitio/" + "EST_" + foto.FOTorden + ".jpg")
-      .putString(foto.FOTurl, 'data_url')
-      .then(snapshot =>{
-        foto.FOTurl = snapshot.downloadURL[0];
-        
-      });
+
+
+  storageGuardarFb(foto: DTOfoto): Promise<any> {
+    return this.USUservice.consultarBd().then(data => {
+      return this.storageRef.child("establecimientos/" + data.USUestablecimiento + "/sitio/" + "EST_" + foto.FOTorden + ".jpg")
+        .putString(foto.FOTurl, 'data_url')
+        .then(snapshot => {
+          foto.FOTurl = snapshot.downloadURL;
+          return foto;
+        });
     });
   }
 

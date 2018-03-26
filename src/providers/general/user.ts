@@ -19,34 +19,35 @@ export class UserProvider {
     this.user = new DTOusuario;
   }
 
-  inicializar(id?: string){
-      this.consultarBd().then(data =>{
-          if(!data && id){
-            this.consultaFb(id);
-          }
+  inicializar(id?: string): Promise<DTOusuario> {
+    return this.consultarBd().then(data => {
+      if (!data && id) {
+        return this.consultaFb(id);
+      }
+      return data;
+    });
+  }
+
+  consultarBd(): Promise<DTOusuario> {
+    return this.storage.get("User")
+      .then(data => {
+        this.user = JSON.parse(data) as DTOusuario;
+        return this.user;
       });
   }
 
-  consultarBd() :Promise<DTOusuario> {
-    return this.storage.get("User")
-            .then(data => {
-              this.user = JSON.parse(data) as DTOusuario;
-              return this.user;
-            });
-  }
- 
- 
-  consultaFb(id: string) {
-    firebase.firestore().collection('Usuarios').doc(id).get()
+
+  consultaFb(id: string): Promise<DTOusuario> {
+    return firebase.firestore().collection('Usuarios').doc(id).get()
       .then(data => {
         this.user = data.data() as DTOusuario;
-        this.guardarBd();      
+        return this.guardarBd();
       });
   }
 
 
-  guardarBd() {
-    this.storage.set("User", JSON.stringify(this.user));
+  guardarBd(): Promise<DTOusuario> {
+    return this.storage.set("User", JSON.stringify(this.user));
   }
 
 }

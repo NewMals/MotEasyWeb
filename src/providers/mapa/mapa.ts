@@ -31,19 +31,24 @@ export class MapaProvider {
         lng: posicion.longitude
       };
       this.crearMapa(cordenadas);
+      // this.subject.next(posicion);
     }
     else {
       let that = this;
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
+
           let cordenadas = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
           that.crearMapa(cordenadas);
+
+         
         });
       }
     }
+    
   }
 
   crearMapa(posicion) {
@@ -150,6 +155,10 @@ export class MapaProvider {
     });
 
     infowindow.open(this.map, marker);
+
+    this.geoUbicacion.latitude = posicion.lat;
+    this.geoUbicacion.longitude = posicion.lng;
+    this.subject.next(that.geoUbicacion);
 
     google.maps.event.addListener(marker, 'dragend', function (event) {
       that.geoUbicacion.latitude = this.position.lat();

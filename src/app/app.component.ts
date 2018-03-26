@@ -27,6 +27,7 @@ export class MyApp {
   ) {
     this.inicializarApp();
     this.cargarMenu();
+    this.auth.StateSesion();
   }
 
   inicializarApp(){

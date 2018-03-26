@@ -25,7 +25,10 @@ export class ConfiguracionPage {
     , private ESTservice: EstablecimientoProvider
     , private USUservice: UserProvider
   ) {
+    console.log("Hello Configuracion");
   }
+
+
 
   ionViewDidLoad() {
     this.obtenerEstablecimiento();
@@ -41,8 +44,15 @@ export class ConfiguracionPage {
 
   obtenerEstablecimiento() {
     this.USUservice.consultarBd().then(user =>{
-      this.ESTservice.getEstablecimientoFb(user.USUestablecimiento);   
+      if(user){
+        this.ESTservice.getEstablecimientoFb(user.USUestablecimiento);   
+      }
+     
     });      
+  }
+
+  obtenerUser(){
+
   }
 
 }

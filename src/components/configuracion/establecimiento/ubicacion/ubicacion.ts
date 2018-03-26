@@ -41,12 +41,12 @@ export class UbicacionComponent implements OnInit {
     this.establecimiento = this.ESTservice.establecimiento;
 
     this.googleMaps.posicion(this.mapElement.nativeElement, this.establecimiento.ESTgeolocalizacion);
-    this.googleMaps.posicionActual.subscribe(valor => {
-      this.establecimiento.ESTgeolocalizacion = new DTOposicion;
-      this.establecimiento.ESTgeolocalizacion.latitude = valor.latitude;
-      this.establecimiento.ESTgeolocalizacion.longitude = valor.longitude;
-      this.GuardarEST();
-    });
+    // this.googleMaps.posicionActual.subscribe(valor => {
+    //   this.establecimiento.ESTgeolocalizacion = new DTOposicion;
+    //   this.establecimiento.ESTgeolocalizacion.latitude = valor.latitude;
+    //   this.establecimiento.ESTgeolocalizacion.longitude = valor.longitude;
+    //   this.GuardarEST();
+    // });
 
   }
 

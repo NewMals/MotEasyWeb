@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { DTOfoto } from '../../../modelos/DTOfoto';
 import { AlertController } from 'ionic-angular';
 import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
@@ -14,24 +14,31 @@ import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
   selector: 'imagenes',
   templateUrl: 'imagenes.html'
 })
-export class ImagenesComponent {
+export class ImagenesComponent implements OnInit  {
 
   text: string;
   ArrayFotos = new Array<DTOfoto>();
   @ViewChild('fileInput') fileInput;
   FotoSeleccionada: DTOfoto;
   posicion: number = 0;
-  establecimiento = new DTOEstablecimiento;
+  establecimiento : DTOEstablecimiento;
 
   constructor(private alertCtrl: AlertController
-    , private general: EstablecimientoProvider
+    , private ESTservice: EstablecimientoProvider
   ) {
     console.log('Hello ImagenesComponent Component');
     this.text = 'Hello World';
+    this.establecimiento = {ESTnit: 0, ESTnombre: "", ESTgeolocalizacion:{latitude: 0, longitude:0 }
+    , ESTfotos: [{FOTurl: "", FOTorden: 0, FOTactiva: false, FOTprincipal: false}]};
     //this.CargarFotos();
-    this.general.consultarBd("Establecimiento").then(data =>{
-      this.establecimiento = data as DTOEstablecimiento;
-    });
+  }
+
+  ngOnInit(): void {
+    this.obtenerEST();
+  }
+
+  obtenerEST() {
+    this.establecimiento = this.ESTservice.establecimiento;
   }
 
   CargarFotos() {
@@ -61,9 +68,13 @@ export class ImagenesComponent {
       Foto.FOTprincipal = false;
       Foto.FOTurl = imageData;
       Foto.FOTorden = this.ArrayFotos.length + 1;
-      //this.general.storageGuardarFb(Foto);
-      this.ArrayFotos.push(Foto);
-      this.SeleccionarFoto(Foto);
+      this.ESTservice.storageGuardarFb(Foto).then((succes: DTOfoto) => {
+        Foto.FOTurl = succes.FOTurl;
+        this.ArrayFotos.push(Foto);
+        this.establecimiento.ESTfotos = this.ArrayFotos;
+        this.guardar();
+        this.SeleccionarFoto(Foto);
+      });
     };
     if (event.target.files[0])
       reader.readAsDataURL(event.target.files[0]);
@@ -114,10 +125,7 @@ export class ImagenesComponent {
   }
 
   guardar() {
-    this.ArrayFotos.forEach(foto =>{
-      this.general.storageGuardarFb(foto).then(succes =>{
-      });
-    });
+    this.ESTservice.guardarFb();
   }
 
 }

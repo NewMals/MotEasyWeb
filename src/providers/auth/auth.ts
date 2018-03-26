@@ -31,14 +31,13 @@ export class AuthProvider {
     public toastCtrl: ToastController,
     //public firebaseAng: AngularFirestore
     private storage: Storage,
-    private USUservice : UserProvider
+    private USUservice: UserProvider
   ) {
     console.log('Hello AuthProvider Provider');
 
     this.loading = this.loadingCtrl.create({
       content: 'Iniciando sesión'
     });
-    this.StateSesion();
   }
 
   get navCtrl(): NavController {
@@ -57,8 +56,9 @@ export class AuthProvider {
     //this.afAuth.authState.subscribe(usuario => {
     firebase.auth().onAuthStateChanged(usuario => {
       if (usuario) {
-        this.consultar(usuario.uid);
-        this.navCtrl.setRoot('ConfiguracionPage');
+        this.consultar(usuario.uid).then(() => {
+          this.navCtrl.setRoot('ConfiguracionPage');
+        });
       } else {
         this.navCtrl.setRoot('LoginPage');
       }
@@ -202,34 +202,39 @@ export class AuthProvider {
     firebase.auth().signOut();
   }
 
- 
 
-  crearEstablecimiento(usuario){
+
+  crearEstablecimiento(usuario) {
     firebase.firestore().collection('Establecimientos')
       .add({}).then(response => {
-          usuario.USUestablecimiento = response.id;
-          this.crearUser(usuario);
-      }); 
+        usuario.USUestablecimiento = response.id;
+        this.crearUser(usuario);
+      });
   }
 
   crearUser(usuario) {
     firebase.firestore().collection('Usuarios')
       .doc(usuario.USUid)
-      .set(usuario);    
-      this.guardar(usuario);
+      .set(usuario)
+      .then(() => {
+        this.guardar(usuario);
+      });
+
   }
 
-  consultar(id: string){
+  consultar(id: string): Promise<any> {
     // firebase.firestore().collection('Usuarios').doc(id).get()
     //     .then(user =>{
     //       if(user.exists){
     //         this.guardar(user.data() as DTOusuario);
     //       }
     //     });
-    this.USUservice.inicializar(id);
+    return this.USUservice.inicializar(id).then(data => {
+      return data;
+    });
   }
 
-  guardar(usuario :DTOusuario){    
+  guardar(usuario: DTOusuario) {
     this.storage.set("User", JSON.stringify(usuario));
     this.consultar(usuario.USUid);
   }
