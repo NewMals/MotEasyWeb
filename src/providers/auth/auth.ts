@@ -6,6 +6,7 @@ import { AngularFireAuth } from "angularfire2/auth";
 import { DTOusuario } from '../../modelos/DTOusuario';
 import { Storage } from '@ionic/storage';
 import { UserProvider } from '../general/user';
+import { EstablecimientoProvider } from '../general/Establecimiento';
 
 /*
   Generated class for the AuthProvider provider.
@@ -17,8 +18,6 @@ import { UserProvider } from '../general/user';
 export class AuthProvider {
 
   loading;
-  user = new DTOusuario;
-  //Usercolletion: AngularFirestoreCollection<DTOusuario>;
 
 
   constructor(
@@ -31,7 +30,8 @@ export class AuthProvider {
     public toastCtrl: ToastController,
     //public firebaseAng: AngularFirestore
     private storage: Storage,
-    private USUservice: UserProvider
+    private USUservice: UserProvider,
+    private USUestablecimiento: EstablecimientoProvider
   ) {
     console.log('Hello AuthProvider Provider');
 
@@ -53,7 +53,6 @@ export class AuthProvider {
   }
 
   StateSesion() {
-    //this.afAuth.authState.subscribe(usuario => {
     firebase.auth().onAuthStateChanged(usuario => {
       if (usuario) {
         this.consultar(usuario.uid).then(() => {
@@ -205,38 +204,38 @@ export class AuthProvider {
 
 
   crearEstablecimiento(usuario) {
-    firebase.firestore().collection('Establecimientos')
-      .add({}).then(response => {
-        usuario.USUestablecimiento = response.id;
+    // firebase.firestore().collection('Establecimientos')
+    //   .add({}).then(response => {
+    //     usuario.USUestablecimiento = response.id;
+    //     this.crearUser(usuario);
+    //   });
+
+    this.USUestablecimiento.crear()
+      .then(data => {
+        usuario.USUestablecimiento = data.id;
         this.crearUser(usuario);
       });
   }
 
   crearUser(usuario) {
-    firebase.firestore().collection('Usuarios')
-      .doc(usuario.USUid)
-      .set(usuario)
-      .then(() => {
-        this.guardar(usuario);
-      });
-
+    // firebase.firestore().collection('Usuarios')
+    //   .doc(usuario.USUid)
+    //   .set(usuario)
+    //   .then(() => {
+    //     this.guardar(usuario);
+    //   });
+    this.USUservice.crear(usuario);
   }
 
   consultar(id: string): Promise<any> {
-    // firebase.firestore().collection('Usuarios').doc(id).get()
-    //     .then(user =>{
-    //       if(user.exists){
-    //         this.guardar(user.data() as DTOusuario);
-    //       }
-    //     });
     return this.USUservice.inicializar(id).then(data => {
       return data;
     });
   }
 
-  guardar(usuario: DTOusuario) {
-    this.storage.set("User", JSON.stringify(usuario));
-    this.consultar(usuario.USUid);
-  }
+  // guardar(usuario: DTOusuario) {
+  //   this.storage.set("User", JSON.stringify(usuario));
+  //   this.consultar(usuario.USUid);
+  // }
 }
 

@@ -39,13 +39,13 @@ export class ConfiguracionPage {
   }
 
   configurarHabitacion(){
-    this.navCtrl.setRoot("");
+    this.navCtrl.setRoot("TiposHabitacionesPage");
   }
 
   obtenerEstablecimiento() {
     this.USUservice.consultarBd().then(user =>{
       if(user){
-        this.ESTservice.getEstablecimientoFb(user.USUestablecimiento);   
+        this.ESTservice.inicializar(user.USUestablecimiento);   
       }
      
     });      

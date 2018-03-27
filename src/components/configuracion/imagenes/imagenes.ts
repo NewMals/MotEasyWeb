@@ -39,15 +39,19 @@ export class ImagenesComponent implements OnInit  {
 
   obtenerEST() {
     this.establecimiento = this.ESTservice.establecimiento;
+    this.CargarFotos();
   }
 
   CargarFotos() {
-    let Foto = new DTOfoto;
-    Foto.FOTprincipal = true;
-    Foto.FOTurl = "https://firebasestorage.googleapis.com/v0/b/mote-e0df6.appspot.com/o/establecimientos%2FVS2R6uXf0cS16GwPwyqF%2Fsitio%2FEST_1.jpg?alt=media&token=ec85d42c-5c41-41d5-80a1-2bd7f7c876c6";
-    Foto.FOTorden = 1;
-
-    this.ArrayFotos.push(Foto);
+    this.establecimiento.ESTfotos.forEach(foto =>{
+      // let Foto = new DTOfoto;
+      // Foto.FOTprincipal = true;
+      // Foto.FOTurl = "https://firebasestorage.googleapis.com/v0/b/mote-e0df6.appspot.com/o/establecimientos%2FVS2R6uXf0cS16GwPwyqF%2Fsitio%2FEST_1.jpg?alt=media&token=ec85d42c-5c41-41d5-80a1-2bd7f7c876c6";
+      // Foto.FOTorden = 1;
+      foto.FOTactiva = false;
+      this.ArrayFotos.push(foto);
+    });
+    this.SeleccionarFoto(this.ArrayFotos[0]);
   }
 
   AgregarFoto() {
@@ -72,7 +76,7 @@ export class ImagenesComponent implements OnInit  {
         Foto.FOTurl = succes.FOTurl;
         this.ArrayFotos.push(Foto);
         this.establecimiento.ESTfotos = this.ArrayFotos;
-        this.guardar();
+        // this.guardar();
         this.SeleccionarFoto(Foto);
       });
     };
@@ -124,8 +128,8 @@ export class ImagenesComponent implements OnInit  {
     alert.present();
   }
 
-  guardar() {
-    this.ESTservice.guardarFb();
-  }
+  // guardar() {
+  //   this.ESTservice.guardarFb();
+  // }
 
 }

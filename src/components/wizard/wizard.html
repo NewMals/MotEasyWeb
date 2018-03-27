@@ -4,10 +4,10 @@
     <ion-item>
       <ion-row style="margin: auto; ">
         <ion-col *ngFor="let pagina of paginas" style="margin: auto; max-width: 80px;">
-          <label ion-fab [ngStyle]="{'border': (pagina.activo) ? '3px solid blue' : '' }" title="{{pagina.titulo}}" id="btnInfGeneral" >
+          <label ion-fab [ngStyle]="{'border': (pagina.activo) ? '3px solid blue' : '' }" title="{{pagina.titulo}}" id="btnInfGeneral">
             <ion-icon name="{{pagina.iconName}}" color="primary" style="font-size: 40px;"></ion-icon>
           </label>
-          <label style=" border: 10px solid transparent; border-bottom-color: #5bc0de;"></label>
+          <label style=" border: 10px solid transparent; border-bottom-color: #5bc0de; margin-left: 22px;"></label>
         </ion-col>
       </ion-row>
     </ion-item>
@@ -19,8 +19,11 @@
       </button>
     </ion-col>
     <ion-col style="text-align: right">
-      <button ion-button (click)="Continuar()">
+      <button ion-button (click)="Continuar()" *ngIf="!finalizar">
         Continuar
+      </button>
+      <button ion-button (click)="Finalizar()" *ngIf="finalizar">
+        Finalizar
       </button>
     </ion-col>
   </ion-row>

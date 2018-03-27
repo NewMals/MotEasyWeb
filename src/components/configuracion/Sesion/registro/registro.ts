@@ -18,7 +18,7 @@ export class RegistroComponent {
 
   mensajeError: string;
   text: string;
-  usuario : DTOusuario = {USUid:"", USUemail: "", USUprimerNombre: "", USUprimerApellido: "", USUidentificacion:""};
+  usuario = new DTOusuario;
   password: string = "";
   confirPassword: string = "";
   Habilitar: boolean = false;

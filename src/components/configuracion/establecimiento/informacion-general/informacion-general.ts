@@ -19,7 +19,7 @@ import { UserProvider } from '../../../../providers/general/user';
 export class InformacionGeneralComponent implements OnInit {
 
   text: string;
-  usuario : DTOusuario = {USUid:"", USUemail: "", USUprimerNombre: "", USUprimerApellido: "", USUidentificacion:""};
+  usuario = new DTOusuario;
   establecimiento = new DTOEstablecimiento;
 
   constructor(private storage: Storage
@@ -39,9 +39,9 @@ export class InformacionGeneralComponent implements OnInit {
     this.usuario = this.USUservice.user;
   }
 
-  // GuardarUSU(){
-  //   this.general.guardarBd();
-  // }
+  GuardarUSU(){
+    this.USUservice.guardarBd();
+  }
 
   obtenerEST(){ 
     this.establecimiento = this.ESTservice.establecimiento;

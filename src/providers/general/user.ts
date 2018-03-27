@@ -19,6 +19,17 @@ export class UserProvider {
     this.user = new DTOusuario;
   }
 
+  crear(usuario: DTOusuario) {
+    let USU = JSON.stringify(usuario);
+    firebase.firestore().collection('Usuarios')
+      .doc(usuario.USUid)
+      .set(JSON.parse(USU))
+      .then(() => {
+        this.user = usuario;
+        this.guardarBd();
+      });
+  }
+
   inicializar(id?: string): Promise<DTOusuario> {
     return this.consultarBd().then(data => {
       if (!data && id) {
@@ -36,7 +47,6 @@ export class UserProvider {
       });
   }
 
-
   consultaFb(id: string): Promise<DTOusuario> {
     return firebase.firestore().collection('Usuarios').doc(id).get()
       .then(data => {
@@ -45,9 +55,11 @@ export class UserProvider {
       });
   }
 
-
   guardarBd(): Promise<DTOusuario> {
     return this.storage.set("User", JSON.stringify(this.user));
   }
+  
+  
+  
 
 }

@@ -23,14 +23,21 @@ export class EstablecimientoProvider {
     console.log('Hello EstablecimientoProvider Provider');
   }
 
-  getEstablecimientoFb(id: string) {
-    firebase.firestore().collection("Establecimientos").doc(id).get()
-      .then(data => {
-        this.establecimiento = data.data() as DTOEstablecimiento;
-        this.guardarBd();
+  crear(): Promise<any> {
+    return firebase.firestore().collection('Establecimientos')
+      .add({}).then(response => {
+        return response;
       });
   }
-
+ 
+  inicializar(id?: string): Promise<DTOEstablecimiento> {
+    return this.consultarBd().then(data => {
+      if (!data && id) {
+        return this.consultaFb(id);
+      }
+      return data;
+    });
+  }
 
   consultarBd(): Promise<any> {
     return this.storage.get("Establecimiento")
@@ -40,26 +47,28 @@ export class EstablecimientoProvider {
       });
   }
 
+  consultaFb(id: string) {
+    firebase.firestore().collection("Establecimientos").doc(id).get()
+      .then(data => {
+        this.establecimiento = data.data() as DTOEstablecimiento;
+        this.guardarBd();
+      });
+  }
+
 
   guardarBd() {
     this.storage.set("Establecimiento", JSON.stringify(this.establecimiento));
   }
 
   guardarFb() {
-
-    let EST =  JSON.stringify(this.establecimiento);
-
+    let EST = JSON.stringify(this.establecimiento);
     this.USUservice.consultarBd().then(data => {
       firebase.firestore().collection("Establecimientos")
         .doc(data.USUestablecimiento)
         .set(JSON.parse(EST))
-        .then(()=>{
+        .then(() => {
           this.guardarBd();
         });
-        // .then(data => {
-        //   this.establecimiento = data.data() as DTOEstablecimiento;
-        //   this.guardarBd();
-        // });
     });
   }
 
@@ -75,5 +84,8 @@ export class EstablecimientoProvider {
         });
     });
   }
+
+
+  
 
 }

@@ -9,4 +9,6 @@ export class DTOusuario {
     USUcelular?: number;
     USUciudad?: string;
     USUestablecimiento?: string;
+    USUfechaRegistro?: Date;
+    USUfechaModificacion?: Date; 
 }

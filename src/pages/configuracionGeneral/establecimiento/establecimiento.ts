@@ -24,7 +24,7 @@ export class EstablecimientoPage {
     {id: 1 , titulo: "Informacion General", iconName: "folder-open", activo: true, component: InformacionGeneralComponent}
     , {id: 2 , titulo: "Ubicacion", iconName: "pin", activo: false, component: UbicacionComponent}
     , {id: 3 , titulo: "Imagenes", iconName: "images", activo: false, component: ImagenesComponent}
-    , {id: 4 , titulo: "Guardar", iconName: "archive", activo: false, component: UbicacionComponent}
+    // , {id: 4 , titulo: "Guardar", iconName: "archive", activo: false, component: UbicacionComponent}
   ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
