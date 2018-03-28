@@ -10,9 +10,11 @@ import { InformacionGeneralComponent } from './configuracion/establecimiento/inf
 import { WizardDirective } from './wizard/wizard.directive';
 import { TipoHabitacionComponent } from './configuracion/TiposHabitaciones/tipo-habitacion/tipo-habitacion';
 import { UbicacionComponent } from './configuracion/establecimiento/ubicacion/ubicacion';
-import { ImagenesComponent } from './configuracion/imagenes/imagenes';
+import { ImagenesComponent } from './configuracion/establecimiento/imagenes/imagenes';
 import { RegistroComponent } from './configuracion/Sesion/registro/registro';
 import { ReestablecerPassComponent } from './configuracion/Sesion/reestablecer-pass/reestablecer-pass';
+import { RegistrarTipHabComponent } from './configuracion/TiposHabitaciones/registrar/registrar-tip-hab';
+
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { ReestablecerPassComponent } from './configuracion/Sesion/reestablecer-p
         WizardDirective,
         ImagenesComponent,
         RegistroComponent,
-        ReestablecerPassComponent
+        ReestablecerPassComponent,
+        RegistrarTipHabComponent
     ],
     imports: [
         IonicModule,
@@ -41,9 +44,10 @@ import { ReestablecerPassComponent } from './configuracion/Sesion/reestablecer-p
         UbicacionComponent,
         ImagenesComponent,
         RegistroComponent,
-        ReestablecerPassComponent
-    ],entryComponents: [
-        HabitacionesComponent,  
+        ReestablecerPassComponent,
+        RegistrarTipHabComponent
+    ], entryComponents: [
+        HabitacionesComponent,
         ProgressBarComponent,
         TipoHabitacionComponent,
         WizardComponent,
@@ -51,7 +55,8 @@ import { ReestablecerPassComponent } from './configuracion/Sesion/reestablecer-p
         UbicacionComponent,
         ImagenesComponent,
         RegistroComponent,
-        ReestablecerPassComponent
+        ReestablecerPassComponent,
+        RegistrarTipHabComponent
     ]
 })
 export class ComponentsModule { }

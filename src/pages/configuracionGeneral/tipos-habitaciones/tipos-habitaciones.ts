@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { InformacionGeneralComponent } from '../../../components/configuracion/establecimiento/informacion-general/informacion-general';
+import { RegistrarTipHabComponent } from '../../../components/configuracion/TiposHabitaciones/registrar/registrar-tip-hab';
+
+
+
 /**
  * Generated class for the TiposHabitacionesPage page.
  *
@@ -16,7 +19,7 @@ import { InformacionGeneralComponent } from '../../../components/configuracion/e
 export class TiposHabitacionesPage {
 
   ArrayConfiguracionHAB = [
-    {id: 1 , titulo: "Informacion General", iconName: "folder-open", activo: true, component: InformacionGeneralComponent}
+    {id: 1 , titulo: "Registrar tipo de habitación", iconName: "folder-open", activo: true, component: RegistrarTipHabComponent}
   ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -25,5 +28,4 @@ export class TiposHabitacionesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad TiposHabitacionesPage');
   }
-
 }

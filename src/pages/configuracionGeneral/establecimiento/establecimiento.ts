@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InformacionGeneralComponent } from '../../../components/configuracion/establecimiento/informacion-general/informacion-general';
 import { UbicacionComponent } from '../../../components/configuracion/establecimiento/ubicacion/ubicacion';
-import { ImagenesComponent } from '../../../components/configuracion/imagenes/imagenes';
+import { ImagenesComponent } from '../../../components/configuracion/establecimiento/imagenes/imagenes';
 
 
 /**

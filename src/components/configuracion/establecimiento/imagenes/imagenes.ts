@@ -1,8 +1,8 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { DTOfoto } from '../../../modelos/DTOfoto';
+import { DTOfoto } from '../../../../modelos/DTOfoto';
 import { AlertController } from 'ionic-angular';
-import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
-import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
+import { EstablecimientoProvider } from '../../../../providers/general/Establecimiento';
+import { DTOEstablecimiento } from '../../../../modelos/DTOestablecimiento';
 
 /**
  * Generated class for the ImagenesComponent component.

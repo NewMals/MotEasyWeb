@@ -1,0 +1,22 @@
+<!-- Generated template for the RegistarTipHabComponent component -->
+<ion-card>
+  <ion-card-title>
+    Registrar tipo de habitación
+  </ion-card-title>
+  <ion-card-content>
+    <ion-item>
+      <ion-label> Nombre:</ion-label>
+      <ion-input placeholder="ej: Suite, Sencilla" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label> Cantidad de habitaciones:</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-item *ngFor="let complemento of ArrayComplementos">
+        <ion-label> {{complemento.COMdescripcion}}</ion-label>
+        <ion-checkbox [(ngModel)]="complemento.COMactivo" (ionChange)=""></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
