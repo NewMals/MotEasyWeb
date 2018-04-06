@@ -6,17 +6,12 @@
   <ion-card-content>
     <ion-item>
       <ion-label> Nombre:</ion-label>
-      <ion-input placeholder="ej: Suite, Sencilla" type="text"></ion-input>
+      <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTIdescripcion" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label> Cantidad de habitaciones:</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input [(ngModel)]="HabitacionTipo.HTIdescripcion" type="number"></ion-input>
     </ion-item>
-    <ion-list>
-      <ion-item *ngFor="let complemento of ArrayComplementos">
-        <ion-label> {{complemento.COMdescripcion}}</ion-label>
-        <ion-checkbox [(ngModel)]="complemento.COMactivo" (ionChange)=""></ion-checkbox>
-      </ion-item>
-    </ion-list>
+    <complementos [habitacion]="HabitacionTipo"></complementos>
   </ion-card-content>
 </ion-card>

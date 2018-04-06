@@ -19,6 +19,7 @@ import { AngularFireStorageModule } from "angularfire2/storage";
 import { IonicStorageModule } from '@ionic/storage';
 import { EstablecimientoProvider } from '../providers/general/Establecimiento';
 import { UserProvider } from '../providers/general/user';
+import { ComplementoProvider } from '../providers/general/complemento';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyASR-VQFfepVIDxJz_tLRzK7mrJNz_MtB0",

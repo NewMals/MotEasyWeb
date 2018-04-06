@@ -14,6 +14,8 @@ import { ImagenesComponent } from './configuracion/establecimiento/imagenes/imag
 import { RegistroComponent } from './configuracion/Sesion/registro/registro';
 import { ReestablecerPassComponent } from './configuracion/Sesion/reestablecer-pass/reestablecer-pass';
 import { RegistrarTipHabComponent } from './configuracion/TiposHabitaciones/registrar/registrar-tip-hab';
+import { ComplementosComponent } from './configuracion/TiposHabitaciones/complementos/complementos';
+
 
 
 
@@ -29,7 +31,8 @@ import { RegistrarTipHabComponent } from './configuracion/TiposHabitaciones/regi
         ImagenesComponent,
         RegistroComponent,
         ReestablecerPassComponent,
-        RegistrarTipHabComponent
+        RegistrarTipHabComponent,
+        ComplementosComponent
     ],
     imports: [
         IonicModule,
@@ -45,7 +48,8 @@ import { RegistrarTipHabComponent } from './configuracion/TiposHabitaciones/regi
         ImagenesComponent,
         RegistroComponent,
         ReestablecerPassComponent,
-        RegistrarTipHabComponent
+        RegistrarTipHabComponent,
+        ComplementosComponent
     ], entryComponents: [
         HabitacionesComponent,
         ProgressBarComponent,

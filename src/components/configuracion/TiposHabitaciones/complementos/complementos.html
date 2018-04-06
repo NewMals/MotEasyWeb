@@ -1,0 +1,9 @@
+<!-- Generated template for the ComplementosComponent component -->
+<div>
+  <ion-list>
+    <ion-item *ngFor="let complemento of ArrayComplementos">
+      <ion-label> {{complemento.COMdescripcion}}</ion-label>
+      <ion-checkbox [(ngModel)]="complemento.COMactivo" (ionChange)="checkComplemento()"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</div>

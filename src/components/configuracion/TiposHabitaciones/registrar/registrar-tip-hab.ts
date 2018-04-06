@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DTOcomplemento } from '../../../../modelos/DTOcomplemento';
+import { DTOHabitaciontipo } from '../../../../modelos/DTOhabitacion';
 
 /**
  * Generated class for the RegistarTipHabComponent component.
@@ -11,16 +12,16 @@ import { DTOcomplemento } from '../../../../modelos/DTOcomplemento';
   selector: 'registrar-tip-hab',
   templateUrl: 'registrar-tip-hab.html'
 })
-export class RegistrarTipHabComponent {
+export class RegistrarTipHabComponent  {
+
 
   text: string;
-  ArrayComplementos = new Array<DTOcomplemento>();
+  HabitacionTipo = new DTOHabitaciontipo;
 
   constructor() {
     console.log('Hello RegistarTipHabComponent Component');
     this.text = 'Hello World';
-    this.ArrayComplementos = [
-      {COMid: "" , COMdescripcion: "Parqueadero"}]
+    // this.ArrayComplementos = [
+    //   {COMid: "" , COMdescripcion: "Parqueadero"}]
   }
-
 }
