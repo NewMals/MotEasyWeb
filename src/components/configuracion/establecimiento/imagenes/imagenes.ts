@@ -14,22 +14,24 @@ import { DTOEstablecimiento } from '../../../../modelos/DTOestablecimiento';
   selector: 'imagenes',
   templateUrl: 'imagenes.html'
 })
-export class ImagenesComponent implements OnInit  {
+export class ImagenesComponent implements OnInit {
 
   text: string;
   ArrayFotos = new Array<DTOfoto>();
   @ViewChild('fileInput') fileInput;
   FotoSeleccionada: DTOfoto;
   posicion: number = 0;
-  establecimiento : DTOEstablecimiento;
+  establecimiento: DTOEstablecimiento;
 
   constructor(private alertCtrl: AlertController
     , private ESTservice: EstablecimientoProvider
   ) {
     console.log('Hello ImagenesComponent Component');
     this.text = 'Hello World';
-    this.establecimiento = {ESTnit: 0, ESTnombre: "", ESTgeolocalizacion:{latitude: 0, longitude:0 }
-    , ESTfotos: [{FOTurl: "", FOTorden: 0, FOTactiva: false, FOTprincipal: false}]};
+    this.establecimiento = {
+      ESTnit: 0, ESTnombre: "", ESTgeolocalizacion: { latitude: 0, longitude: 0 }
+      , ESTfotos: [{ FOTurl: "", FOTorden: 0, FOTactiva: false, FOTprincipal: false }]
+    };
     //this.CargarFotos();
   }
 
@@ -43,15 +45,17 @@ export class ImagenesComponent implements OnInit  {
   }
 
   CargarFotos() {
-    this.establecimiento.ESTfotos.forEach(foto =>{
-      // let Foto = new DTOfoto;
-      // Foto.FOTprincipal = true;
-      // Foto.FOTurl = "https://firebasestorage.googleapis.com/v0/b/mote-e0df6.appspot.com/o/establecimientos%2FVS2R6uXf0cS16GwPwyqF%2Fsitio%2FEST_1.jpg?alt=media&token=ec85d42c-5c41-41d5-80a1-2bd7f7c876c6";
-      // Foto.FOTorden = 1;
-      foto.FOTactiva = false;
-      this.ArrayFotos.push(foto);
-    });
-    this.SeleccionarFoto(this.ArrayFotos[0]);
+    if (this.establecimiento.ESTfotos) {
+      this.establecimiento.ESTfotos.forEach(foto => {
+        // let Foto = new DTOfoto;
+        // Foto.FOTprincipal = true;
+        // Foto.FOTurl = "https://firebasestorage.googleapis.com/v0/b/mote-e0df6.appspot.com/o/establecimientos%2FVS2R6uXf0cS16GwPwyqF%2Fsitio%2FEST_1.jpg?alt=media&token=ec85d42c-5c41-41d5-80a1-2bd7f7c876c6";
+        // Foto.FOTorden = 1;
+        foto.FOTactiva = false;
+        this.ArrayFotos.push(foto);
+      });
+      this.SeleccionarFoto(this.ArrayFotos[0]);
+    }
   }
 
   AgregarFoto() {
@@ -68,15 +72,22 @@ export class ImagenesComponent implements OnInit  {
     reader.onload = (readerEvent) => {
       let imageData = (readerEvent.target as any).result;
 
+
+
       let Foto = new DTOfoto;
-      Foto.FOTprincipal = false;
+      if (this.ArrayFotos.length == 0) {
+        Foto.FOTprincipal = true;
+      } else {
+        Foto.FOTprincipal = false;
+      }
+
       Foto.FOTurl = imageData;
       Foto.FOTorden = this.ArrayFotos.length + 1;
       this.ESTservice.storageGuardarFb(Foto).then((succes: DTOfoto) => {
         Foto.FOTurl = succes.FOTurl;
         this.ArrayFotos.push(Foto);
         this.establecimiento.ESTfotos = this.ArrayFotos;
-        // this.guardar();
+        this.guardar();
         this.SeleccionarFoto(Foto);
       });
     };
@@ -116,11 +127,11 @@ export class ImagenesComponent implements OnInit  {
         text: 'Aceptar',
         handler: () => {
           this.ArrayFotos.splice(this.posicion, 1);
-          if(this.posicion == 0 && this.ArrayFotos.length == 0){
-              this.SeleccionarFoto(null);
-          }else {
-              this.posicion = 0;
-              this.SeleccionarFoto(this.ArrayFotos[this.posicion]);
+          if (this.posicion == 0 && this.ArrayFotos.length == 0) {
+            this.SeleccionarFoto(null);
+          } else {
+            this.posicion = 0;
+            this.SeleccionarFoto(this.ArrayFotos[this.posicion]);
           }
         }
       }]
@@ -128,8 +139,8 @@ export class ImagenesComponent implements OnInit  {
     alert.present();
   }
 
-  // guardar() {
-  //   this.ESTservice.guardarFb();
-  // }
+  guardar() {
+    this.ESTservice.guardarFb();
+  }
 
 }
