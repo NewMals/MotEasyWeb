@@ -15,6 +15,8 @@ import { RegistroComponent } from './configuracion/Sesion/registro/registro';
 import { ReestablecerPassComponent } from './configuracion/Sesion/reestablecer-pass/reestablecer-pass';
 import { RegistrarTipHabComponent } from './configuracion/TiposHabitaciones/registrar/registrar-tip-hab';
 import { ComplementosComponent } from './configuracion/TiposHabitaciones/complementos/complementos';
+import { TarifasComponent } from './configuracion/tarifas/tarifas';
+import { EntretenimientosComponent } from './configuracion/TiposHabitaciones/entretenimientos/entretenimientos';
 
 
 
@@ -32,7 +34,9 @@ import { ComplementosComponent } from './configuracion/TiposHabitaciones/complem
         RegistroComponent,
         ReestablecerPassComponent,
         RegistrarTipHabComponent,
-        ComplementosComponent
+        ComplementosComponent,
+    TarifasComponent,
+    EntretenimientosComponent
     ],
     imports: [
         IonicModule,
@@ -49,7 +53,9 @@ import { ComplementosComponent } from './configuracion/TiposHabitaciones/complem
         RegistroComponent,
         ReestablecerPassComponent,
         RegistrarTipHabComponent,
-        ComplementosComponent
+        ComplementosComponent,
+    TarifasComponent,
+    EntretenimientosComponent
     ], entryComponents: [
         HabitacionesComponent,
         ProgressBarComponent,
@@ -60,7 +66,8 @@ import { ComplementosComponent } from './configuracion/TiposHabitaciones/complem
         ImagenesComponent,
         RegistroComponent,
         ReestablecerPassComponent,
-        RegistrarTipHabComponent
+        RegistrarTipHabComponent,
+        TarifasComponent
     ]
 })
 export class ComponentsModule { }

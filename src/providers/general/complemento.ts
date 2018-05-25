@@ -20,12 +20,12 @@ export class ComplementoProvider {
   }
 
   inicializar() : Promise<Array<DTOcomplemento>> {
-    return this.consultarBd().then(data => {
-      if (!data) {
+    // return this.consultarBd().then(data => {
+    //   if (!data) {
         return this.consultaFb();
-      }
-      return data;
-    });
+    //   }
+    //   return data;
+    // });
   }
 
   consultarBd(): Promise<any> {
@@ -36,8 +36,8 @@ export class ComplementoProvider {
       });
   }
 
-  consultaFb() {
-    firebase.firestore().collection("Complementos").get()
+  consultaFb(): Promise<any> {
+    return firebase.firestore().collection("Complementos").get()
       .then(data => {
         this.ArrayCOM =  new Array<DTOcomplemento>();
         data.forEach(doc => {
@@ -47,6 +47,7 @@ export class ComplementoProvider {
           this.ArrayCOM.push(complemento);
         });
         this.guardarBd();
+        return this.ArrayCOM;        
       });
   }
 

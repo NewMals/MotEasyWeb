@@ -1,17 +1,31 @@
 <!-- Generated template for the RegistarTipHabComponent component -->
 <ion-card>
-  <ion-card-title>
-    Registrar tipo de habitación
-  </ion-card-title>
+  <ion-card-header>
+    <ion-card-title>
+      Registrar tipo de habitación
+    </ion-card-title>
+  </ion-card-header>
   <ion-card-content>
     <ion-item>
-      <ion-label> Nombre:</ion-label>
+      <ion-label color="primary"> Nombre:</ion-label>
       <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTIdescripcion" type="text"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label> Cantidad de habitaciones:</ion-label>
-      <ion-input [(ngModel)]="HabitacionTipo.HTIdescripcion" type="number"></ion-input>
+      <ion-label color="primary"> Descripción:</ion-label>
+      <ion-textarea placeholder="Indica los detalles generales de este tipo de habitación" [(ngModel)]="HabitacionTipo.HTIdescripcion"
+        type="number"></ion-textarea>
     </ion-item>
-    <complementos [habitacion]="HabitacionTipo"></complementos>
+    <ion-item>
+      <ion-label color="primary"> Cantidad de habitaciones:</ion-label>
+      <ion-input placeholder="1" [(ngModel)]="HabitacionTipo.HTIcantPersonasMax" type="number" min="1"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <complementos [habitacion]="HabitacionTipo"></complementos>
+      </ion-col>
+      <ion-col>
+        <entretenimientos [habitacion]="HabitacionTipo"></entretenimientos>
+      </ion-col>
+    </ion-row>
   </ion-card-content>
 </ion-card>

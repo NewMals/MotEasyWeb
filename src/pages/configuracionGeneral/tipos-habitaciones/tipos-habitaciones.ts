@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RegistrarTipHabComponent } from '../../../components/configuracion/TiposHabitaciones/registrar/registrar-tip-hab';
+import { TarifasComponent } from '../../../components/configuracion/tarifas/tarifas';
 
 
 
@@ -20,6 +21,7 @@ export class TiposHabitacionesPage {
 
   ArrayConfiguracionHAB = [
     {id: 1 , titulo: "Registrar tipo de habitación", iconName: "folder-open", activo: true, component: RegistrarTipHabComponent}
+    , {id: 2 , titulo: "Tarifas", iconName: "logo-usd", activo: false, component: TarifasComponent}
   ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

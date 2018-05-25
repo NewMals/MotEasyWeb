@@ -50,6 +50,8 @@ export class WizardComponent {
     this.cargarComponente(this.paginas[this.posicion]);
     if (this.posicion + 1 == this.paginas.length) {
       this.finalizar = true;
+    }else {
+      this.finalizar = false;
     }
   }
 
@@ -58,6 +60,11 @@ export class WizardComponent {
     this.posicion = (this.posicion - 1) % this.paginas.length;
     this.paginas[this.posicion].activo = true;
     this.cargarComponente(this.paginas[this.posicion]);
+    if (this.posicion + 1 == this.paginas.length) {
+      this.finalizar = true;
+    }else {
+      this.finalizar = false;
+    }
   }
 
   Finalizar() {
