@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DTOcomplemento } from '../../../../modelos/DTOcomplemento';
 import { DTOHabitaciontipo } from '../../../../modelos/DTOhabitacion';
+import { HabitacionTipoProvider } from '../../../../providers/general/habitacion-tipo';
 
 /**
  * Generated class for the RegistarTipHabComponent component.
@@ -18,7 +19,7 @@ export class RegistrarTipHabComponent  {
   text: string;
   HabitacionTipo = new DTOHabitaciontipo;
 
-  constructor() {
+  constructor(private HABservice: HabitacionTipoProvider) {
     console.log('Hello RegistarTipHabComponent Component');
     this.text = 'Hello World';
     // this.ArrayComplementos = [

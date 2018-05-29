@@ -14,3 +14,9 @@ export class DTOHabitaciontipo {
     HTIcomplemento : Array<DTOcomplemento>;
 }
 
+export class DTOhabitaciones {
+    HTIid : number;
+    HTIdescripcion: string;
+    HTIfoto: string;
+    HTItarifaMin: number;
+}

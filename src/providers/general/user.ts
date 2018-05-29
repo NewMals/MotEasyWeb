@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DTOusuario } from '../../modelos/DTOusuario';
 import { Storage } from '@ionic/storage';
-import * as firebase from 'firebase/app';
-
+import firebase from 'firebase/app';
 /*
   Generated class for the UserProvider provider.
 

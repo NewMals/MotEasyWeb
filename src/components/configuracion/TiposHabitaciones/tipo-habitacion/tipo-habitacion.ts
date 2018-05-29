@@ -19,4 +19,6 @@ export class TipoHabitacionComponent {
     this.text = 'Hello World';
   }
 
+  
+
 }
