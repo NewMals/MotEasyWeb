@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserProvider } from './user';
 import firebase from 'firebase/app';
-import { DTOHabitaciontipo } from '../../modelos/DTOhabitacion';
+import { DTOHabitaciontipo, DTOhabitaciones } from '../../modelos/DTOhabitacion';
 import { Storage } from '@ionic/storage';
 
 @Injectable()
@@ -16,44 +16,80 @@ export class HabitacionTipoProvider {
     console.log('Hello HabitacionTipoProvider Provider');
   }
 
-  BuscarHabitacionTipo(id: string): Promise<DTOHabitaciontipo> {
-    return this.consultarBd(id).then(data => {
-      if (!data && id) {
-        return this.consultaFb(id);
+  // inicializar() {
+  //   this.USUservice.consultarBd().then(data => {
+  //     firebase.firestore().collection('Establecimientos')
+  //       .doc(data.USUestablecimiento)
+  //       .collection("HabitacionTipos")
+  //       .get()
+  //       .then(data =>{
+  //         data.forEach(doc => {
+  //           let tipoHab = new DTOHabitaciontipo;
+  //           tipoHab = doc.data() as DTOHabitaciontipo;
+  //           this.ArrayTipoHAB.push(tipoHab);
+  //         });
+  //         this.guardarBd();        
+  //       });
+  //   });
+  // }
+
+  inicializar(): Promise<DTOHabitaciontipo> {
+    return this.consultarBd().then(data => {
+      if (!data) {
+        return this.consultaFb();
       }
       return data;
     });
   }
 
-  consultarBd(id): Promise<any> {
+  consultarBd(): Promise<any> {
     return this.storage.get("HabitacionTipos")
       .then(data => {
-        this.ArrayTipoHAB = JSON.parse(data);
-        this.ArrayTipoHAB.forEach(Hab =>{
-          if(Hab.HTIid == id)  
-            return this.habitacionTipo = Hab;
-        });
+         this.ArrayTipoHAB = JSON.parse(data) as Array<DTOHabitaciontipo>;
+         return this.ArrayTipoHAB;
+        // return this.ArrayTipoHAB.forEach(Hab =>{
+        //   if(Hab.HTIid == id)  
+        //     this.habitacionTipo = Hab;       
+        //     return this.habitacionTipo;  
+        // });
       });
   }
 
-  consultaFb(id: string) {
+  consultaFb() {
+    // this.USUservice.consultarBd().then(data => {
+    //   firebase.firestore().collection('Establecimientos')
+    //     .doc(data.USUestablecimiento)
+    //     .collection("HabitacionTipos")
+    //     .doc(id)
+    //     .get()
+    //     .then(data => {
+    //       this.habitacionTipo = data.data() as DTOHabitaciontipo;
+    //       this.ArrayTipoHAB.push(this.habitacionTipo);
+    //       this.guardarBd();
+    //     });
+    // });
+
     this.USUservice.consultarBd().then(data => {
-      firebase.firestore().collection('Establecimientos')
-        .doc(data.USUestablecimiento)
-        .collection("HabitacionTipos")
-        .doc(id)
-        .get()
-        .then(data => {
-          this.habitacionTipo = data.data() as DTOHabitaciontipo;
-          this.ArrayTipoHAB.push(this.habitacionTipo);
-          this.guardarBd();
+          firebase.firestore().collection('Establecimientos')
+            .doc(data.USUestablecimiento)
+            .collection("HabitacionTipos")
+            .get()
+            .then(data =>{
+              this.ArrayTipoHAB =  new Array<DTOHabitaciontipo>();
+              data.forEach(doc => {
+                let tipoHab = new DTOHabitaciontipo;
+                tipoHab = doc.data() as DTOHabitaciontipo;
+                this.ArrayTipoHAB.push(tipoHab);
+              });
+              this.guardarBd();        
+            });
         });
-    });
   }
 
   crear() {
-    this.habitacionTipo.HTIid = this.ArrayTipoHAB.length + (this.ArrayTipoHAB.length > 0  ? -1 : 0);
-    this.guardarFb();
+    this.habitacionTipo = new DTOHabitaciontipo;
+    this.habitacionTipo.HTIid = this.ArrayTipoHAB.length;
+    
   }
 
   guardarFb(){
@@ -72,6 +108,19 @@ export class HabitacionTipoProvider {
   }
 
   guardarBd() {
-    this.storage.set("HabitacionTipos", JSON.stringify(this.ArrayTipoHAB));
+    this.storage.set("Hab_" + this.habitacionTipo.HTIid, JSON.stringify(this.habitacionTipo));
+  }
+
+  guardarEstablecimiento() {
+  }
+
+  BuscarHabitacionTipo(id: number) : DTOHabitaciontipo {
+        
+    this.ArrayTipoHAB.forEach(Hab =>{
+      if(Hab.HTIid == id){
+        this.habitacionTipo = Hab;
+      }
+    });
+    return this.habitacionTipo;
   }
 }

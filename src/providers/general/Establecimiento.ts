@@ -20,7 +20,6 @@ export class EstablecimientoProvider {
   constructor(private storage: Storage
     , private USUservice: UserProvider
   ) {
-    console.log('Hello EstablecimientoProvider Provider');
   }
 
   crear(): Promise<any> {
@@ -39,19 +38,20 @@ export class EstablecimientoProvider {
     });
   }
 
-  consultarBd(): Promise<any> {
+  consultarBd(): Promise<DTOEstablecimiento> {
     return this.storage.get("Establecimiento")
       .then(data => {
-        this.establecimiento = JSON.parse(data);
+        this.establecimiento = JSON.parse(data) as DTOEstablecimiento;
         return this.establecimiento;
       });
   }
 
   consultaFb(id: string) {
-    firebase.firestore().collection("Establecimientos").doc(id).get()
+    return firebase.firestore().collection("Establecimientos").doc(id).get()
       .then(data => {
         this.establecimiento = data.data() as DTOEstablecimiento;
         this.guardarBd();
+        return this.establecimiento;
       });
   }
 

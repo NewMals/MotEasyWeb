@@ -1,5 +1,6 @@
 import { DTOfoto } from "./DTOfoto";
 import { DTOposicion } from "./DTOposicion";
+import { DTOhabitaciones } from "./DTOhabitacion";
 
 export class DTOEstablecimiento {
     ESTnit : number;
@@ -9,7 +10,7 @@ export class DTOEstablecimiento {
     ESTdireccion? : string;
     ESTfotos? : Array<DTOfoto>;
     ESTlocalidad?: string;
-    //ESThabitacionesTipos: Array<DTOHabitaciontipo>;
+    ESThabitacionesTipos: Array<DTOhabitaciones>;
     ESTgeolocalizacion?: DTOposicion;
     ESTvalorMin?: number;
 }

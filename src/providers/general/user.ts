@@ -50,7 +50,8 @@ export class UserProvider {
     return firebase.firestore().collection('Usuarios').doc(id).get()
       .then(data => {
         this.user = data.data() as DTOusuario;
-        return this.guardarBd();
+        this.guardarBd();
+        return this.user;
       });
   }
 

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DTOcomplemento } from '../../../../modelos/DTOcomplemento';
 import { DTOHabitaciontipo } from '../../../../modelos/DTOhabitacion';
 import { HabitacionTipoProvider } from '../../../../providers/general/habitacion-tipo';
+import { NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the RegistarTipHabComponent component.
@@ -13,16 +14,30 @@ import { HabitacionTipoProvider } from '../../../../providers/general/habitacion
   selector: 'registrar-tip-hab',
   templateUrl: 'registrar-tip-hab.html'
 })
-export class RegistrarTipHabComponent  {
+export class RegistrarTipHabComponent implements OnInit, OnDestroy {
+
 
 
   text: string;
   HabitacionTipo = new DTOHabitaciontipo;
 
-  constructor(private HABservice: HabitacionTipoProvider) {
+  constructor(private HABservice: HabitacionTipoProvider
+  , private navParams: NavParams) {
     console.log('Hello RegistarTipHabComponent Component');
     this.text = 'Hello World';
+    //this.HabitacionTipo = obj ? obj : new DTOHabitaciontipo;
     // this.ArrayComplementos = [
     //   {COMid: "" , COMdescripcion: "Parqueadero"}]
   }
+
+
+
+  ngOnInit(): void {
+    this.HabitacionTipo = this.HABservice.habitacionTipo;   
+  }
+
+  ngOnDestroy() : void{
+    this.HABservice.guardarBd();
+  }
+  
 }

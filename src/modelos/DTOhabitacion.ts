@@ -4,6 +4,7 @@ import { DTOtarifa } from "./DTOtarifa";
 
 export class DTOHabitaciontipo {
     HTIid : number;
+    HTInombre : string;
     HTIdescripcion : string;
     HTIcantPersonasMax : number;
     HTItarifas : Array<DTOtarifa>;

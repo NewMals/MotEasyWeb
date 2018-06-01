@@ -55,7 +55,7 @@ export class AuthProvider {
   StateSesion() {
     firebase.auth().onAuthStateChanged(usuario => {
       if (usuario) {
-        this.consultar(usuario.uid).then(() => {
+        this.consultar(usuario.uid).then((data) => {
           this.navCtrl.setRoot('ConfiguracionPage');
         });
       } else {

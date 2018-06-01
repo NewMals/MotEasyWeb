@@ -20,6 +20,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { EstablecimientoProvider } from '../providers/general/Establecimiento';
 import { UserProvider } from '../providers/general/user';
 import { ComplementoProvider } from '../providers/general/complemento';
+import { HabitacionTipoProvider } from '../providers/general/habitacion-tipo';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyASR-VQFfepVIDxJz_tLRzK7mrJNz_MtB0",
@@ -62,7 +63,8 @@ export const firebaseConfig = {
     //AngularFireDatabase,
     AuthProvider,
     EstablecimientoProvider,
-    UserProvider
+    UserProvider,
+    HabitacionTipoProvider
   ]
 })
 export class AppModule {}

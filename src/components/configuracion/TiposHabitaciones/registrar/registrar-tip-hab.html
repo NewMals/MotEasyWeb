@@ -6,9 +6,13 @@
     </ion-card-title>
   </ion-card-header>
   <ion-card-content>
+      <ion-item>
+          <ion-label color="primary"> Id:</ion-label>
+          <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTIid" type="number"></ion-input>
+        </ion-item>
     <ion-item>
       <ion-label color="primary"> Nombre:</ion-label>
-      <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTIdescripcion" type="text"></ion-input>
+      <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTInombre" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary"> Descripción:</ion-label>

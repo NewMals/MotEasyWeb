@@ -28,10 +28,10 @@ export class ImagenesComponent implements OnInit {
   ) {
     console.log('Hello ImagenesComponent Component');
     this.text = 'Hello World';
-    this.establecimiento = {
-      ESTnit: 0, ESTnombre: "", ESTgeolocalizacion: { latitude: 0, longitude: 0 }
-      , ESTfotos: [{ FOTurl: "", FOTorden: 0, FOTactiva: false, FOTprincipal: false }]
-    };
+    // this.establecimiento = {
+    //   ESTnit: 0, ESTnombre: "", ESTgeolocalizacion: { latitude: 0, longitude: 0 }
+    //   , ESTfotos: [{ FOTurl: "", FOTorden: 0, FOTactiva: false, FOTprincipal: false }]
+    // };
     //this.CargarFotos();
   }
 

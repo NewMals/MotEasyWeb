@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {EstablecimientoProvider } from '../../../providers/general/Establecimiento';
+import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
 import { DTOusuario } from '../../../modelos/DTOusuario';
 import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
 import { UserProvider } from '../../../providers/general/user';
+import { HabitacionTipoProvider } from '../../../providers/general/habitacion-tipo';
 
 /**
  * Generated class for the ConfiguracionPage page.
@@ -20,10 +21,13 @@ import { UserProvider } from '../../../providers/general/user';
 export class ConfiguracionPage {
 
   text: string = 'progress-bar'
+  est = new DTOEstablecimiento; 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams
+  constructor(public navCtrl: NavController
+    , public navParams: NavParams
     , private ESTservice: EstablecimientoProvider
     , private USUservice: UserProvider
+    , private HABservice: HabitacionTipoProvider
   ) {
     console.log("Hello Configuracion");
   }
@@ -34,25 +38,28 @@ export class ConfiguracionPage {
     this.obtenerEstablecimiento();
   }
 
-  configurarEstablecimiento(){
+  configurarEstablecimiento() {
     this.navCtrl.setRoot("EstablecimientoPage");
   }
 
-  configurarHabitacion(){
+  configurarHabitacion() {
+    this.HABservice.BuscarHabitacionTipo(0);
     this.navCtrl.setRoot("TiposHabitacionesPage");
   }
 
   obtenerEstablecimiento() {
-    this.USUservice.consultarBd().then(user =>{
-      if(user){
-        this.ESTservice.inicializar(user.USUestablecimiento);   
+    this.USUservice.consultarBd().then(user => {
+      if (user) {
+        this.ESTservice.inicializar(user.USUestablecimiento).then(data =>{
+          this.est = data;
+        });
+        //this.HABservice.inicializar();
       }
-     
-    });      
+    });
   }
 
-  obtenerUser(){
-
+  AgregarTipHab() {
+    this.HABservice.crear();
+    this.navCtrl.setRoot("TiposHabitacionesPage");
   }
-
 }

@@ -29,7 +29,6 @@ export class ComplementosComponent implements OnInit {
   ngOnInit(): void {
     this.COMservice.inicializar().then(data =>{
       this.ArrayComplementos = data;
-      console.log(this.ArrayComplementos);
     }); 
   }
 

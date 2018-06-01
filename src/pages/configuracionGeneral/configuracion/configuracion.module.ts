@@ -17,8 +17,7 @@ import { ComplementoProvider } from '../../../providers/general/complemento';
     ConfiguracionPage
   ],
   providers:[
-    ComplementoProvider,
-    HabitacionTipoProvider
+    ComplementoProvider
   ]
 })
 export class ConfiguracionPageModule {}
