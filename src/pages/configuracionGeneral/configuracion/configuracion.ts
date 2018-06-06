@@ -43,7 +43,7 @@ export class ConfiguracionPage {
   }
 
   configurarHabitacion() {
-    this.HABservice.BuscarHabitacionTipo(0);
+    this.HABservice.inicializar(0);
     this.navCtrl.setRoot("TiposHabitacionesPage");
   }
 
@@ -51,7 +51,8 @@ export class ConfiguracionPage {
     this.USUservice.consultarBd().then(user => {
       if (user) {
         this.ESTservice.inicializar(user.USUestablecimiento).then(data =>{
-          this.est = data;
+          if(this.est.ESThabitacionesTipos)
+            this.est.ESThabitacionesTipos = data.ESThabitacionesTipos;
         });
         //this.HABservice.inicializar();
       }

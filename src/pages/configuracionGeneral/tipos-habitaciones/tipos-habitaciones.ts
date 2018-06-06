@@ -5,6 +5,8 @@ import { TarifasComponent } from '../../../components/configuracion/tarifas/tari
 import { HabitacionTipoProvider } from '../../../providers/general/habitacion-tipo';
 import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
 import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
+import { DTOhabitaciones } from '../../../modelos/DTOhabitacion';
+import { DTOtarifa } from '../../../modelos/DTOtarifa';
 
 
 
@@ -38,10 +40,21 @@ export class TiposHabitacionesPage {
   }
 
   ionViewDidLeave(){
-    this.ESTservice.consultarBd().then((data : DTOEstablecimiento) => {
-        
-    });
-    
+    this.ESTservice.consultarBd().then(est =>{
+      let tipoHab = this.HABservice.habitacionTipo;
+      let hab = new DTOhabitaciones;
+      hab.HTIdescripcion = tipoHab.HTIdescripcion;
+      //hab.HTIfoto = tipoHab.HTIfotos[0].FOTurl;
+      // tipoHab.HTItarifas.forEach(tar => {
+      //     let valor = tar.TARvalor;
+      //     hab.HTItarifaMin = (valor <= hab.HTItarifaMin || hab.HTItarifaMin == 0) ? valor : hab.HTItarifaMin;   
+      // });
+      est.ESThabitacionesTipos = est.ESThabitacionesTipos ? est.ESThabitacionesTipos : new Array<DTOhabitaciones>();
+      est.ESThabitacionesTipos.push(hab); 
+      this.HABservice.guardarFb();
+      this.ESTservice.guardarBd();
+      this.ESTservice.guardarFb();
+    });    
   }
 
 }
