@@ -45,7 +45,7 @@ export class HabitacionTipoProvider {
   }
 
   consultarBd(id: number): Promise<any> {
-    return this.storage.get("HabitacionTipos")
+    return this.storage.get("Hab_" + id)
       .then(data => {
          this.habitacionTipo = JSON.parse(data) as DTOHabitaciontipo;
          return this.habitacionTipo;
@@ -71,8 +71,8 @@ export class HabitacionTipoProvider {
     //     });
     // });
 
-    this.USUservice.consultarBd().then(data => {
-          firebase.firestore().collection('Establecimientos')
+    return this.USUservice.consultarBd().then(data => {
+          return firebase.firestore().collection('Establecimientos')
             .doc(data.USUestablecimiento)
             .collection("HabitacionTipos")
             .doc(id.toString())
@@ -86,15 +86,16 @@ export class HabitacionTipoProvider {
               //   this.ArrayTipoHAB.push(tipoHab);
               //});
               this.guardarBd();
+              return this.habitacionTipo;
             });
         });
   }
 
-  crear() {
-    this.ESTservice.consultarBd().then(est =>{
-      
+  crear(): Promise<DTOHabitaciontipo> {
+    return this.ESTservice.consultarBd().then(est =>{
       this.habitacionTipo = new DTOHabitaciontipo;
-      this.habitacionTipo.HTIid = est.ESThabitacionesTipos ? est.ESThabitacionesTipos.length : 0;  
+      return this.habitacionTipo;
+      //this.habitacionTipo.HTIid = est.ESThabitacionesTipos ? est.ESThabitacionesTipos.length : 0;  
     });
     
     // this.habitacionTipo.HTIid = this.ArrayTipoHAB.length;

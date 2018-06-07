@@ -38,11 +38,12 @@
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-item (click)="configurarHabitacion()">
-          {{est.ESTnombre}}
-          <ion-icon name="ios-arrow-forward" item-end></ion-icon>
-        </ion-item>
-
+        <div *ngFor="let hab of est.ESThabitacionesTipos">
+          <ion-item (click)="configurarHabitacion(hab.HTIid)">
+            {{hab.HTIdescripcion}}
+            <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+          </ion-item>
+        </div>
       </ion-card-content>
     </ion-card>
   </div>

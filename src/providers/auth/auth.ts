@@ -56,7 +56,9 @@ export class AuthProvider {
     firebase.auth().onAuthStateChanged(usuario => {
       if (usuario) {
         this.consultar(usuario.uid).then((data) => {
-          this.navCtrl.setRoot('ConfiguracionPage');
+          this.USUestablecimiento.inicializar(data.USUestablecimiento).then(data => {
+            this.navCtrl.setRoot('ConfiguracionPage');
+          });
         });
       } else {
         this.navCtrl.setRoot('LoginPage');

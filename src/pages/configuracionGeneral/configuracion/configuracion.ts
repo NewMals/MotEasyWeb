@@ -21,7 +21,7 @@ import { HabitacionTipoProvider } from '../../../providers/general/habitacion-ti
 export class ConfiguracionPage {
 
   text: string = 'progress-bar'
-  est = new DTOEstablecimiento; 
+  est = new DTOEstablecimiento;
 
   constructor(public navCtrl: NavController
     , public navParams: NavParams
@@ -30,11 +30,12 @@ export class ConfiguracionPage {
     , private HABservice: HabitacionTipoProvider
   ) {
     console.log("Hello Configuracion");
+    // this.obtenerEstablecimiento();
   }
 
 
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     this.obtenerEstablecimiento();
   }
 
@@ -42,25 +43,30 @@ export class ConfiguracionPage {
     this.navCtrl.setRoot("EstablecimientoPage");
   }
 
-  configurarHabitacion() {
-    this.HABservice.inicializar(0);
-    this.navCtrl.setRoot("TiposHabitacionesPage");
-  }
-
-  obtenerEstablecimiento() {
-    this.USUservice.consultarBd().then(user => {
-      if (user) {
-        this.ESTservice.inicializar(user.USUestablecimiento).then(data =>{
-          if(this.est.ESThabitacionesTipos)
-            this.est.ESThabitacionesTipos = data.ESThabitacionesTipos;
-        });
-        //this.HABservice.inicializar();
-      }
+  configurarHabitacion(id: number) {
+    this.HABservice.inicializar(id).then(() => {
+      this.navCtrl.setRoot("TiposHabitacionesPage");
     });
   }
 
+  obtenerEstablecimiento() {
+    // this.USUservice.consultarBd().then(user => {
+    //   if (user) {
+    //     this.ESTservice.inicializar(user.USUestablecimiento).then(data => {
+    //       if (data.ESThabitacionesTipos) {
+    //         this.est.ESThabitacionesTipos = data.ESThabitacionesTipos;
+    //       }
+    //     });
+    //     //this.HABservice.inicializar();
+    //   }
+    // });
+    this.est.ESThabitacionesTipos = this.ESTservice.establecimiento.ESThabitacionesTipos;
+  }
+
   AgregarTipHab() {
-    this.HABservice.crear();
-    this.navCtrl.setRoot("TiposHabitacionesPage");
+    this.HABservice.crear().then(()=>{
+      this.navCtrl.setRoot("TiposHabitacionesPage");
+    });
+    
   }
 }

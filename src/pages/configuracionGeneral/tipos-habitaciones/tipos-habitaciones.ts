@@ -7,6 +7,7 @@ import { EstablecimientoProvider } from '../../../providers/general/Establecimie
 import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
 import { DTOhabitaciones } from '../../../modelos/DTOhabitacion';
 import { DTOtarifa } from '../../../modelos/DTOtarifa';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 
@@ -43,16 +44,39 @@ export class TiposHabitacionesPage {
     this.ESTservice.consultarBd().then(est =>{
       let tipoHab = this.HABservice.habitacionTipo;
       let hab = new DTOhabitaciones;
+
       hab.HTIdescripcion = tipoHab.HTIdescripcion;
+      hab.HTIfoto = "";
+
+      if(tipoHab.HTIid >= 0 ){
+         
+        let valor = est.ESThabitacionesTipos.findIndex(index => index.HTIid ===tipoHab.HTIid);
+        hab.HTIid = tipoHab.HTIid;
+        est.ESThabitacionesTipos[valor] = hab;
+         
+         
+      }else{
+        console.log("nuevo");
+        est.ESThabitacionesTipos = est.ESThabitacionesTipos ? est.ESThabitacionesTipos : new Array<DTOhabitaciones>();
+        hab.HTIid = est.ESThabitacionesTipos ? est.ESThabitacionesTipos.length : 0;
+        this.HABservice.habitacionTipo.HTIid = hab.HTIid;
+        est.ESThabitacionesTipos.push(hab); 
+      }
+      // if(est.ESThabitacionesTipos){
+      //   est.ESThabitacionesTipos.forEach(data)
+      // }
+      
+       
+      // hab.HTIid = tipoHab.HTIid;
+      
       //hab.HTIfoto = tipoHab.HTIfotos[0].FOTurl;
       // tipoHab.HTItarifas.forEach(tar => {
       //     let valor = tar.TARvalor;
       //     hab.HTItarifaMin = (valor <= hab.HTItarifaMin || hab.HTItarifaMin == 0) ? valor : hab.HTItarifaMin;   
       // });
-      est.ESThabitacionesTipos = est.ESThabitacionesTipos ? est.ESThabitacionesTipos : new Array<DTOhabitaciones>();
-      est.ESThabitacionesTipos.push(hab); 
+      this.HABservice.guardarBd();
       this.HABservice.guardarFb();
-      this.ESTservice.guardarBd();
+      this.ESTservice.guardarBd().then();
       this.ESTservice.guardarFb();
     });    
   }

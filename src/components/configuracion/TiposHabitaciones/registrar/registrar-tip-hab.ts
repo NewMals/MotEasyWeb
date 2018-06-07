@@ -41,7 +41,7 @@ export class RegistrarTipHabComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() : void{
-    this.HABservice.guardarBd();
+    // this.HABservice.guardarBd();
   }
   
 }

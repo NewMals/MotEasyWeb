@@ -5,12 +5,16 @@ import * as firebase from 'firebase/app';
 import { DTOfoto } from '../../modelos/DTOfoto';
 import { DTOEstablecimiento } from '../../modelos/DTOestablecimiento';
 import { UserProvider } from './user';
+import { Observable } from "rxjs/Observable";
 /*
   Generated class for the GeneralProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+
+
+
 @Injectable()
 export class EstablecimientoProvider {
 
@@ -22,13 +26,15 @@ export class EstablecimientoProvider {
   ) {
   }
 
+  
+
   crear(): Promise<any> {
     return firebase.firestore().collection('Establecimientos')
       .add({}).then(response => {
         return response;
       });
   }
- 
+
   inicializar(id?: string): Promise<DTOEstablecimiento> {
     return this.consultarBd().then(data => {
       if (!data && id) {
@@ -56,8 +62,10 @@ export class EstablecimientoProvider {
   }
 
 
-  guardarBd() {
-    this.storage.set("Establecimiento", JSON.stringify(this.establecimiento));
+  guardarBd(): Promise<DTOEstablecimiento> {
+    return this.storage.set("Establecimiento", JSON.stringify(this.establecimiento)).then(() => {
+      return this.establecimiento;
+    });
   }
 
   guardarFb() {
@@ -84,8 +92,11 @@ export class EstablecimientoProvider {
         });
     });
   }
+ 
+  obser(){
+    var subs = Observable.fromPromise(this.guardarBd())
+  }
 
 
-  
 
 }
