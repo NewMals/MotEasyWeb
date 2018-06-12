@@ -9,7 +9,7 @@ import { DTOposicion } from '../../../../modelos/DTOposicion';
  * See https://angular.io/api/core/Component for more info on Angular
  * Components.
  */
-declare var google;
+
 
 
 @Component({

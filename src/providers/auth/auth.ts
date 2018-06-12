@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { LoadingController, ToastController, Platform, NavController, App } from 'ionic-angular';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from "angularfire2/auth";
-import { DTOusuario } from '../../modelos/DTOusuario';
-import { Storage } from '@ionic/storage';
 import { UserProvider } from '../general/user';
 import { EstablecimientoProvider } from '../general/Establecimiento';
 
@@ -29,7 +27,6 @@ export class AuthProvider {
     //private googlePlus: GooglePlus,
     public toastCtrl: ToastController,
     //public firebaseAng: AngularFirestore
-    private storage: Storage,
     private USUservice: UserProvider,
     private USUestablecimiento: EstablecimientoProvider
   ) {

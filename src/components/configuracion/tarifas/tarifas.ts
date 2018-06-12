@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DTOtarifa } from '../../../modelos/DTOtarifa';
+import { DTOHabitaciontipo } from '../../../modelos/DTOhabitacion';
+import { HabitacionTipoProvider } from '../../../providers/general/habitacion-tipo';
 
 /**
  * Generated class for the TarifasComponent component.
@@ -11,27 +13,44 @@ import { DTOtarifa } from '../../../modelos/DTOtarifa';
   selector: 'tarifas',
   templateUrl: 'tarifas.html'
 })
-export class TarifasComponent {
+export class TarifasComponent implements OnInit, OnDestroy{
 
-  tarifa : DTOtarifa;
+  Arraytarifa = new Array<DTOtarifa>();
   text: string;
 
-  constructor() {
+  constructor(
+    private HABservice: HabitacionTipoProvider
+  ) {
     console.log('Hello TarifasComponent Component');
     this.text = 'Hello World';
-    this.tarifa = new DTOtarifa;
-    this.tarifa.TARcantHoras = 4;
-    this.tarifa.TARvalor = 50000;
+
   }
 
-  cambiarValor(){
-    document.getElementById('lblValor').style.display = "none";
-    document.getElementById('txtValor').style.display = "block";
-    document.getElementById('txtValor').focus();
+  ngOnInit(): void {
+    if(this.HABservice.habitacionTipo.HTItarifas)
+    this.Arraytarifa = this.HABservice.habitacionTipo.HTItarifas;   
   }
 
-  actualizarValor(){
-    document.getElementById('txtValor').style.display = "none";
-    document.getElementById('lblValor').style.display = "block";
+  ngOnDestroy(): void {
+    this.HABservice.habitacionTipo.HTItarifas = this.Arraytarifa;
+  }
+
+  cambiarValor(id: number){
+    document.getElementById('lblValor_' + id).style.display = "none";
+    document.getElementById('txtValor_' + id).style.display = "block";
+    document.getElementById('txtValor_' + id).focus();
+  }
+
+  actualizarValor(id: number){
+    document.getElementById('txtValor_' + id).style.display = "none";
+    document.getElementById('lblValor_' + id).style.display = "block";
+  }
+
+  AgregarTarifa(){
+    let tarifa = new DTOtarifa;
+    tarifa.TARid = this.Arraytarifa.length + 1;
+    tarifa.TARcantHoras = 4;
+    tarifa.TARvalor = 50000;
+    this.Arraytarifa.push(tarifa);
   }
 }

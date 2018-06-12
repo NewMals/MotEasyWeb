@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
-import { DTOusuario } from '../../../modelos/DTOusuario';
 import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
-import { UserProvider } from '../../../providers/general/user';
 import { HabitacionTipoProvider } from '../../../providers/general/habitacion-tipo';
 
 /**
@@ -26,11 +24,10 @@ export class ConfiguracionPage {
   constructor(public navCtrl: NavController
     , public navParams: NavParams
     , private ESTservice: EstablecimientoProvider
-    , private USUservice: UserProvider
     , private HABservice: HabitacionTipoProvider
   ) {
     console.log("Hello Configuracion");
-    // this.obtenerEstablecimiento();
+    //this.obtenerEstablecimiento();
   }
 
 
@@ -60,13 +57,25 @@ export class ConfiguracionPage {
     //     //this.HABservice.inicializar();
     //   }
     // });
-    this.est.ESThabitacionesTipos = this.ESTservice.establecimiento.ESThabitacionesTipos;
+
+    // this.ESTservice.obser().subscribe(data =>{
+    //    this.est.ESThabitacionesTipos = data.ESThabitacionesTipos; 
+    // });
+    this.ESTservice.objObservable.subscribe(data => {
+      if (data) 
+        this.est.ESThabitacionesTipos = data.ESThabitacionesTipos;
+      //   console.log("entro", data);
+      // } else {
+      //   console.log("no entro");
+      // }
+    });
+    // this.est.ESThabitacionesTipos = this.ESTservice.establecimiento.ESThabitacionesTipos;
   }
 
   AgregarTipHab() {
-    this.HABservice.crear().then(()=>{
+    this.HABservice.crear().then(() => {
       this.navCtrl.setRoot("TiposHabitacionesPage");
     });
-    
+
   }
 }

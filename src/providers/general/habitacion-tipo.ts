@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserProvider } from './user';
 import firebase from 'firebase/app';
-import { DTOHabitaciontipo, DTOhabitaciones } from '../../modelos/DTOhabitacion';
+import { DTOHabitaciontipo } from '../../modelos/DTOhabitacion';
 import { Storage } from '@ionic/storage';
 import { EstablecimientoProvider } from './Establecimiento';
 

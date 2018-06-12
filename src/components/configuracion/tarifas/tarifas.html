@@ -1,5 +1,8 @@
 <!-- Generated template for the TarifasComponent component -->
 <ion-card class="content">
+  <button ion-fab mini style="float: right;" (click)="AgregarTarifa()">
+    <ion-icon name="add" color="primary"></ion-icon>
+  </button>
   <ion-grid class="col">
     <ion-row align-items-center>
       <ion-col align-self-center>
@@ -12,11 +15,11 @@
         <ion-label> Valor total</ion-label>
       </ion-col>
     </ion-row>
-    <ion-row align-items-center>
+    <ion-row align-items-center *ngFor="let tarifa of Arraytarifa">
       <ion-col align-self-center>
-        <ion-label>1</ion-label>
+        <ion-label>{{tarifa.TARid}}</ion-label>
       </ion-col>
-      <ion-col align-self-center >
+      <ion-col align-self-center>
         <label>{{tarifa.TARcantHoras}} hrs</label>
         <ion-range min="1" max="24" [(ngModel)]="tarifa.TARcantHoras">
           <ion-label range-left> 1</ion-label>
@@ -24,8 +27,9 @@
         </ion-range>
       </ion-col>
       <ion-col align-self-center>
-        <input id="txtValor" [(ngModel)]="tarifa.TARvalor" type="number" style="display: none; border: none; width: 100px; margin: auto;" (blur)="actualizarValor()"/>
-        <ion-label id="lblValor" (click)="cambiarValor()" style="cursor: text">{{ tarifa.TARvalor | currency:'USD':true:'.0'}}</ion-label>
+        <input id="txtValor_{{tarifa.TARid}}" [(ngModel)]="tarifa.TARvalor" type="number" style="display: none; border: none; width: 100px; margin: auto;"
+          (blur)="actualizarValor(tarifa.TARid)" />
+        <ion-label id="lblValor_{{tarifa.TARid}}" (click)="cambiarValor(tarifa.TARid)" style="cursor: text">{{ tarifa.TARvalor | currency:'USD':true:'.0'}}</ion-label>
       </ion-col>
     </ion-row>
   </ion-grid>

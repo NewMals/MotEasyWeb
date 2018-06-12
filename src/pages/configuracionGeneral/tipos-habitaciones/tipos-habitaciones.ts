@@ -47,6 +47,13 @@ export class TiposHabitacionesPage {
 
       hab.HTIdescripcion = tipoHab.HTIdescripcion;
       hab.HTIfoto = "";
+      hab.HTItarifaMin = 0 ;
+
+      tipoHab.HTItarifas.forEach(tar => {
+          let valor = tar.TARvalor;
+          hab.HTItarifaMin = (valor <= hab.HTItarifaMin || hab.HTItarifaMin == 0) ? valor : hab.HTItarifaMin;   
+      });
+      console.log("habitacon", hab)
 
       if(tipoHab.HTIid >= 0 ){
          
@@ -56,7 +63,6 @@ export class TiposHabitacionesPage {
          
          
       }else{
-        console.log("nuevo");
         est.ESThabitacionesTipos = est.ESThabitacionesTipos ? est.ESThabitacionesTipos : new Array<DTOhabitaciones>();
         hab.HTIid = est.ESThabitacionesTipos ? est.ESThabitacionesTipos.length : 0;
         this.HABservice.habitacionTipo.HTIid = hab.HTIid;
@@ -76,7 +82,7 @@ export class TiposHabitacionesPage {
       // });
       this.HABservice.guardarBd();
       this.HABservice.guardarFb();
-      this.ESTservice.guardarBd().then();
+      this.ESTservice.guardarBd();
       this.ESTservice.guardarFb();
     });    
   }

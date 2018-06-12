@@ -22,8 +22,8 @@ export class InformacionGeneralComponent implements OnInit {
   usuario = new DTOusuario;
   establecimiento = new DTOEstablecimiento;
 
-  constructor(private storage: Storage
-    , private ESTservice: EstablecimientoProvider
+  constructor(
+    private ESTservice: EstablecimientoProvider
     , private USUservice: UserProvider
   ) {
     console.log('Hello InformacionGeneralComponent Component');
