@@ -64,7 +64,7 @@ export const firebaseConfig = {
     AuthProvider,
     EstablecimientoProvider,
     UserProvider,
-    HabitacionTipoProvider
+    HabitacionTipoProvider,
   ]
 })
 export class AppModule {}

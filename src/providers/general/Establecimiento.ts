@@ -86,22 +86,9 @@ export class EstablecimientoProvider {
   }
 
 
-
-  storageGuardarFb(foto: DTOfoto): Promise<any> {
-    return this.USUservice.consultarBd().then(data => {
-      return this.storageRef.child("establecimientos/" + data.USUestablecimiento + "/sitio/" + "EST_" + foto.FOTorden + ".jpg")
-        .putString(foto.FOTurl, 'data_url')
-        .then(snapshot => {
-          foto.FOTurl = snapshot.downloadURL;
-          return foto;
-        });
-    });
-  }
  
   obser() {
     this.subject.next(this.establecimiento);
   }
-
-
 
 }

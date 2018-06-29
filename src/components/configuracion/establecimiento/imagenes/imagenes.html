@@ -1,34 +1,28 @@
 <!-- Generated template for the ImagenesComponent component -->
 <div>
-    <h1 style="text-align: center">Fotos del establecimiento</h1>
-  <ion-row>
-    <ion-col>
-      <ion-card padding>
-        <div style="height: 500px" *ngIf="FotoSeleccionada">
-            <button ion-fab mini title="Eliminar foto" style="right: 30px; font-size: 50px; position: absolute" (click)="EliminarFoto()">
-                <ion-icon name="close" color="primary"></ion-icon>
-              </button>
-          <img style="max-height: 100%;  max-width: 100%" src="{{FotoSeleccionada.FOTurl}}" />
-        </div>
+  <h1 style="text-align: center">Fotos del establecimiento</h1>
+  <ion-card padding style="height: 30% ; width: 40%; margin: auto;">
+    <button ion-fab title="Eliminar foto" style="top: -10px ; float: right; height: 30px; width: 30px;" (click)="EliminarFoto()">
+      <ion-icon name="close" color="primary"></ion-icon>
+    </button>
+    <div *ngIf="FotoSeleccionada">
+      <img  src="{{FotoSeleccionada.FOTurl}}" width="100" height="250"/>
+    </div>
+  </ion-card>
+  <br>
+  <ion-card padding style="height: 100%;">
+    <button ion-fab title="Agregar foto" style="top: -10px ; float: right; height: 30px; width: 30px;" (click)="AgregarFoto()">
+      <input type="file" accept="image/jpeg" #fileInput style="display:none; " class="form-control" (change)="ProcessImage($event)"
+      />
+      <ion-icon name="add" color="primary"></ion-icon>
+    </button>
+    <ion-label style="text-align: center"> {{ArrayFotos.length}} de 6</ion-label>
+    <div class="general" *ngFor="let foto of ArrayFotos">
+      <ion-card style="height: 90%; width: 90%; margin: auto" padding (click)="SeleccionarFoto(foto);" [ngStyle]="{'border': (foto.FOTactiva) ? '3px solid blue' : '' }">
+        <img src="{{foto.FOTurl}}" width="100" height="100" />
       </ion-card>
-    </ion-col>
-    <ion-col style=" max-width: 60%">
-      <ion-card style="height: 100%;">
-        <ion-card-header>
-          <button ion-fab mini title="Agregar foto" style="float: right" (click)="AgregarFoto()">
-            <input type="file" accept="image/jpeg" #fileInput style="display:none;" class="form-control" (change)="ProcessImage($event)"
-            />
-            <ion-icon name="add" color="primary"></ion-icon>
-          </button>
-          <ion-label style="text-align: center"> {{ArrayFotos.length}} de 6</ion-label>
-        </ion-card-header>
-        <div class="general" *ngFor="let foto of ArrayFotos">
-          <ion-card style="height: 100%; width: 100%" padding (click)="SeleccionarFoto(foto);" [ngStyle]="{'border': (foto.FOTactiva) ? '3px solid blue' : '' }">
-              <img style="max-height: 100% ;  max-width: 100%" src="{{foto.FOTurl}}" />
-          </ion-card>
-        </div>
-      </ion-card>
-    </ion-col>
-  </ion-row>
+    </div>
+  </ion-card>
+
 
 </div>
