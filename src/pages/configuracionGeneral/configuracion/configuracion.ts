@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
 import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
 import { HabitacionTipoProvider } from '../../../providers/general/habitacion-tipo';
+import { DTOfoto } from '../../../modelos/DTOfoto';
 
 /**
  * Generated class for the ConfiguracionPage page.
@@ -37,7 +38,20 @@ export class ConfiguracionPage {
   }
 
   configurarEstablecimiento() {
-    this.navCtrl.setRoot("EstablecimientoPage");
+    let ArrayFotos = new Array<DTOfoto>();
+
+    // objFotos.file = "sitio";
+    // objFotos.marca = "EST";
+    // objFotos.ArrayFotos = new Array<DTOfoto>();
+
+    if (this.ESTservice.establecimiento.ESTfotos) {
+      ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
+    }
+    this.navCtrl.push("EstablecimientoPage", {
+      objFotos: ArrayFotos 
+      , file: "sitio"
+      , marca: "EST"
+    });
   }
 
   configurarHabitacion(id: number) {
@@ -62,7 +76,7 @@ export class ConfiguracionPage {
     //    this.est.ESThabitacionesTipos = data.ESThabitacionesTipos; 
     // });
     this.ESTservice.objObservable.subscribe(data => {
-      if (data) 
+      if (data)
         this.est.ESThabitacionesTipos = data.ESThabitacionesTipos;
       //   console.log("entro", data);
       // } else {

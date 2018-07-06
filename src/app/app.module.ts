@@ -21,6 +21,7 @@ import { EstablecimientoProvider } from '../providers/general/Establecimiento';
 import { UserProvider } from '../providers/general/user';
 import { ComplementoProvider } from '../providers/general/complemento';
 import { HabitacionTipoProvider } from '../providers/general/habitacion-tipo';
+import { StorageProvider } from '../providers/general/storage';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyASR-VQFfepVIDxJz_tLRzK7mrJNz_MtB0",
@@ -65,6 +66,7 @@ export const firebaseConfig = {
     EstablecimientoProvider,
     UserProvider,
     HabitacionTipoProvider,
+    StorageProvider
   ]
 })
 export class AppModule {}

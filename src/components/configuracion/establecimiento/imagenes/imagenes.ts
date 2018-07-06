@@ -1,8 +1,9 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { DTOfoto } from '../../../../modelos/DTOfoto';
-import { AlertController } from 'ionic-angular';
+import { AlertController, NavParams } from 'ionic-angular';
 import { EstablecimientoProvider } from '../../../../providers/general/Establecimiento';
 import { DTOEstablecimiento } from '../../../../modelos/DTOestablecimiento';
+import { StorageProvider } from '../../../../providers/general/storage';
 
 /**
  * Generated class for the ImagenesComponent component.
@@ -22,9 +23,13 @@ export class ImagenesComponent implements OnInit {
   FotoSeleccionada: DTOfoto;
   posicion: number = 0;
   establecimiento: DTOEstablecimiento;
+  file : string;
+  marca: string;
 
   constructor(private alertCtrl: AlertController
+    , public navParams: NavParams
     , private ESTservice: EstablecimientoProvider
+    , private STOservice: StorageProvider
   ) {
     console.log('Hello ImagenesComponent Component');
     this.text = 'Hello World';
@@ -33,6 +38,9 @@ export class ImagenesComponent implements OnInit {
     //   , ESTfotos: [{ FOTurl: "", FOTorden: 0, FOTactiva: false, FOTprincipal: false }]
     // };
     //this.CargarFotos();
+    this.ArrayFotos = this.navParams.get("objFotos");
+    this.file = this.navParams.get("file");
+    this.marca = this.navParams.get("marca");
   }
 
   ngOnInit(): void {
@@ -40,20 +48,20 @@ export class ImagenesComponent implements OnInit {
   }
 
   obtenerEST() {
-    this.establecimiento = this.ESTservice.establecimiento;
+    // this.establecimiento = this.ESTservice.establecimiento;
     this.CargarFotos();
   }
 
   CargarFotos() {
-    if (this.establecimiento.ESTfotos) {
-      this.establecimiento.ESTfotos.forEach(foto => {
-        // let Foto = new DTOfoto;
-        // Foto.FOTprincipal = true;
-        // Foto.FOTurl = "https://firebasestorage.googleapis.com/v0/b/mote-e0df6.appspot.com/o/establecimientos%2FVS2R6uXf0cS16GwPwyqF%2Fsitio%2FEST_1.jpg?alt=media&token=ec85d42c-5c41-41d5-80a1-2bd7f7c876c6";
-        // Foto.FOTorden = 1;
-        foto.FOTactiva = false;
-        this.ArrayFotos.push(foto);
-      });
+    if (this.ArrayFotos) {
+      // this.ArrayFotos.forEach(foto => {
+      //   // let Foto = new DTOfoto;
+      //   // Foto.FOTprincipal = true;
+      //   // Foto.FOTurl = "https://firebasestorage.googleapis.com/v0/b/mote-e0df6.appspot.com/o/establecimientos%2FVS2R6uXf0cS16GwPwyqF%2Fsitio%2FEST_1.jpg?alt=media&token=ec85d42c-5c41-41d5-80a1-2bd7f7c876c6";
+      //   // Foto.FOTorden = 1;
+      //   foto.FOTactiva = false;
+      //   // this.ArrayFotos.push(foto);
+      // });
       this.SeleccionarFoto(this.ArrayFotos[0]);
     }
   }
@@ -83,10 +91,10 @@ export class ImagenesComponent implements OnInit {
 
       Foto.FOTurl = imageData;
       Foto.FOTorden = this.ArrayFotos.length + 1;
-      this.ESTservice.storageGuardarFb(Foto).then((succes: DTOfoto) => {
+      this.STOservice.storageGuardarFb(this.file, this.marca, Foto).then((succes: DTOfoto) => {
         Foto.FOTurl = succes.FOTurl;
         this.ArrayFotos.push(Foto);
-        this.establecimiento.ESTfotos = this.ArrayFotos;
+        //this.establecimiento.ESTfotos = this.ArrayFotos;
         this.guardar();
         this.SeleccionarFoto(Foto);
       });
