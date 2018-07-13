@@ -13,7 +13,7 @@ import { HabitacionTipoProvider } from '../../../providers/general/habitacion-ti
   selector: 'tarifas',
   templateUrl: 'tarifas.html'
 })
-export class TarifasComponent implements OnInit, OnDestroy{
+export class TarifasComponent implements OnInit, OnDestroy {
 
   Arraytarifa = new Array<DTOtarifa>();
   text: string;
@@ -27,30 +27,34 @@ export class TarifasComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    if(this.HABservice.habitacionTipo.HTItarifas)
-    this.Arraytarifa = this.HABservice.habitacionTipo.HTItarifas;   
+    if (this.HABservice.habitacionTipo.HTItarifas)
+      this.Arraytarifa = this.HABservice.habitacionTipo.HTItarifas;
+    else
+      this.AgregarTarifa();
   }
 
   ngOnDestroy(): void {
-    this.HABservice.habitacionTipo.HTItarifas = this.Arraytarifa;
+
   }
 
-  cambiarValor(id: number){
+  cambiarValor(id: number) {
     document.getElementById('lblValor_' + id).style.display = "none";
     document.getElementById('txtValor_' + id).style.display = "block";
     document.getElementById('txtValor_' + id).focus();
   }
 
-  actualizarValor(id: number){
+  actualizarValor(id: number) {
     document.getElementById('txtValor_' + id).style.display = "none";
     document.getElementById('lblValor_' + id).style.display = "block";
   }
 
-  AgregarTarifa(){
+  AgregarTarifa() {
     let tarifa = new DTOtarifa;
     tarifa.TARid = this.Arraytarifa.length + 1;
     tarifa.TARcantHoras = 4;
     tarifa.TARvalor = 50000;
     this.Arraytarifa.push(tarifa);
+
+    this.HABservice.habitacionTipo.HTItarifas = this.Arraytarifa;
   }
 }

@@ -23,7 +23,7 @@ export class ImagenesComponent implements OnInit {
   FotoSeleccionada: DTOfoto;
   posicion: number = 0;
   establecimiento: DTOEstablecimiento;
-  file : string;
+  file: string;
   marca: string;
 
   constructor(private alertCtrl: AlertController
@@ -80,8 +80,6 @@ export class ImagenesComponent implements OnInit {
     reader.onload = (readerEvent) => {
       let imageData = (readerEvent.target as any).result;
 
-
-
       let Foto = new DTOfoto;
       if (this.ArrayFotos.length == 0) {
         Foto.FOTprincipal = true;
@@ -94,7 +92,9 @@ export class ImagenesComponent implements OnInit {
       this.STOservice.storageGuardarFb(this.file, this.marca, Foto).then((succes: DTOfoto) => {
         Foto.FOTurl = succes.FOTurl;
         this.ArrayFotos.push(Foto);
-        //this.establecimiento.ESTfotos = this.ArrayFotos;
+        if(this.marca === "EST"){
+          this.ESTservice.establecimiento.ESTfotos = this.ArrayFotos;
+        }
         this.guardar();
         this.SeleccionarFoto(Foto);
       });

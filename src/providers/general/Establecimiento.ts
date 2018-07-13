@@ -20,8 +20,6 @@ export class EstablecimientoProvider {
 
   establecimiento = new DTOEstablecimiento;
   storageRef = firebase.storage().ref();
-  subject = new Subject<DTOEstablecimiento>();
-  objObservable : Observable<DTOEstablecimiento> = this.subject.asObservable();
 
   constructor(private storage: Storage
     , private USUservice: UserProvider
@@ -49,7 +47,6 @@ export class EstablecimientoProvider {
     return this.storage.get("Establecimiento")
       .then(data => {
         this.establecimiento = JSON.parse(data) as DTOEstablecimiento;
-        this.obser();
         this.guardarBd();
         return this.establecimiento;
       });
@@ -60,7 +57,6 @@ export class EstablecimientoProvider {
       .then(data => {
         this.establecimiento = data.data() as DTOEstablecimiento;
         this.guardarBd();
-        this.obser();
         return this.establecimiento;
       });
   }
@@ -68,7 +64,6 @@ export class EstablecimientoProvider {
 
   guardarBd(): Promise<DTOEstablecimiento> {
     return this.storage.set("Establecimiento", JSON.stringify(this.establecimiento)).then(() => {
-      this.obser();
       return this.establecimiento;
     });
   }
@@ -84,20 +79,4 @@ export class EstablecimientoProvider {
         });
     });
   }
-
-  // storageGuardarFb(foto: DTOfoto): Promise<any> {
-  //   return this.USUservice.consultarBd().then(data => {
-  //     return this.storageRef.child("establecimientos/" + data.USUestablecimiento + "/sitio/" + "EST_" + foto.FOTorden + ".jpg")
-  //       .putString(foto.FOTurl, 'data_url')
-  //       .then(snapshot => {
-  //         foto.FOTurl = snapshot.downloadURL;
-  //         return foto;
-  //       });
-  //   });
-  // }
- 
-  obser() {
-    this.subject.next(this.establecimiento);
-  }
-
 }

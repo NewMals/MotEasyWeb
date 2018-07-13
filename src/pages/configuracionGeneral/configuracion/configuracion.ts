@@ -28,7 +28,6 @@ export class ConfiguracionPage {
     , private HABservice: HabitacionTipoProvider
   ) {
     console.log("Hello Configuracion");
-    //this.obtenerEstablecimiento();
   }
 
 
@@ -39,11 +38,7 @@ export class ConfiguracionPage {
 
   configurarEstablecimiento() {
     let ArrayFotos = new Array<DTOfoto>();
-
-    // objFotos.file = "sitio";
-    // objFotos.marca = "EST";
-    // objFotos.ArrayFotos = new Array<DTOfoto>();
-
+    
     if (this.ESTservice.establecimiento.ESTfotos) {
       ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
     }
@@ -61,29 +56,7 @@ export class ConfiguracionPage {
   }
 
   obtenerEstablecimiento() {
-    // this.USUservice.consultarBd().then(user => {
-    //   if (user) {
-    //     this.ESTservice.inicializar(user.USUestablecimiento).then(data => {
-    //       if (data.ESThabitacionesTipos) {
-    //         this.est.ESThabitacionesTipos = data.ESThabitacionesTipos;
-    //       }
-    //     });
-    //     //this.HABservice.inicializar();
-    //   }
-    // });
-
-    // this.ESTservice.obser().subscribe(data =>{
-    //    this.est.ESThabitacionesTipos = data.ESThabitacionesTipos; 
-    // });
-    this.ESTservice.objObservable.subscribe(data => {
-      if (data)
-        this.est.ESThabitacionesTipos = data.ESThabitacionesTipos;
-      //   console.log("entro", data);
-      // } else {
-      //   console.log("no entro");
-      // }
-    });
-    // this.est.ESThabitacionesTipos = this.ESTservice.establecimiento.ESThabitacionesTipos;
+    this.est.ESThabitacionesTipos = this.ESTservice.establecimiento.ESThabitacionesTipos;
   }
 
   AgregarTipHab() {

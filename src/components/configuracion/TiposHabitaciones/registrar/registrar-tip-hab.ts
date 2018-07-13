@@ -13,7 +13,7 @@ import { EstablecimientoProvider } from '../../../../providers/general/Estableci
   selector: 'registrar-tip-hab',
   templateUrl: 'registrar-tip-hab.html'
 })
-export class RegistrarTipHabComponent implements OnInit, OnDestroy {
+export class RegistrarTipHabComponent implements OnInit {
 
 
 
@@ -36,8 +36,5 @@ export class RegistrarTipHabComponent implements OnInit, OnDestroy {
     this.HabitacionTipo = this.HABservice.habitacionTipo;   
   }
 
-  ngOnDestroy() : void{
-    // this.HABservice.guardarBd();
-  }
   
 }
