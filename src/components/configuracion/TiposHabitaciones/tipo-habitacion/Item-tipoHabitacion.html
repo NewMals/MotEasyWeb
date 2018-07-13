@@ -1,0 +1,27 @@
+<ion-row>
+    <!-- <ion-col class="contenedorImg">
+      <img id="imagen" src="{{foto}}" class="imagen" onerror="this.src='assets/icon/picture.svg';" />
+    </ion-col> -->
+    <ion-col class="contenedorDescripcion">
+      <label class="lblName">{{Tipohabitacion.HTIdescripcion}}</label>
+      <!-- <div class="contenedorStart">
+        <div class="lblStart" >
+          <label class="icon-start" [ngStyle]="{'width' : itemHotel.stars * 2 + '0px' , 'background-repeat': 'space' , 'background-size': '20px' , 'height': '20px' }" ></label>
+        </div>
+      </div> -->
+      <!-- <div class="contenedorAmenitie">
+        <div class="amenitie" *ngFor="let amenitie of itemHotel.amenities">
+          <img src="assets/amenities/{{amenitie}}.svg" />
+        </div>
+      </div> -->
+    </ion-col>
+    <!-- <ion-col class="contenedorValor">
+      <label>Precio por noche por habitación</label>
+      <label class="lblCode">ARS
+        <label class="lblValor">{{itemHotel.price | currency:'ARS':'symbol-narrow':'.0':'en-ES'}}</label>
+      </label>
+      <button class="BtnVer" (click)="VerHotel()">
+        Ver hotel
+      </button>
+    </ion-col> -->
+</ion-row>

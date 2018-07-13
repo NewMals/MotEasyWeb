@@ -8,7 +8,7 @@ import { WizardComponent } from './wizard/wizard';
 import { InformacionGeneralComponent } from './configuracion/establecimiento/informacion-general/informacion-general';
 
 import { WizardDirective } from './wizard/wizard.directive';
-import { TipoHabitacionComponent } from './configuracion/TiposHabitaciones/tipo-habitacion/tipo-habitacion';
+import { ItemTipoHabitacionComponent } from './configuracion/TiposHabitaciones/tipo-habitacion/Item-tipoHabitacion';
 import { UbicacionComponent } from './configuracion/establecimiento/ubicacion/ubicacion';
 import { ImagenesComponent } from './configuracion/establecimiento/imagenes/imagenes';
 import { RegistroComponent } from './configuracion/Sesion/registro/registro';
@@ -25,7 +25,7 @@ import { EntretenimientosComponent } from './configuracion/TiposHabitaciones/ent
     declarations: [
         HabitacionesComponent,
         ProgressBarComponent,
-        TipoHabitacionComponent,
+        ItemTipoHabitacionComponent,
         WizardComponent,
         InformacionGeneralComponent,
         UbicacionComponent,
@@ -45,7 +45,7 @@ import { EntretenimientosComponent } from './configuracion/TiposHabitaciones/ent
     exports: [
         HabitacionesComponent,
         ProgressBarComponent,
-        TipoHabitacionComponent,
+        ItemTipoHabitacionComponent,
         WizardComponent,
         InformacionGeneralComponent,
         UbicacionComponent,
@@ -59,7 +59,7 @@ import { EntretenimientosComponent } from './configuracion/TiposHabitaciones/ent
     ], entryComponents: [
         HabitacionesComponent,
         ProgressBarComponent,
-        TipoHabitacionComponent,
+        ItemTipoHabitacionComponent,
         WizardComponent,
         InformacionGeneralComponent,
         UbicacionComponent,

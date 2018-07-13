@@ -89,10 +89,10 @@ export class ImagenesComponent implements OnInit {
 
       Foto.FOTurl = imageData;
       Foto.FOTorden = this.ArrayFotos.length + 1;
-      this.STOservice.storageGuardarFb(this.file, this.marca, Foto).then((succes: DTOfoto) => {
+      this.STOservice.GuardarFb(this.file, this.marca, Foto).then((succes: DTOfoto) => {
         Foto.FOTurl = succes.FOTurl;
         this.ArrayFotos.push(Foto);
-        if(this.marca === "EST"){
+        if (this.marca === "EST") {
           this.ESTservice.establecimiento.ESTfotos = this.ArrayFotos;
         }
         this.guardar();
@@ -134,13 +134,18 @@ export class ImagenesComponent implements OnInit {
       {
         text: 'Aceptar',
         handler: () => {
-          this.ArrayFotos.splice(this.posicion, 1);
-          if (this.posicion == 0 && this.ArrayFotos.length == 0) {
-            this.SeleccionarFoto(null);
-          } else {
-            this.posicion = 0;
-            this.SeleccionarFoto(this.ArrayFotos[this.posicion]);
-          }
+          this.STOservice.EliminarFb(this.file, this.ArrayFotos[this.posicion].FOTorigen).then(succes => {
+            if (succes === true) {
+              this.ArrayFotos.splice(this.posicion, 1);
+              if (this.posicion == 0 && this.ArrayFotos.length == 0) {
+                this.SeleccionarFoto(null);
+              } else {
+                this.posicion = 0;
+                this.SeleccionarFoto(this.ArrayFotos[this.posicion]);
+              }
+            }
+            this.guardar();
+          });
         }
       }]
     });

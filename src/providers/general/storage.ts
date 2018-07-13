@@ -21,14 +21,25 @@ export class StorageProvider {
     console.log('Hello StorageProvider Provider');
   }
 
-  storageGuardarFb(file: string , marca: string ,foto: DTOfoto): Promise<any> {
-    return this.USUservice.consultarBd().then(data => {
-      return this.storageRef.child("establecimientos/" + data.USUestablecimiento + "/" + file + "/" + marca + "_" + foto.FOTorden + ".jpg")
+  GuardarFb(file: string , marca: string ,foto: DTOfoto): Promise<any> {
+    let origen = "";
+    origen =  marca + "_" + foto.FOTorden + ".jpg";
+    // return this.USUservice.consultarBd().then(data => {
+      return this.storageRef.child("establecimientos/" + this.USUservice.user.USUestablecimiento + "/" + file + "/" + origen)
         .putString(foto.FOTurl, 'data_url')
         .then(snapshot => {
           foto.FOTurl = snapshot.downloadURL;
+          foto.FOTorigen = origen
           return foto;
         });
-    });
+    // });
   }
+
+  EliminarFb(file: string ,origen: string) : Promise<boolean>{
+    return this.storageRef.child("establecimientos/" + this.USUservice.user.USUestablecimiento + "/" + file + "/" + origen)
+      .delete().then(() =>{
+        return true;
+      });
+  }
+
 }
