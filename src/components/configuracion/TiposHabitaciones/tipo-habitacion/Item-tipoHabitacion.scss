@@ -1,3 +1,46 @@
 Item-tipoHabitacion {
+    .contenedorImg{
+        height: 130px; 
+        max-width: 30%;
+        display: grid;
+        padding: 10px;
+        margin: auto;
+    }
 
+    .imagen{
+        height: 100%;
+    }
+
+    
+    .contenedorDescripcion{
+        // height: 120px; 
+        // max-width: 100%;
+        // padding: 10px;
+        // display: block;
+    }
+
+    .lblName{
+        color: dodgerblue;
+        font-weight: bold;
+        font-size: 16px;
+        margin: auto;
+        padding: 10px;
+    } 
+
+    .lblValor{
+        font-size: 25px;
+        color: limegreen;
+        font-weight: bold;
+    }
+
+    .contenedorValor{
+        // height: 180px; 
+        max-width: 30%;
+        text-align: center;        
+        // border-left: none;
+        margin: auto;
+        // display: grid;
+        // align-items: center;
+        padding: 10px;
+    }
 }

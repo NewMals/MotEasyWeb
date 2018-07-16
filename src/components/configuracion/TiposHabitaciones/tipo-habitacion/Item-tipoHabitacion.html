@@ -1,7 +1,8 @@
-<ion-row>
-    <!-- <ion-col class="contenedorImg">
-      <img id="imagen" src="{{foto}}" class="imagen" onerror="this.src='assets/icon/picture.svg';" />
-    </ion-col> -->
+<ion-card>
+  <ion-row>
+    <ion-col class="contenedorImg">
+      <img class="imagen" src="{{Tipohabitacion.HTIfoto}}" class="imagen" onerror="this.src='assets/icon/picture.svg';" />
+    </ion-col>
     <ion-col class="contenedorDescripcion">
       <label class="lblName">{{Tipohabitacion.HTIdescripcion}}</label>
       <!-- <div class="contenedorStart">
@@ -15,13 +16,12 @@
         </div>
       </div> -->
     </ion-col>
-    <!-- <ion-col class="contenedorValor">
-      <label>Precio por noche por habitación</label>
-      <label class="lblCode">ARS
-        <label class="lblValor">{{itemHotel.price | currency:'ARS':'symbol-narrow':'.0':'en-ES'}}</label>
-      </label>
-      <button class="BtnVer" (click)="VerHotel()">
-        Ver hotel
+    <ion-col class="contenedorValor">
+      <label>Tarifa minima</label>
+      <ion-label class="lblValor">{{Tipohabitacion.HTItarifaMin | currency:'USD':true:'.0'}}</ion-label>
+      <button ion-button (click)="configurarHabitacion(Tipohabitacion.HTIid)">
+        Ver
       </button>
-    </ion-col> -->
-</ion-row>
+    </ion-col>
+  </ion-row>
+</ion-card>

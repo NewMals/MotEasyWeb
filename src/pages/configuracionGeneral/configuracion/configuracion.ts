@@ -49,11 +49,11 @@ export class ConfiguracionPage {
     });
   }
 
-  configurarHabitacion(id: number) {
-    this.HABservice.inicializar(id).then(() => {
-      this.navCtrl.setRoot("TiposHabitacionesPage");
-    });
-  }
+  // configurarHabitacion(id: number) {
+  //   this.HABservice.inicializar(id).then(() => {
+  //     this.navCtrl.setRoot("TiposHabitacionesPage");
+  //   });
+  // }
 
   obtenerEstablecimiento() {
     this.est.ESThabitacionesTipos = this.ESTservice.establecimiento.ESThabitacionesTipos;
