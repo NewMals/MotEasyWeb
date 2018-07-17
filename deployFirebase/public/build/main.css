@@ -5040,7 +5040,7 @@ ion-input :focus {
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
@@ -18861,23 +18861,23 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-container-3d .swiper-slide-shadow-left {
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-right {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-top {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-bottom {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-coverflow .swiper-wrapper,
@@ -25678,6 +25678,59 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+ion-img {
+  background: white;
+}
+
+registro .mjsError {
+  font-size: 10px;
+  color: red;
+}
+
+registro .item {
+  border-bottom: 1px solid #dedede !important;
+}
+
+Item-tipoHabitacion .contenedorImg {
+  height: 130px;
+  max-width: 30%;
+  display: grid;
+  padding: 10px;
+  margin: auto;
+}
+
+Item-tipoHabitacion .imagen {
+  height: 100%;
+}
+
+Item-tipoHabitacion .lblName {
+  color: dodgerblue;
+  font-weight: bold;
+  font-size: 16px;
+  margin: auto;
+  padding: 10px;
+}
+
+Item-tipoHabitacion .lblValor {
+  font-size: 25px;
+  color: limegreen;
+  font-weight: bold;
+}
+
+Item-tipoHabitacion .contenedorValor {
+  max-width: 30%;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+
+imagenes .general {
+  float: left;
+  width: 200px;
+  height: 150px;
+  padding: 5px;
+}
+
 informacion-general .GloINF {
   width: 50%;
   -webkit-box-sizing: border-box;
@@ -25692,13 +25745,13 @@ ubicacion #map {
   width: 100%;
 }
 
-imagenes .general {
-  float: left;
-  width: 200px;
-  height: 150px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 5px;
+tarifas .col {
+  text-align: center;
+  max-width: 700px;
+}
+
+tarifas .content {
+  text-align: -webkit-center;
 }
 
 habitaciones .general {
@@ -25719,150 +25772,10 @@ habitaciones .habitacion {
 }
 
 wizard .fab {
-  width: 65px;
-  height: 65px;
+  width: 50px;
+  height: 50px;
   background: white;
   position: relative;
-}
-
-wizard .wizard {
-  margin: 20px auto;
-  background: #fff;
-}
-
-wizard .wizard .nav-tabs {
-  position: relative;
-  margin: 40px auto;
-  margin-bottom: 0;
-  border-bottom-color: #e0e0e0;
-}
-
-wizard .wizard > div.wizard-inner {
-  position: relative;
-}
-
-wizard .connecting-line {
-  height: 2px;
-  background: #e0e0e0;
-  position: absolute;
-  width: 80%;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 50%;
-  z-index: 1;
-}
-
-wizard .wizard .nav-tabs > li.active > a, wizard .wizard .nav-tabs > li.active > a:hover, wizard .wizard .nav-tabs > li.active > a:focus {
-  color: #555555;
-  cursor: default;
-  border: 0;
-  border-bottom-color: transparent;
-}
-
-wizard span.round-tab {
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  display: inline-block;
-  border-radius: 100px;
-  background: #fff;
-  border: 2px solid #e0e0e0;
-  z-index: 2;
-  position: absolute;
-  left: 0;
-  text-align: center;
-  font-size: 25px;
-}
-
-wizard span.round-tab i {
-  color: #555555;
-}
-
-wizard .wizard li.active span.round-tab {
-  background: #fff;
-  border: 2px solid #5bc0de;
-}
-
-wizard .wizard li.active span.round-tab i {
-  color: #5bc0de;
-}
-
-wizard span.round-tab:hover {
-  color: #333;
-  border: 2px solid #333;
-}
-
-wizard .wizard .nav-tabs > li {
-  width: 25%;
-}
-
-wizard .wizard li:after {
-  content: " ";
-  position: absolute;
-  left: 46%;
-  opacity: 0;
-  margin: 0 auto;
-  bottom: 0px;
-  border: 5px solid transparent;
-  border-bottom-color: #5bc0de;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
-}
-
-wizard .wizard li.active:after {
-  content: " ";
-  position: absolute;
-  left: 46%;
-  opacity: 1;
-  margin: 0 auto;
-  bottom: 0px;
-  border: 10px solid transparent;
-  border-bottom-color: #5bc0de;
-}
-
-wizard .wizard .nav-tabs > li a {
-  width: 70px;
-  height: 70px;
-  margin: 20px auto;
-  border-radius: 100%;
-  padding: 0;
-}
-
-wizard .wizard .nav-tabs > li a:hover {
-  background: transparent;
-}
-
-wizard .wizard .tab-pane {
-  position: relative;
-  padding-top: 50px;
-}
-
-wizard .wizard h3 {
-  margin-top: 0;
-}
-
-@media (max-width: 585px) {
-  wizard .wizard {
-    width: 90%;
-    height: auto !important;
-  }
-  wizard span.round-tab {
-    font-size: 16px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-  }
-  wizard .wizard .nav-tabs > li a {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-  }
-  wizard .wizard li.active:after {
-    content: " ";
-    position: absolute;
-    left: 35%;
-  }
 }
 
 page-administracion .panelIzquierdo {
@@ -25903,6 +25816,10 @@ page-configuracion .general {
   box-sizing: border-box;
   padding: 10px;
   margin: auto;
+}
+
+page-configuracion .establecimiento {
+  max-width: 30%;
 }
 
 page-establecimiento .item {

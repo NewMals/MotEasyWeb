@@ -29,23 +29,32 @@ export class ItemTipoHabitacionComponent {
   }
 
   obtenerFoto() {
-  //   if (this.Tipohabitacion.HTIfoto)
-  //     this.foto = this.Tipohabitacion.HTIfotos.find(elem => elem.FOTprincipal === true).FOTurl;
+    //   if (this.Tipohabitacion.HTIfoto)
+    //     this.foto = this.Tipohabitacion.HTIfotos.find(elem => elem.FOTprincipal === true).FOTurl;
 
-  //     console.log("antes de las tarifas");
-  //   if (this.Tipohabitacion.HTItarifas) {
-  //     this.Tipohabitacion.HTItarifas.forEach(tar => {
-  //       let valor = tar.TARvalor;
-  //       this.tarifaMinima = (valor <= this.tarifaMinima || this.tarifaMinima == 0) ? valor : this.tarifaMinima;
-  //       console.log("tarifas", tar);
-  //     });
-  //   }
-  //   console.log("despues de las tarifas");
-   }
+    //     console.log("antes de las tarifas");
+    //   if (this.Tipohabitacion.HTItarifas) {
+    //     this.Tipohabitacion.HTItarifas.forEach(tar => {
+    //       let valor = tar.TARvalor;
+    //       this.tarifaMinima = (valor <= this.tarifaMinima || this.tarifaMinima == 0) ? valor : this.tarifaMinima;
+    //       console.log("tarifas", tar);
+    //     });
+    //   }
+    //   console.log("despues de las tarifas");
+  }
 
-   configurarHabitacion(id: number) {
+  configurarHabitacion(id: number) {
     this.HABservice.inicializar(id).then(() => {
-      this.navCtrl.setRoot("TiposHabitacionesPage");
+      let ArrayFotos = new Array<DTOfoto>();
+
+      if (this.HABservice.habitacionTipo.HTIfotos) {
+        ArrayFotos = this.HABservice.habitacionTipo.HTIfotos;
+      }
+      this.navCtrl.setRoot("TiposHabitacionesPage", {
+        objFotos: ArrayFotos
+        , file: "habitacion_" + this.HABservice.habitacionTipo.HTInombre
+        , marca: "HAB"
+      });
     });
   }
 

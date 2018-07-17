@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EstablecimientoProvider } from '../../providers/general/Establecimiento';
+import { DTOhabitaciones } from '../../modelos/DTOhabitacion';
 
 /**
  * Generated class for the AdministracionPage page.
@@ -15,9 +17,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AdministracionPage {
 
-  tiposHabitacion = new Array<any>();
+  tiposHabitacion = new Array<DTOhabitaciones>();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController
+    , public navParams: NavParams
+    , private ESTservice: EstablecimientoProvider  
+  ) {
   
 
   }
@@ -28,23 +33,7 @@ export class AdministracionPage {
   }
 
   cargarTipos(){
-    this.tiposHabitacion = [
-      {
-        TIHidTipo: 1
-        , TIHdescripcion: "Sencilla"
-        , TIHorden: 1
-      },
-      {
-        TIHidTipo: 2
-        , TIHdescripcion: "Suite"
-        , TIHorden: 2
-      },
-      {
-        TIHidTipo: 3
-        , TIHdescripcion: "VIP"
-        , TIHorden: 3
-      }
-    ]
+    this.tiposHabitacion = this.ESTservice.establecimiento.ESThabitacionesTipos;
   }
 
 }

@@ -13,6 +13,7 @@ export class DTOHabitaciontipo {
     HTIfotos : Array<DTOfoto>;
     //HTIentretenimiento : Array<DTOentretenimiento>;
     HTIcomplemento : Array<DTOcomplemento>;
+    HTIcantidad: number;
 }
 
 export class DTOhabitaciones {

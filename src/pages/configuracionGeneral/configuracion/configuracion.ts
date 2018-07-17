@@ -42,7 +42,7 @@ export class ConfiguracionPage {
     if (this.ESTservice.establecimiento.ESTfotos) {
       ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
     }
-    this.navCtrl.push("EstablecimientoPage", {
+    this.navCtrl.setRoot("EstablecimientoPage", {
       objFotos: ArrayFotos 
       , file: "sitio"
       , marca: "EST"

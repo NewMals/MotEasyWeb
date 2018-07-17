@@ -4,6 +4,7 @@ import { AlertController, NavParams } from 'ionic-angular';
 import { EstablecimientoProvider } from '../../../../providers/general/Establecimiento';
 import { DTOEstablecimiento } from '../../../../modelos/DTOestablecimiento';
 import { StorageProvider } from '../../../../providers/general/storage';
+import { HabitacionTipoProvider } from '../../../../providers/general/habitacion-tipo';
 
 /**
  * Generated class for the ImagenesComponent component.
@@ -30,6 +31,7 @@ export class ImagenesComponent implements OnInit {
     , public navParams: NavParams
     , private ESTservice: EstablecimientoProvider
     , private STOservice: StorageProvider
+    , private HABservice: HabitacionTipoProvider
   ) {
     console.log('Hello ImagenesComponent Component');
     this.text = 'Hello World';
@@ -62,7 +64,7 @@ export class ImagenesComponent implements OnInit {
       //   foto.FOTactiva = false;
       //   // this.ArrayFotos.push(foto);
       // });
-      this.SeleccionarFoto(this.ArrayFotos[0]);
+      this.SeleccionarFoto(this.ArrayFotos.find(foto => foto.FOTactiva ===true));
     }
   }
 
@@ -92,9 +94,6 @@ export class ImagenesComponent implements OnInit {
       this.STOservice.GuardarFb(this.file, this.marca, Foto).then((succes: DTOfoto) => {
         Foto.FOTurl = succes.FOTurl;
         this.ArrayFotos.push(Foto);
-        if (this.marca === "EST") {
-          this.ESTservice.establecimiento.ESTfotos = this.ArrayFotos;
-        }
         this.guardar();
         this.SeleccionarFoto(Foto);
       });
@@ -153,7 +152,15 @@ export class ImagenesComponent implements OnInit {
   }
 
   guardar() {
-    this.ESTservice.guardarFb();
+    if (this.marca === "EST") {
+      this.ESTservice.establecimiento.ESTfotos = this.ArrayFotos;
+      this.ESTservice.guardarFb();
+    }
+    else if(this.marca === "HAB"){
+      this.HABservice.habitacionTipo.HTIfotos = this.ArrayFotos;
+      this.HABservice.guardarFb();
+    }
+    
   }
 
 }

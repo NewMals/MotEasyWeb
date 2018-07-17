@@ -23,7 +23,7 @@ export class StorageProvider {
 
   GuardarFb(file: string , marca: string ,foto: DTOfoto): Promise<any> {
     let origen = "";
-    origen =  marca + "_" + foto.FOTorden + ".jpg";
+    origen =  marca + "_" + Math.random().toString(36).substring(7) + ".jpg";
     // return this.USUservice.consultarBd().then(data => {
       return this.storageRef.child("establecimientos/" + this.USUservice.user.USUestablecimiento + "/" + file + "/" + origen)
         .putString(foto.FOTurl, 'data_url')

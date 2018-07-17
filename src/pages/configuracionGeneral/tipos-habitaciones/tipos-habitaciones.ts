@@ -5,9 +5,10 @@ import { TarifasComponent } from '../../../components/configuracion/tarifas/tari
 import { HabitacionTipoProvider } from '../../../providers/general/habitacion-tipo';
 import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
 import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
-import { DTOhabitaciones } from '../../../modelos/DTOhabitacion';
+import { DTOhabitaciones, DTOHabitaciontipo } from '../../../modelos/DTOhabitacion';
 import { DTOtarifa } from '../../../modelos/DTOtarifa';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { ImagenesComponent } from '../../../components/configuracion/establecimiento/imagenes/imagenes';
 
 
 
@@ -28,6 +29,7 @@ export class TiposHabitacionesPage {
   ArrayConfiguracionHAB = [
     { id: 1, titulo: "Registrar tipo de habitación", iconName: "folder-open", activo: true, component: RegistrarTipHabComponent }
     , { id: 2, titulo: "Tarifas", iconName: "logo-usd", activo: false, component: TarifasComponent }
+    , { id: 3, titulo: "Imagenes", iconName: "images", activo: false, component: ImagenesComponent }
   ]
 
   constructor(public navCtrl: NavController
@@ -45,8 +47,18 @@ export class TiposHabitacionesPage {
     let tipoHab = this.HABservice.habitacionTipo;
     let hab = new DTOhabitaciones;
 
+    this.objetoTipoHabitacion(est, tipoHab, hab);
+
+    this.HABservice.guardarBd();
+    this.HABservice.guardarFb();
+    this.ESTservice.guardarBd();
+    this.ESTservice.guardarFb();
+  }
+
+  objetoTipoHabitacion(est: DTOEstablecimiento, tipoHab: DTOHabitaciontipo, hab: DTOhabitaciones) {
+
     hab.HTIdescripcion = tipoHab.HTInombre;
-    hab.HTIfoto = "";
+    hab.HTIfoto = (tipoHab.HTIfotos) ? tipoHab.HTIfotos.find(foto => foto.FOTprincipal === true).FOTurl : "";
     hab.HTItarifaMin = 0;
 
     tipoHab.HTItarifas.forEach(tar => {
@@ -64,10 +76,5 @@ export class TiposHabitacionesPage {
       this.HABservice.habitacionTipo.HTIid = hab.HTIid;
       est.ESThabitacionesTipos.push(hab);
     }
-    this.HABservice.guardarBd();
-    this.HABservice.guardarFb();
-    this.ESTservice.guardarBd();
-    this.ESTservice.guardarFb();
   }
-
 }

@@ -1,4 +1,5 @@
 export class DTOfoto {
+    FOTid: string;
     FOTurl?: string;
     FOTorden?: number;
     FOTprincipal? : boolean;
