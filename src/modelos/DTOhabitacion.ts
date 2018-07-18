@@ -14,11 +14,20 @@ export class DTOHabitaciontipo {
     //HTIentretenimiento : Array<DTOentretenimiento>;
     HTIcomplemento : Array<DTOcomplemento>;
     HTIcantidad: number;
+    HTIhabitaciones?: Array<DTOItemhabitacion>;
 }
 
-export class DTOhabitaciones {
+export class DTOViewhabitacion {
     HTIid : number;
     HTIdescripcion: string;
     HTIfoto: string;
     HTItarifaMin: number;
+}
+
+export class DTOItemhabitacion {
+    HIHid: string;
+    HIHidentidad: string; 
+    HIHestado: string;
+    HIHtiempo?: Date;
+    HIHtarifa?: number;
 }

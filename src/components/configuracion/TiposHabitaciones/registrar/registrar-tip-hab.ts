@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DTOHabitaciontipo } from '../../../../modelos/DTOhabitacion';
 import { HabitacionTipoProvider } from '../../../../providers/general/habitacion-tipo';
-import { EstablecimientoProvider } from '../../../../providers/general/Establecimiento';
 
 /**
  * Generated class for the RegistarTipHabComponent component.
@@ -15,13 +14,11 @@ import { EstablecimientoProvider } from '../../../../providers/general/Estableci
 })
 export class RegistrarTipHabComponent implements OnInit {
 
-
-
   text: string;
   HabitacionTipo = new DTOHabitaciontipo;
 
   constructor(
-    private HABservice: HabitacionTipoProvider
+    private TIHservice: HabitacionTipoProvider
   ) {
     console.log('Hello RegistarTipHabComponent Component');
     this.text = 'Hello World';
@@ -30,11 +27,10 @@ export class RegistrarTipHabComponent implements OnInit {
     //   {COMid: "" , COMdescripcion: "Parqueadero"}]
   }
 
-
-
   ngOnInit(): void {
-    this.HabitacionTipo = this.HABservice.habitacionTipo;   
+    this.HabitacionTipo = this.TIHservice.habitacionTipo;   
   }
+
 
   
 }

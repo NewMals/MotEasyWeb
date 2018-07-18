@@ -5,9 +5,7 @@ import { TarifasComponent } from '../../../components/configuracion/tarifas/tari
 import { HabitacionTipoProvider } from '../../../providers/general/habitacion-tipo';
 import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
 import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
-import { DTOhabitaciones, DTOHabitaciontipo } from '../../../modelos/DTOhabitacion';
-import { DTOtarifa } from '../../../modelos/DTOtarifa';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { DTOHabitaciontipo, DTOViewhabitacion, DTOItemhabitacion } from '../../../modelos/DTOhabitacion';
 import { ImagenesComponent } from '../../../components/configuracion/establecimiento/imagenes/imagenes';
 
 
@@ -34,7 +32,7 @@ export class TiposHabitacionesPage {
 
   constructor(public navCtrl: NavController
     , public navParams: NavParams
-    , private HABservice: HabitacionTipoProvider
+    , private TIHservice: HabitacionTipoProvider
     , private ESTservice: EstablecimientoProvider) {
   }
 
@@ -44,22 +42,26 @@ export class TiposHabitacionesPage {
 
   ionViewDidLeave() {
     let est = this.ESTservice.establecimiento;
-    let tipoHab = this.HABservice.habitacionTipo;
-    let hab = new DTOhabitaciones;
+    let tipoHab = this.TIHservice.habitacionTipo;
+    let hab = new DTOViewhabitacion;
 
     this.objetoTipoHabitacion(est, tipoHab, hab);
 
-    this.HABservice.guardarBd();
-    this.HABservice.guardarFb();
+    this.TIHservice.guardarBd();
+    this.TIHservice.guardarFb();
     this.ESTservice.guardarBd();
     this.ESTservice.guardarFb();
   }
 
-  objetoTipoHabitacion(est: DTOEstablecimiento, tipoHab: DTOHabitaciontipo, hab: DTOhabitaciones) {
+  objetoTipoHabitacion(est: DTOEstablecimiento, tipoHab: DTOHabitaciontipo, hab: DTOViewhabitacion) {
 
     hab.HTIdescripcion = tipoHab.HTInombre;
     hab.HTIfoto = (tipoHab.HTIfotos) ? tipoHab.HTIfotos.find(foto => foto.FOTprincipal === true).FOTurl : "";
     hab.HTItarifaMin = 0;
+
+    if(tipoHab.HTIcantidad > 0){
+      tipoHab.HTIhabitaciones = this.crearHabitaciones(tipoHab.HTIcantidad);
+    }
 
     tipoHab.HTItarifas.forEach(tar => {
       let valor = tar.TARvalor;
@@ -71,10 +73,25 @@ export class TiposHabitacionesPage {
       hab.HTIid = tipoHab.HTIid;
       est.ESThabitacionesTipos[valor] = hab;
     } else {
-      est.ESThabitacionesTipos = est.ESThabitacionesTipos ? est.ESThabitacionesTipos : new Array<DTOhabitaciones>();
+      est.ESThabitacionesTipos = est.ESThabitacionesTipos ? est.ESThabitacionesTipos : new Array<DTOViewhabitacion>();
       hab.HTIid = est.ESThabitacionesTipos ? est.ESThabitacionesTipos.length : 0;
-      this.HABservice.habitacionTipo.HTIid = hab.HTIid;
+      this.TIHservice.habitacionTipo.HTIid = hab.HTIid;
       est.ESThabitacionesTipos.push(hab);
     }
   }
+
+  crearHabitaciones(cantidadHab: number): Array<DTOItemhabitacion> {
+    let ArrayHabitaciones = new Array<DTOItemhabitacion>();
+    for(let i = 0; i < cantidadHab; i++){
+       let itemHabitacion = new DTOItemhabitacion;
+       itemHabitacion.HIHid = Math.random().toString(36).substring(7);
+       itemHabitacion.HIHestado = "Disponible";
+       itemHabitacion.HIHidentidad = i.toString();
+
+       ArrayHabitaciones.push(itemHabitacion);
+    }
+    return ArrayHabitaciones;
+  }
+
+  
 }

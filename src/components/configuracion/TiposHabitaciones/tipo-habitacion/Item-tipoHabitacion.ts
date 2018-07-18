@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DTOhabitaciones } from '../../../../modelos/DTOhabitacion';
+import { DTOViewhabitacion } from '../../../../modelos/DTOhabitacion';
 import { DTOfoto } from '../../../../modelos/DTOfoto';
 import { HabitacionTipoProvider } from '../../../../providers/general/habitacion-tipo';
 import { NavController } from 'ionic-angular';
@@ -16,12 +16,12 @@ import { NavController } from 'ionic-angular';
 })
 export class ItemTipoHabitacionComponent {
 
-  @Input() Tipohabitacion = new DTOhabitaciones;
+  @Input() Tipohabitacion = new DTOViewhabitacion;
   text: string;
 
   constructor(
     public navCtrl: NavController
-    , private HABservice: HabitacionTipoProvider) {
+    , private TIHservice: HabitacionTipoProvider) {
     console.log('Hello TipoHabitacionComponent Component');
     this.text = 'Hello World';
     this.obtenerFoto();
@@ -44,15 +44,15 @@ export class ItemTipoHabitacionComponent {
   }
 
   configurarHabitacion(id: number) {
-    this.HABservice.inicializar(id).then(() => {
+    this.TIHservice.inicializar(id).then(() => {
       let ArrayFotos = new Array<DTOfoto>();
 
-      if (this.HABservice.habitacionTipo.HTIfotos) {
-        ArrayFotos = this.HABservice.habitacionTipo.HTIfotos;
+      if (this.TIHservice.habitacionTipo.HTIfotos) {
+        ArrayFotos = this.TIHservice.habitacionTipo.HTIfotos;
       }
       this.navCtrl.setRoot("TiposHabitacionesPage", {
         objFotos: ArrayFotos
-        , file: "habitacion_" + this.HABservice.habitacionTipo.HTInombre
+        , file: "habitacion_" + this.TIHservice.habitacionTipo.HTInombre
         , marca: "HAB"
       });
     });

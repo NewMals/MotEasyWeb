@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DTOItemhabitacion } from '../../modelos/DTOhabitacion';
 
 /**
  * Generated class for the HabitacionesComponent component.
@@ -12,6 +13,7 @@ import { Component } from '@angular/core';
 })
 export class HabitacionesComponent {
 
+  @Input() Habitaciones : Array<DTOItemhabitacion>;
   text: string;
   heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado', 'superman', 'spiderman', 'ironman'];
 
@@ -19,5 +21,4 @@ export class HabitacionesComponent {
     console.log('Hello HabitacionesComponent Component');
     this.text = 'Hello World';
   }
-
 }

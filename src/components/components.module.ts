@@ -2,11 +2,8 @@ import { NgModule } from '@angular/core';
 import { HabitacionesComponent } from './habitaciones/habitaciones';
 import { IonicModule, IonicPageModule } from 'ionic-angular';
 import { ProgressBarComponent } from './configuracion/progress-bar/progress-bar';
-
-
 import { WizardComponent } from './wizard/wizard';
 import { InformacionGeneralComponent } from './configuracion/establecimiento/informacion-general/informacion-general';
-
 import { WizardDirective } from './wizard/wizard.directive';
 import { ItemTipoHabitacionComponent } from './configuracion/TiposHabitaciones/tipo-habitacion/Item-tipoHabitacion';
 import { UbicacionComponent } from './configuracion/establecimiento/ubicacion/ubicacion';

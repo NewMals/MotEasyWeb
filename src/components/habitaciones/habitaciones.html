@@ -1,15 +1,15 @@
 <!-- Generated template for the HabitacionesComponent component -->
-<div class="general" *ngFor="let hero of heroes">
+<div class="general" *ngFor="let hab of Habitaciones">
       <!-- <div class="habitacion">
           {{hero}}
       </div> -->
       <ion-card>
             <ion-card-header>
-                  {{hero}}
+                  {{hab.HIHidentidad}}
             </ion-card-header>
             <ion-card-content>
                   <ion-item style="text-align: center; background-color: #d0cccc; border-radius: 25px">
-                        Ocupado
+                        {{hab.HIHestado}}
                         <ion-icon name="radio-button-on" color="danger"></ion-icon>
                   </ion-item>
                   <ion-label>Tiempo</ion-label>
