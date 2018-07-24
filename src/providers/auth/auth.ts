@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
-import { LoadingController, ToastController, Platform, NavController, App } from 'ionic-angular';
+import { LoadingController, ToastController, NavController, App } from 'ionic-angular';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from "angularfire2/auth";
 import { UserProvider } from '../general/user';
@@ -22,7 +22,6 @@ export class AuthProvider {
     protected app: App,
     private afAuth: AngularFireAuth,
     //private fb: Facebook,
-    private platform: Platform,
     public loadingCtrl: LoadingController,
     //private googlePlus: GooglePlus,
     public toastCtrl: ToastController,

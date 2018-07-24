@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HabitacionesComponent } from './habitaciones/habitaciones';
+import { HabitacionComponent } from './administracion/habitaciones/habitacion';
 import { IonicModule, IonicPageModule } from 'ionic-angular';
 import { ProgressBarComponent } from './configuracion/progress-bar/progress-bar';
 import { WizardComponent } from './wizard/wizard';
@@ -7,20 +7,21 @@ import { InformacionGeneralComponent } from './configuracion/establecimiento/inf
 import { WizardDirective } from './wizard/wizard.directive';
 import { ItemTipoHabitacionComponent } from './configuracion/TiposHabitaciones/tipo-habitacion/Item-tipoHabitacion';
 import { UbicacionComponent } from './configuracion/establecimiento/ubicacion/ubicacion';
-import { ImagenesComponent } from './configuracion/establecimiento/imagenes/imagenes';
+import { ImagenesComponent } from './configuracion/imagenes/imagenes';
 import { RegistroComponent } from './configuracion/Sesion/registro/registro';
 import { ReestablecerPassComponent } from './configuracion/Sesion/reestablecer-pass/reestablecer-pass';
 import { RegistrarTipHabComponent } from './configuracion/TiposHabitaciones/registrar/registrar-tip-hab';
 import { ComplementosComponent } from './configuracion/TiposHabitaciones/complementos/complementos';
 import { TarifasComponent } from './configuracion/tarifas/tarifas';
 import { EntretenimientosComponent } from './configuracion/TiposHabitaciones/entretenimientos/entretenimientos';
+import { ViewEstablecimientoComponent } from './configuracion/establecimiento/view-establecimiento/view-establecimiento';
 
 
 
 
 @NgModule({
     declarations: [
-        HabitacionesComponent,
+        HabitacionComponent,
         ProgressBarComponent,
         ItemTipoHabitacionComponent,
         WizardComponent,
@@ -33,14 +34,15 @@ import { EntretenimientosComponent } from './configuracion/TiposHabitaciones/ent
         RegistrarTipHabComponent,
         ComplementosComponent,
     TarifasComponent,
-    EntretenimientosComponent
+    EntretenimientosComponent,
+    ViewEstablecimientoComponent
     ],
     imports: [
         IonicModule,
         IonicPageModule,
     ],
     exports: [
-        HabitacionesComponent,
+        HabitacionComponent,
         ProgressBarComponent,
         ItemTipoHabitacionComponent,
         WizardComponent,
@@ -52,9 +54,10 @@ import { EntretenimientosComponent } from './configuracion/TiposHabitaciones/ent
         RegistrarTipHabComponent,
         ComplementosComponent,
     TarifasComponent,
-    EntretenimientosComponent
+    EntretenimientosComponent,
+    ViewEstablecimientoComponent
     ], entryComponents: [
-        HabitacionesComponent,
+        HabitacionComponent,
         ProgressBarComponent,
         ItemTipoHabitacionComponent,
         WizardComponent,

@@ -15,15 +15,17 @@
 <ion-content padding>
   <ion-row style="height: 100%">
     <ion-col class="panelIzquierdo">
-        <ion-row *ngFor="let tipo of tiposHabitacion" >
-          <ion-col>
-            <button  class="TipoHabitacion" (click)="mostrarHabitaciones(tipo.HTIid)">{{tipo.HTIdescripcion}}</button>
-          </ion-col>
-        </ion-row>
+      <ion-row *ngFor="let tipo of tiposHabitacion">
+        <ion-col>
+          <button class="TipoHabitacion" (click)="mostrarHabitaciones(tipo.HTIid)">{{tipo.HTIdescripcion}}</button>
+        </ion-col>
+      </ion-row>
     </ion-col>
     <ion-col class="panelDerecho">
-      <habitaciones [Habitaciones]="habitaciones"></habitaciones>
+      <div *ngFor="let habitacion of habitaciones" class="general">
+        <habitacion [Habitacion]="habitacion">
+          </habitacion>
+      </div>
     </ion-col>
-  </ion-row>  
+  </ion-row>
 </ion-content>
-

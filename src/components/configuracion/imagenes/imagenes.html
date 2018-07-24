@@ -6,7 +6,7 @@
       <ion-icon name="close" color="primary"></ion-icon>
     </button>
     <div *ngIf="FotoSeleccionada">
-      <img  src="{{FotoSeleccionada.FOTurl}}" width="100" height="250"/>
+      <img class="imagen" src="{{FotoSeleccionada.FOTurl}}" onerror="this.src='assets/icon/picture.svg';"/>
     </div>
   </ion-card>
   <br>
@@ -19,7 +19,7 @@
     <ion-label style="text-align: center"> {{ArrayFotos.length}} de 6</ion-label>
     <div class="general" *ngFor="let foto of ArrayFotos">
       <ion-card style="height: 70%; width: 70%; margin: auto" padding (click)="SeleccionarFoto(foto);" [ngStyle]="{'border': (foto.FOTactiva) ? '3px solid blue' : '' }">
-        <img src="{{foto.FOTurl}}" width="70" height="70" />
+        <img src="{{foto.FOTurl}}" width="70" height="70" onerror="this.src='assets/icon/picture.svg';" />
       </ion-card>
     </div>
   </ion-card>

@@ -1,10 +1,10 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { DTOfoto } from '../../../../modelos/DTOfoto';
+import { DTOfoto } from '../../../modelos/DTOfoto';
 import { AlertController, NavParams } from 'ionic-angular';
-import { EstablecimientoProvider } from '../../../../providers/general/Establecimiento';
-import { DTOEstablecimiento } from '../../../../modelos/DTOestablecimiento';
-import { StorageProvider } from '../../../../providers/general/storage';
-import { HabitacionTipoProvider } from '../../../../providers/general/habitacion-tipo';
+import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
+import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
+import { StorageProvider } from '../../../providers/general/storage';
+import { HabitacionTipoProvider } from '../../../providers/general/habitacion-tipo';
 
 /**
  * Generated class for the ImagenesComponent component.

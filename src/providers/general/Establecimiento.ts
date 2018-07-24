@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import * as firebase from 'firebase/app';
-import { DTOfoto } from '../../modelos/DTOfoto';
 import { DTOEstablecimiento } from '../../modelos/DTOestablecimiento';
 import { UserProvider } from './user';
-import { Observable } from "rxjs/Observable";
-import { Subject } from 'rxjs/Subject';
 /*
   Generated class for the GeneralProvider provider.
 

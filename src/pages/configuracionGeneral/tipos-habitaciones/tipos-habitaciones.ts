@@ -6,7 +6,7 @@ import { HabitacionTipoProvider } from '../../../providers/general/habitacion-ti
 import { EstablecimientoProvider } from '../../../providers/general/Establecimiento';
 import { DTOEstablecimiento } from '../../../modelos/DTOestablecimiento';
 import { DTOHabitaciontipo, DTOViewhabitacion, DTOItemhabitacion } from '../../../modelos/DTOhabitacion';
-import { ImagenesComponent } from '../../../components/configuracion/establecimiento/imagenes/imagenes';
+import { ImagenesComponent } from '../../../components/configuracion/imagenes/imagenes';
 
 
 

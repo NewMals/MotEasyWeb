@@ -1,0 +1,30 @@
+<ion-card>
+  <ion-card-header>
+    <div class="contenedorImg">
+      <img class="imagen" src="{{foto}}" class="imagen" onerror="this.src='assets/icon/picture.svg';" />
+    </div>
+    <!-- <ion-col class="contenedorDescripcion">
+      <label class="lblName">{{Tipohabitacion.HTIdescripcion}}</label>
+      <div class="contenedorStart">
+        <div class="lblStart" >
+          <label class="icon-start" [ngStyle]="{'width' : itemHotel.stars * 2 + '0px' , 'background-repeat': 'space' , 'background-size': '20px' , 'height': '20px' }" ></label>
+        </div>
+      </div>
+       <div class="contenedorAmenitie">
+        <div class="amenitie" *ngFor="let amenitie of itemHotel.amenities">
+          <img src="assets/amenities/{{amenitie}}.svg" />
+        </div>
+      </div>
+    </ion-col>
+    <ion-col class="contenedorValor">
+      <label>Tarifa minima</label>
+      <ion-label class="lblValor">{{Tipohabitacion.HTItarifaMin | currency:'USD':true:'.0'}}</ion-label>
+      <button ion-button (click)="configurarHabitacion(Tipohabitacion.HTIid)">
+        Ver
+      </button>
+    </ion-col> -->
+  </ion-card-header>
+  <ion-card-content>
+    <ion-label>{{establecimiento.ESTnombre}}</ion-label>
+  </ion-card-content>
+</ion-card>

@@ -1,23 +1,26 @@
 Item-tipoHabitacion {
     .contenedorImg{
-        height: 130px; 
-        max-width: 30%;
+        height: 150px; 
+        max-width: 25%;
         display: grid;
         padding: 10px;
         margin: auto;
+        
+        
     }
 
     .imagen{
         height: 100%;
+        border-radius: 10px;
     }
 
     
-    .contenedorDescripcion{
-        // height: 120px; 
-        // max-width: 100%;
-        // padding: 10px;
-        // display: block;
-    }
+    // .contenedorDescripcion{
+    //     height: 120px; 
+    //     max-width: 100%;
+    //     padding: 10px;
+    //     display: block;
+    // }
 
     .lblName{
         color: dodgerblue;

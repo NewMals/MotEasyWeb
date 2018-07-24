@@ -40,7 +40,7 @@ export class AdministracionPage {
   }
 
   mostrarHabitaciones(idTipo){
-    this.TIHservice.inicializar(idTipo).then(Tipo => {
+    this.TIHservice.inicializar(idTipo).then(() => {
       this.habitaciones = this.TIHservice.habitacionTipo.HTIhabitaciones;
     });
   }
