@@ -36,18 +36,18 @@ export class ConfiguracionPage {
     this.obtenerEstablecimiento();
   }
 
-  configurarEstablecimiento() {
-    let ArrayFotos = new Array<DTOfoto>();
+  // configurarEstablecimiento() {
+  //   let ArrayFotos = new Array<DTOfoto>();
     
-    if (this.ESTservice.establecimiento.ESTfotos) {
-      ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
-    }
-    this.navCtrl.setRoot("EstablecimientoPage", {
-      objFotos: ArrayFotos 
-      , file: "sitio"
-      , marca: "EST"
-    });
-  }
+  //   if (this.ESTservice.establecimiento.ESTfotos) {
+  //     ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
+  //   }
+  //   this.navCtrl.setRoot("EstablecimientoPage", {
+  //     objFotos: ArrayFotos 
+  //     , file: "sitio"
+  //     , marca: "EST"
+  //   });
+  // }
 
   // configurarHabitacion(id: number) {
   //   this.HABservice.inicializar(id).then(() => {

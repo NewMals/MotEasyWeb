@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { EstablecimientoProvider } from '../../../../providers/general/Establecimiento';
 import { DTOEstablecimiento } from '../../../../modelos/DTOestablecimiento';
+import { DTOfoto } from '../../../../modelos/DTOfoto';
+import { NavController } from 'ionic-angular';
 
 /**
  * Generated class for the ViewEstablecimientoComponent component.
@@ -18,7 +20,8 @@ export class ViewEstablecimientoComponent {
   establecimiento: DTOEstablecimiento;
   foto : string;
 
-  constructor(private ESTservice: EstablecimientoProvider) {
+  constructor(public navCtrl: NavController
+    , private ESTservice: EstablecimientoProvider) {
     console.log('Hello ViewEstablecimientoComponent Component');
     this.text = 'Hello World';
     this.obtenerEstablecimiento();
@@ -29,4 +32,16 @@ export class ViewEstablecimientoComponent {
     this.foto = (this.ESTservice.establecimiento.ESTfotos) ? this.ESTservice.establecimiento.ESTfotos.find(foto => foto.FOTactiva === true).FOTurl : "";
   }
 
+  configurarEstablecimiento() {
+    let ArrayFotos = new Array<DTOfoto>();
+    
+    if (this.ESTservice.establecimiento.ESTfotos) {
+      ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
+    }
+    this.navCtrl.setRoot("EstablecimientoPage", {
+      objFotos: ArrayFotos 
+      , file: "sitio"
+      , marca: "EST"
+    });
+  }
 }

@@ -56,7 +56,7 @@ export class TiposHabitacionesPage {
   objetoTipoHabitacion(est: DTOEstablecimiento, tipoHab: DTOHabitaciontipo, hab: DTOViewhabitacion) {
 
     hab.HTIdescripcion = tipoHab.HTInombre;
-    hab.HTIfoto = (tipoHab.HTIfotos) ? tipoHab.HTIfotos.find(foto => foto.FOTprincipal === true).FOTurl : "";
+    hab.HTIfoto = (tipoHab.HTIfotos.length > 0) ? tipoHab.HTIfotos.find(foto => foto.FOTactiva === true).FOTurl : "";
     hab.HTItarifaMin = 0;
 
     if(tipoHab.HTIcantidad > 0){
