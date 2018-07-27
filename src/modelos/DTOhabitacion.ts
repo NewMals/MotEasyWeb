@@ -3,7 +3,7 @@ import { DTOcomplemento } from "./DTOcomplemento";
 import { DTOtarifa } from "./DTOtarifa";
 
 export class DTOHabitaciontipo {
-    HTIid : number;
+    HTIid : string;
     HTInombre : string;
     HTIdescripcion : string;
     HTIcantPersonasMax : number;
@@ -18,7 +18,7 @@ export class DTOHabitaciontipo {
 }
 
 export class DTOViewhabitacion {
-    HTIid : number;
+    HTIid : string;
     HTIdescripcion: string;
     HTIfoto: string;
     HTItarifaMin: number;

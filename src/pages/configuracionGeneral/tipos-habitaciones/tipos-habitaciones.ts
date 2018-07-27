@@ -43,9 +43,9 @@ export class TiposHabitacionesPage {
   ionViewDidLeave() {
     let est = this.ESTservice.establecimiento;
     let tipoHab = this.TIHservice.habitacionTipo;
-    let hab = new DTOViewhabitacion;
+    let habView = new DTOViewhabitacion;
 
-    this.objetoTipoHabitacion(est, tipoHab, hab);
+    this.objetoTipoHabitacion(est, tipoHab, habView);
 
     this.TIHservice.guardarBd();
     this.TIHservice.guardarFb();
@@ -53,45 +53,56 @@ export class TiposHabitacionesPage {
     this.ESTservice.guardarFb();
   }
 
-  objetoTipoHabitacion(est: DTOEstablecimiento, tipoHab: DTOHabitaciontipo, hab: DTOViewhabitacion) {
+  objetoTipoHabitacion(est: DTOEstablecimiento, tipoHab: DTOHabitaciontipo, habView: DTOViewhabitacion) {
 
-    hab.HTIdescripcion = tipoHab.HTInombre;
-    hab.HTIfoto = (tipoHab.HTIfotos.length > 0) ? tipoHab.HTIfotos.find(foto => foto.FOTactiva === true).FOTurl : "";
-    hab.HTItarifaMin = 0;
+    habView.HTIdescripcion = tipoHab.HTInombre;
+    habView.HTIfoto = (tipoHab.HTIfotos && tipoHab.HTIfotos.length > 0) ? tipoHab.HTIfotos.find(foto => foto.FOTactiva === true).FOTurl : "";
+    habView.HTItarifaMin = 0;
 
-    if(tipoHab.HTIcantidad > 0){
+    if (tipoHab.HTIcantidad > 0) {
       tipoHab.HTIhabitaciones = this.crearHabitaciones(tipoHab.HTIcantidad);
     }
 
     tipoHab.HTItarifas.forEach(tar => {
       let valor = tar.TARvalor;
-      hab.HTItarifaMin = (valor <= hab.HTItarifaMin || hab.HTItarifaMin == 0) ? valor : hab.HTItarifaMin;
+      habView.HTItarifaMin = (valor <= habView.HTItarifaMin || habView.HTItarifaMin == 0) ? valor : habView.HTItarifaMin;
     });
 
-    if (tipoHab.HTIid >= 0) {
-      let valor = est.ESThabitacionesTipos.findIndex(index => index.HTIid === tipoHab.HTIid);
-      hab.HTIid = tipoHab.HTIid;
-      est.ESThabitacionesTipos[valor] = hab;
-    } else {
-      est.ESThabitacionesTipos = est.ESThabitacionesTipos ? est.ESThabitacionesTipos : new Array<DTOViewhabitacion>();
-      hab.HTIid = est.ESThabitacionesTipos ? est.ESThabitacionesTipos.length : 0;
-      this.TIHservice.habitacionTipo.HTIid = hab.HTIid;
-      est.ESThabitacionesTipos.push(hab);
+    est.ESThabitacionesTipos = (est.ESThabitacionesTipos && est.ESThabitacionesTipos.length > 0)  ? est.ESThabitacionesTipos : new Array<DTOViewhabitacion>();
+    let idTipoHab = est.ESThabitacionesTipos.findIndex(index => index.HTIid === tipoHab.HTIid);
+
+    if (idTipoHab >= 0) {
+      est.ESThabitacionesTipos[idTipoHab] = habView;
     }
+    else {
+      est.ESThabitacionesTipos.push(habView);
+    }
+
+    // if (tipoHab.HTIid !== ) {
+
+    //   // let valor = est.ESThabitacionesTipos.findIndex(index => index.HTIid === tipoHab.HTIid);
+    //   // hab.HTIid = tipoHab.HTIid;
+
+    // } else {
+    //   est.ESThabitacionesTipos = est.ESThabitacionesTipos ? est.ESThabitacionesTipos : new Array<DTOViewhabitacion>();
+    //   // hab.HTIid = est.ESThabitacionesTipos ? est.ESThabitacionesTipos.length : 0;
+    //   // this.TIHservice.habitacionTipo.HTIid = hab.HTIid;
+
+    // }
   }
 
   crearHabitaciones(cantidadHab: number): Array<DTOItemhabitacion> {
     let ArrayHabitaciones = new Array<DTOItemhabitacion>();
-    for(let i = 0; i < cantidadHab; i++){
-       let itemHabitacion = new DTOItemhabitacion;
-       itemHabitacion.HIHid = Math.random().toString(36).substring(7);
-       itemHabitacion.HIHestado = "Disponible";
-       itemHabitacion.HIHidentidad = i.toString();
+    for (let i = 0; i < cantidadHab; i++) {
+      let itemHabitacion = new DTOItemhabitacion;
+      itemHabitacion.HIHid = Math.random().toString(36).substring(7);
+      itemHabitacion.HIHestado = "Disponible";
+      itemHabitacion.HIHidentidad = i.toString();
 
-       ArrayHabitaciones.push(itemHabitacion);
+      ArrayHabitaciones.push(itemHabitacion);
     }
     return ArrayHabitaciones;
   }
 
-  
+
 }

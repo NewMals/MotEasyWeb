@@ -25,7 +25,7 @@ export class ConfiguracionPage {
   constructor(public navCtrl: NavController
     , public navParams: NavParams
     , private ESTservice: EstablecimientoProvider
-    , private HABservice: HabitacionTipoProvider
+    , private TIHservice: HabitacionTipoProvider
   ) {
     console.log("Hello Configuracion");
   }
@@ -38,7 +38,7 @@ export class ConfiguracionPage {
 
   // configurarEstablecimiento() {
   //   let ArrayFotos = new Array<DTOfoto>();
-    
+
   //   if (this.ESTservice.establecimiento.ESTfotos) {
   //     ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
   //   }
@@ -60,9 +60,16 @@ export class ConfiguracionPage {
   }
 
   AgregarTipHab() {
-    this.HABservice.crear().then(() => {
-      this.navCtrl.setRoot("TiposHabitacionesPage");
+    this.TIHservice.crear().then(() => {
+      let ArrayFotos = new Array<DTOfoto>();
+      if (this.TIHservice.habitacionTipo.HTIfotos) {
+        ArrayFotos = this.TIHservice.habitacionTipo.HTIfotos;
+      }
+      this.navCtrl.setRoot("TiposHabitacionesPage", {
+        objFotos: ArrayFotos
+        , file: "habitacion_" + this.TIHservice.habitacionTipo.HTInombre
+        , marca: "HAB"
+      });
     });
-
   }
 }

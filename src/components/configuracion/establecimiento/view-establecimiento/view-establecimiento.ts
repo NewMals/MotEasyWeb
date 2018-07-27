@@ -29,7 +29,7 @@ export class ViewEstablecimientoComponent {
 
   obtenerEstablecimiento(){
     this.establecimiento = this.ESTservice.establecimiento;
-    this.foto = (this.ESTservice.establecimiento.ESTfotos) ? this.ESTservice.establecimiento.ESTfotos.find(foto => foto.FOTactiva === true).FOTurl : "";
+    this.foto = (this.ESTservice.establecimiento.ESTfotos && this.ESTservice.establecimiento.ESTfotos.length) ? this.ESTservice.establecimiento.ESTfotos.find(foto => foto.FOTactiva === true).FOTurl : "";
   }
 
   configurarEstablecimiento() {

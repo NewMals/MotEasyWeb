@@ -43,7 +43,7 @@ export class ItemTipoHabitacionComponent {
     //   console.log("despues de las tarifas");
   }
 
-  configurarHabitacion(id: number) {
+  configurarHabitacion(id: string) {
     this.TIHservice.inicializar(id).then(() => {
       let ArrayFotos = new Array<DTOfoto>();
 
