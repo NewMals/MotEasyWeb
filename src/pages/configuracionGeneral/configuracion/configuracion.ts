@@ -30,46 +30,24 @@ export class ConfiguracionPage {
     console.log("Hello Configuracion");
   }
 
-
-
   ionViewDidEnter() {
     this.obtenerEstablecimiento();
   }
-
-  // configurarEstablecimiento() {
-  //   let ArrayFotos = new Array<DTOfoto>();
-
-  //   if (this.ESTservice.establecimiento.ESTfotos) {
-  //     ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
-  //   }
-  //   this.navCtrl.setRoot("EstablecimientoPage", {
-  //     objFotos: ArrayFotos 
-  //     , file: "sitio"
-  //     , marca: "EST"
-  //   });
-  // }
-
-  // configurarHabitacion(id: number) {
-  //   this.HABservice.inicializar(id).then(() => {
-  //     this.navCtrl.setRoot("TiposHabitacionesPage");
-  //   });
-  // }
 
   obtenerEstablecimiento() {
     this.est.ESThabitacionesTipos = this.ESTservice.establecimiento.ESThabitacionesTipos;
   }
 
   AgregarTipHab() {
-    this.TIHservice.crear().then(() => {
-      let ArrayFotos = new Array<DTOfoto>();
-      if (this.TIHservice.habitacionTipo.HTIfotos) {
-        ArrayFotos = this.TIHservice.habitacionTipo.HTIfotos;
-      }
-      this.navCtrl.setRoot("TiposHabitacionesPage", {
-        objFotos: ArrayFotos
-        , file: "habitacion_" + this.TIHservice.habitacionTipo.HTInombre
-        , marca: "HAB"
-      });
+    this.TIHservice.crear();
+    let ArrayFotos = new Array<DTOfoto>();
+    if (this.TIHservice.habitacionTipo.HTIfotos) {
+      ArrayFotos = this.TIHservice.habitacionTipo.HTIfotos;
+    }
+    this.navCtrl.setRoot("TiposHabitacionesPage", {
+      objFotos: ArrayFotos
+      , file: "habitacion_" + this.TIHservice.habitacionTipo.HTInombre
+      , marca: "HAB"
     });
   }
 }

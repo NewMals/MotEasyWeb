@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { Component, Input, ViewChild, ComponentFactoryResolver, ComponentRef, OnDestroy } from '@angular/core';
 import { WizardDirective } from './wizard.directive';
 import { NavController } from 'ionic-angular';
 
@@ -21,6 +21,7 @@ export class WizardComponent {
   interval: any;
   componenteActual: number;
   finalizar: boolean = false;
+  componentRef: ComponentRef<any>;
 
   constructor(public navCtrl: NavController
     , private componentFactoryResolver: ComponentFactoryResolver) {
@@ -29,8 +30,6 @@ export class WizardComponent {
 
   ngOnInit() {
     this.ComponenteInicial();
-    //this.loadComponent();
-    //this.getAds();
   }
 
   ngOnDestroy() {
@@ -50,7 +49,7 @@ export class WizardComponent {
     this.cargarComponente(this.paginas[this.posicion]);
     if (this.posicion + 1 == this.paginas.length) {
       this.finalizar = true;
-    }else {
+    } else {
       this.finalizar = false;
     }
   }
@@ -62,7 +61,7 @@ export class WizardComponent {
     this.cargarComponente(this.paginas[this.posicion]);
     if (this.posicion + 1 == this.paginas.length) {
       this.finalizar = true;
-    }else {
+    } else {
       this.finalizar = false;
     }
   }
@@ -72,16 +71,12 @@ export class WizardComponent {
   }
 
   cargarComponente(ComponenteActual) {
-    // this.currentAdIndex = (this.currentAdIndex + 1) % this.paginas.length;
-    // let adItem = this.paginas[this.currentAdIndex];
-
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(ComponenteActual.component);
-
     let viewContainerRef = this.adHost.viewContainerRef;
+    
     viewContainerRef.clear();
-
-    let componentRef = viewContainerRef.createComponent(componentFactory);
-    (<any>componentRef.instance).data = ComponenteActual.data;
+    this.componentRef = viewContainerRef.createComponent(componentFactory);
+    // (<any>componentRef.instance).data = ComponenteActual.data;
   }
 
   getAds() {

@@ -40,7 +40,7 @@ export class TiposHabitacionesPage {
     console.log('ionViewDidLoad TiposHabitacionesPage');
   }
 
-  ionViewDidLeave() {
+  ionViewWillLeave() {
     this.objetoTipoHabitacion();
     this.TIHservice.guardarBd();
     this.TIHservice.guardarFb();
@@ -50,10 +50,25 @@ export class TiposHabitacionesPage {
 
   objetoTipoHabitacion() {
 
-    let objEstablecimiento = this.ESTservice.establecimiento.ESThabitacionesTipos;
+    let objEstablecimiento = this.ESTservice.establecimiento;
     let objTipoHabitacion = this.TIHservice.habitacionTipo;
     let VistaHabitacion = new DTOViewhabitacion;
 
+    this.crearVistaHabitacion(VistaHabitacion, objTipoHabitacion);
+
+    objEstablecimiento.ESThabitacionesTipos = (objEstablecimiento.ESThabitacionesTipos && objEstablecimiento.ESThabitacionesTipos.length > 0)  ? objEstablecimiento.ESThabitacionesTipos : new Array<DTOViewhabitacion>();
+    let idTipoHab = objEstablecimiento.ESThabitacionesTipos.findIndex(index => index.HTIid === objTipoHabitacion.HTIid);
+
+    if (idTipoHab >= 0) {
+      objEstablecimiento.ESThabitacionesTipos[idTipoHab] = VistaHabitacion;
+    }
+    else {
+      objEstablecimiento.ESThabitacionesTipos.push(VistaHabitacion);
+    }
+
+  }
+
+  crearVistaHabitacion(VistaHabitacion: DTOViewhabitacion, objTipoHabitacion: DTOHabitaciontipo) {
     VistaHabitacion.HTIid = objTipoHabitacion.HTIid;
     VistaHabitacion.HTIdescripcion = objTipoHabitacion.HTInombre;
     VistaHabitacion.HTIfoto = (objTipoHabitacion.HTIfotos && objTipoHabitacion.HTIfotos.length > 0) ? objTipoHabitacion.HTIfotos.find(foto => foto.FOTactiva === true).FOTurl : "";
@@ -67,28 +82,6 @@ export class TiposHabitacionesPage {
       let valor = tar.TARvalor;
       VistaHabitacion.HTItarifaMin = (valor <= VistaHabitacion.HTItarifaMin || VistaHabitacion.HTItarifaMin == 0) ? valor : VistaHabitacion.HTItarifaMin;
     });
-
-    objEstablecimiento = (objEstablecimiento && objEstablecimiento.length > 0)  ? objEstablecimiento : new Array<DTOViewhabitacion>();
-    let idTipoHab = objEstablecimiento.findIndex(index => index.HTIid === objTipoHabitacion.HTIid);
-
-    if (idTipoHab >= 0) {
-      objEstablecimiento[idTipoHab] = VistaHabitacion;
-    }
-    else {
-      objEstablecimiento.push(VistaHabitacion);
-    }
-
-    // if (tipoHab.HTIid !== ) {
-
-    //   // let valor = est.ESThabitacionesTipos.findIndex(index => index.HTIid === tipoHab.HTIid);
-    //   // hab.HTIid = tipoHab.HTIid;
-
-    // } else {
-    //   est.ESThabitacionesTipos = est.ESThabitacionesTipos ? est.ESThabitacionesTipos : new Array<DTOViewhabitacion>();
-    //   // hab.HTIid = est.ESThabitacionesTipos ? est.ESThabitacionesTipos.length : 0;
-    //   // this.TIHservice.habitacionTipo.HTIid = hab.HTIid;
-
-    // }
   }
 
   crearHabitaciones(cantidadHab: number): Array<DTOItemhabitacion> {

@@ -24,23 +24,6 @@ export class ItemTipoHabitacionComponent {
     , private TIHservice: HabitacionTipoProvider) {
     console.log('Hello TipoHabitacionComponent Component');
     this.text = 'Hello World';
-    this.obtenerFoto();
-
-  }
-
-  obtenerFoto() {
-    //   if (this.Tipohabitacion.HTIfoto)
-    //     this.foto = this.Tipohabitacion.HTIfotos.find(elem => elem.FOTprincipal === true).FOTurl;
-
-    //     console.log("antes de las tarifas");
-    //   if (this.Tipohabitacion.HTItarifas) {
-    //     this.Tipohabitacion.HTItarifas.forEach(tar => {
-    //       let valor = tar.TARvalor;
-    //       this.tarifaMinima = (valor <= this.tarifaMinima || this.tarifaMinima == 0) ? valor : this.tarifaMinima;
-    //       console.log("tarifas", tar);
-    //     });
-    //   }
-    //   console.log("despues de las tarifas");
   }
 
   configurarHabitacion(id: string) {

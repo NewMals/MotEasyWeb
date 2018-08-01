@@ -1,24 +1,25 @@
 page-administracion {
     .panelIzquierdo{
         max-width: 250px; 
-        background-color: #800000; 
+        background-color: #252525; 
         position: relative; 
         height: 100%; 
         font-size: 20px; 
         //color:white;
-        border-radius: 10px;
+        border-radius: 5px;
     }
 
     .panelDerecho {
         //max-width: 80%; 
         //background-color: #800000; 
-        left: 10px;
-        border-radius: 10px;
+        left: 5px;
+        border-radius: 5px;
+        background-color: #252525; 
     }
 
     .TipoHabitacion{
         color: #fff;
-        background-color: #a24444;
+        background-color: #800000;
         text-align: center;
         width: 100%;
         font-size: 2rem;

@@ -33,8 +33,7 @@ export class ViewEstablecimientoComponent {
   }
 
   configurarEstablecimiento() {
-    let ArrayFotos = new Array<DTOfoto>();
-    
+    let ArrayFotos = new Array<DTOfoto>();    
     if (this.ESTservice.establecimiento.ESTfotos) {
       ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
     }
