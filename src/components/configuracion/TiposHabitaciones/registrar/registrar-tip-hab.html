@@ -19,10 +19,7 @@
       <ion-textarea placeholder="Indica los detalles generales de este tipo de habitación" [(ngModel)]="HabitacionTipo.HTIdescripcion"
         type="number"></ion-textarea>
     </ion-item>
-    <ion-item>
-      <ion-label color="primary"> Cantidad de habitaciones:</ion-label>
-      <ion-input placeholder="1" [(ngModel)]="HabitacionTipo.HTIcantidad" type="number" min="1"></ion-input>
-    </ion-item>
+  
     <ion-row>
       <ion-col>
         <complementos [habitacion]="HabitacionTipo"></complementos>

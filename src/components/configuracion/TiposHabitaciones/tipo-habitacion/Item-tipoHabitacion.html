@@ -1,10 +1,10 @@
 <ion-card>
   <ion-row>
     <ion-col class="contenedorImg">
-      <img class="imagen" src="{{Tipohabitacion.HTIfoto}}" class="imagen" onerror="this.src='assets/icon/picture.svg';" />
+      <img class="imagen" src="{{Tipohabitacion.HVIfoto}}" class="imagen" onerror="this.src='assets/icon/picture.svg';" />
     </ion-col>
     <ion-col class="contenedorDescripcion">
-      <label class="lblName">{{Tipohabitacion.HTIdescripcion}}</label>
+      <label class="lblName">{{Tipohabitacion.HVIdescripcion}}</label>
       <!-- <div class="contenedorStart">
         <div class="lblStart" >
           <label class="icon-start" [ngStyle]="{'width' : itemHotel.stars * 2 + '0px' , 'background-repeat': 'space' , 'background-size': '20px' , 'height': '20px' }" ></label>
@@ -18,8 +18,8 @@
     </ion-col>
     <ion-col class="contenedorValor">
       <label>Tarifa minima</label>
-      <ion-label class="lblValor">{{Tipohabitacion.HTItarifaMin | currency:'USD':true:'.0'}}</ion-label>
-      <button ion-button (click)="configurarHabitacion(Tipohabitacion.HTIid)">
+      <ion-label class="lblValor">{{Tipohabitacion.HVItarifaMin | currency:'USD':true:'.0'}}</ion-label>
+      <button ion-button (click)="configurarHabitacion(Tipohabitacion.HVIid)">
         Ver
       </button>
     </ion-col>

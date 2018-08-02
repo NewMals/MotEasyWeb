@@ -32,7 +32,8 @@ habitacion {
         // transition:border .8s ease-in;
         
         transition:border .1s ease-out;
-        border: 4px solid black;
+        border: 3px solid black;
+        box-sizing: border-box; 
         cursor: pointer;
         // -webkit-transition: background-color 500ms ease-out 1s;
         // -moz-transition: background-color 500ms ease-out 1s;

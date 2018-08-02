@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DTOItemhabitacion } from '../../../modelos/DTOhabitacion';
+import { DTOHabitacionItem } from '../../../modelos/DTOhabitacion';
 
 /**
  * Generated class for the HabitacionesComponent component.
@@ -13,7 +13,7 @@ import { DTOItemhabitacion } from '../../../modelos/DTOhabitacion';
 })
 export class HabitacionComponent {
 
-  @Input() Habitacion: DTOItemhabitacion;
+  @Input() Habitacion: DTOHabitacionItem;
   text: string;
   cronometro;
   // heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado', 'superman', 'spiderman', 'ironman'];
@@ -27,9 +27,9 @@ export class HabitacionComponent {
     let contador_s = 5;
     let contador_m = 0;
     let contador_h = 1;
-    let segundos = document.getElementById("segundos_" + this.Habitacion.HIHid);
-    let minutos = document.getElementById("minutos_" + this.Habitacion.HIHid);
-    let horas = document.getElementById("horas_" + this.Habitacion.HIHid);
+    let segundos = document.getElementById("segundos_" + this.Habitacion.HITid);
+    let minutos = document.getElementById("minutos_" + this.Habitacion.HITid);
+    let horas = document.getElementById("horas_" + this.Habitacion.HITid);
 
     horas.innerText = contador_h.toString();
     minutos.innerText = contador_m.toString();

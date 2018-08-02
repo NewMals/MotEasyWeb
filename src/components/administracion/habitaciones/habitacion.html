@@ -1,20 +1,20 @@
 <ion-card class="habitacion">
       <ion-card-header style="margin-left: -15px; margin-top: -20px">
             <ion-label class="estado semantica">
-                  {{Habitacion.HIHestado}}
+                  {{Habitacion.HITestado}}
             </ion-label>
       </ion-card-header>
       <ion-card-content>
-            <ion-label>{{Habitacion.HIHidentidad}}</ion-label>
+            <ion-label>{{Habitacion.HITidentidad}}</ion-label>
             <!-- <ion-item style="text-align: center; background-color: #d0cccc; border-radius: 25px">
                   <ion-icon name="radio-button-on" color="danger"></ion-icon>
             </ion-item> -->
             
             Tiempo restante
             <ion-label>
-                  <label id="horas_{{Habitacion.HIHid}}">0</label>:
-                  <label id="minutos_{{Habitacion.HIHid}}">0</label>:
-                  <label id="segundos_{{Habitacion.HIHid}}">0</label>
+                  <label id="horas_{{Habitacion.HITid}}">0</label>:
+                  <label id="minutos_{{Habitacion.HITid}}">0</label>:
+                  <label id="segundos_{{Habitacion.HITid}}">0</label>
             </ion-label>
             <button (click)="carga()"></button>
       </ion-card-content>

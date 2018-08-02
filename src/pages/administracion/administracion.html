@@ -17,15 +17,18 @@
     <ion-col class="panelIzquierdo">
       <ion-row *ngFor="let tipo of tiposHabitacion">
         <ion-col>
-          <button class="TipoHabitacion" (click)="mostrarHabitaciones(tipo.HTIid)">{{tipo.HTIdescripcion}}</button>
+          <button class="TipoHabitacion" (click)="mostrarHabitaciones(tipo.HVIid)">{{tipo.HVIdescripcion}}</button>
         </ion-col>
       </ion-row>
     </ion-col>
     <ion-col class="panelDerecho">
-      <div *ngFor="let habitacion of habitaciones" class="general">
+      <div *ngIf="habitaciones">
+        <generar-habitaciones></generar-habitaciones>
+      </div>
+      <!-- <div *ngFor="let habitacion of habitaciones" class="general">
         <habitacion [Habitacion]="habitacion">
           </habitacion>
-      </div>
+      </div> -->
     </ion-col>
   </ion-row>
 </ion-content>

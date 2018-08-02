@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EstablecimientoProvider } from '../../providers/general/Establecimiento';
-import { DTOViewhabitacion, DTOItemhabitacion } from '../../modelos/DTOhabitacion';
+import { DTOHabitacionView, DTOHabitacionItem } from '../../modelos/DTOhabitacion';
 import { HabitacionTipoProvider } from '../../providers/general/habitacion-tipo';
 
 /**
@@ -18,8 +18,8 @@ import { HabitacionTipoProvider } from '../../providers/general/habitacion-tipo'
 })
 export class AdministracionPage {
 
-  tiposHabitacion = new Array<DTOViewhabitacion>();
-  habitaciones = new Array<DTOItemhabitacion>();
+  tiposHabitacion = new Array<DTOHabitacionView>();
+  habitaciones = new Array<DTOHabitacionItem>();
 
   constructor(public navCtrl: NavController
     , public navParams: NavParams
@@ -44,5 +44,7 @@ export class AdministracionPage {
       this.habitaciones = this.TIHservice.habitacionTipo.HTIhabitaciones;
     });
   }
+
+  
 }
 

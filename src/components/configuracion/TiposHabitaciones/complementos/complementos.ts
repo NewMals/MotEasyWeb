@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ComplementoProvider } from '../../../../providers/general/complemento';
 import { DTOcomplemento } from '../../../../modelos/DTOcomplemento';
-import { DTOHabitaciontipo } from '../../../../modelos/DTOhabitacion';
+import { DTOHabitacionTipo } from '../../../../modelos/DTOhabitacion';
 
 /**
  * Generated class for the ComplementosComponent component.
@@ -17,7 +17,7 @@ export class ComplementosComponent implements OnInit {
 
   text: string;
   ArrayComplementos = new Array<DTOcomplemento>();
-  @Input() habitacion : DTOHabitaciontipo;
+  @Input() habitacion : DTOHabitacionTipo;
   
   constructor(
     private COMservice: ComplementoProvider

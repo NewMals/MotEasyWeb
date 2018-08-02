@@ -46,7 +46,7 @@ export class ConfiguracionPage {
     }
     this.navCtrl.setRoot("TiposHabitacionesPage", {
       objFotos: ArrayFotos
-      , file: "habitacion_" + this.TIHservice.habitacionTipo.HTInombre
+      , file: "habitacion_" + this.TIHservice.habitacionTipo.HTIid
       , marca: "HAB"
     });
   }

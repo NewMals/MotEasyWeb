@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DTOHabitaciontipo } from '../../../../modelos/DTOhabitacion';
+import { DTOHabitacionTipo } from '../../../../modelos/DTOhabitacion';
 
 /**
  * Generated class for the EntretenimientosComponent component.
@@ -14,7 +14,7 @@ import { DTOHabitaciontipo } from '../../../../modelos/DTOhabitacion';
 export class EntretenimientosComponent {
 
   text: string;
-  @Input() habitacion : DTOHabitaciontipo;
+  @Input() habitacion : DTOHabitacionTipo;
 
   constructor() {
     console.log('Hello EntretenimientosComponent Component');

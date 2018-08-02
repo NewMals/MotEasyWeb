@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DTOViewhabitacion } from '../../../../modelos/DTOhabitacion';
+import { DTOHabitacionView } from '../../../../modelos/DTOhabitacion';
 import { DTOfoto } from '../../../../modelos/DTOfoto';
 import { HabitacionTipoProvider } from '../../../../providers/general/habitacion-tipo';
 import { NavController } from 'ionic-angular';
@@ -16,7 +16,7 @@ import { NavController } from 'ionic-angular';
 })
 export class ItemTipoHabitacionComponent {
 
-  @Input() Tipohabitacion = new DTOViewhabitacion;
+  @Input() Tipohabitacion = new DTOHabitacionView;
   text: string;
 
   constructor(
@@ -35,10 +35,9 @@ export class ItemTipoHabitacionComponent {
       }
       this.navCtrl.setRoot("TiposHabitacionesPage", {
         objFotos: ArrayFotos
-        , file: "habitacion_" + this.TIHservice.habitacionTipo.HTInombre
+        , file: "habitacion_" + this.TIHservice.habitacionTipo.HTIid
         , marca: "HAB"
       });
     });
   }
-
 }

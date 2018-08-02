@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DTOtarifa } from '../../../modelos/DTOtarifa';
-import { DTOHabitaciontipo } from '../../../modelos/DTOhabitacion';
+import { DTOHabitacionTipo } from '../../../modelos/DTOhabitacion';
 import { HabitacionTipoProvider } from '../../../providers/general/habitacion-tipo';
 
 /**

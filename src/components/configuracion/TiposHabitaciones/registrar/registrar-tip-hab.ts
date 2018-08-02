@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DTOHabitaciontipo } from '../../../../modelos/DTOhabitacion';
+import { DTOHabitacionTipo } from '../../../../modelos/DTOhabitacion';
 import { HabitacionTipoProvider } from '../../../../providers/general/habitacion-tipo';
 
 /**
@@ -15,7 +15,7 @@ import { HabitacionTipoProvider } from '../../../../providers/general/habitacion
 export class RegistrarTipHabComponent implements OnInit {
 
   text: string;
-  HabitacionTipo = new DTOHabitaciontipo;
+  HabitacionTipo = new DTOHabitacionTipo;
 
   constructor(
     private TIHservice: HabitacionTipoProvider
@@ -32,5 +32,4 @@ export class RegistrarTipHabComponent implements OnInit {
   }
 
 
-  
 }

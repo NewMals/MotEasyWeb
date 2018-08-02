@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { UserProvider } from './user';
 import firebase from 'firebase/app';
-import { DTOHabitaciontipo } from '../../modelos/DTOhabitacion';
+import { DTOHabitacionTipo } from '../../modelos/DTOhabitacion';
 import { Storage } from '@ionic/storage';
 import { EstablecimientoProvider } from './Establecimiento';
 
 @Injectable()
 export class HabitacionTipoProvider {
 
-  ArrayTipoHAB = new Array<DTOHabitaciontipo>();
-  habitacionTipo = new DTOHabitaciontipo;
+  ArrayTipoHAB = new Array<DTOHabitacionTipo>();
+  habitacionTipo = new DTOHabitacionTipo;
 
   constructor(private storage: Storage
     , private USUservice: UserProvider
@@ -17,7 +17,7 @@ export class HabitacionTipoProvider {
     console.log('Hello HabitacionTipoProvider Provider');
   }
 
-  inicializar(id: string): Promise<DTOHabitaciontipo> {
+  inicializar(id: string): Promise<DTOHabitacionTipo> {
     return this.consultarBd(id).then(data => {
       if (!data) {
         return this.consultaFb(id);
@@ -29,7 +29,7 @@ export class HabitacionTipoProvider {
   consultarBd(id: string): Promise<any> {
     return this.storage.get("Hab_" + id)
       .then(data => {
-        this.habitacionTipo = JSON.parse(data) as DTOHabitaciontipo;
+        this.habitacionTipo = JSON.parse(data) as DTOHabitacionTipo;
         return this.habitacionTipo;
       });
   }
@@ -41,15 +41,15 @@ export class HabitacionTipoProvider {
         .doc(id.toString())
         .get()
         .then(data => {
-          this.habitacionTipo = data.data() as DTOHabitaciontipo;
+          this.habitacionTipo = data.data() as DTOHabitacionTipo;
           this.guardarBd();
           return this.habitacionTipo;
         });
   }
 
-  crear(): DTOHabitaciontipo {
-    this.habitacionTipo = new DTOHabitaciontipo;
-    this.habitacionTipo.HTIid = Math.random().toString(36).substring(7);
+  crear(): DTOHabitacionTipo {
+    this.habitacionTipo = new DTOHabitacionTipo;
+    this.habitacionTipo.HTIid = Math.random().toString(36).substring(2);
     return this.habitacionTipo;
   }
 

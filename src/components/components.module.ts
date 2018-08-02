@@ -15,6 +15,8 @@ import { ComplementosComponent } from './configuracion/TiposHabitaciones/complem
 import { TarifasComponent } from './configuracion/tarifas/tarifas';
 import { EntretenimientosComponent } from './configuracion/TiposHabitaciones/entretenimientos/entretenimientos';
 import { ViewEstablecimientoComponent } from './configuracion/establecimiento/view-establecimiento/view-establecimiento';
+import { RegistrarHabitacionComponent } from './administracion/registrar-habitacion/registrar-habitacion';
+import { GenerarHabitacionesComponent } from './administracion/generar-habitaciones/generar-habitaciones';
 
 
 
@@ -33,9 +35,11 @@ import { ViewEstablecimientoComponent } from './configuracion/establecimiento/vi
         ReestablecerPassComponent,
         RegistrarTipHabComponent,
         ComplementosComponent,
-    TarifasComponent,
-    EntretenimientosComponent,
-    ViewEstablecimientoComponent
+        TarifasComponent,
+        EntretenimientosComponent,
+        ViewEstablecimientoComponent,
+        RegistrarHabitacionComponent,
+        GenerarHabitacionesComponent
     ],
     imports: [
         IonicModule,
@@ -53,9 +57,11 @@ import { ViewEstablecimientoComponent } from './configuracion/establecimiento/vi
         ReestablecerPassComponent,
         RegistrarTipHabComponent,
         ComplementosComponent,
-    TarifasComponent,
-    EntretenimientosComponent,
-    ViewEstablecimientoComponent
+        TarifasComponent,
+        EntretenimientosComponent,
+        ViewEstablecimientoComponent,
+        RegistrarHabitacionComponent,
+        GenerarHabitacionesComponent
     ], entryComponents: [
         HabitacionComponent,
         ProgressBarComponent,
