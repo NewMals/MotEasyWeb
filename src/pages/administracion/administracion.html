@@ -22,13 +22,13 @@
       </ion-row>
     </ion-col>
     <ion-col class="panelDerecho">
-      <div *ngIf="habitaciones">
+      <!-- <div *ngIf="habitaciones.length > 0">
         <generar-habitaciones></generar-habitaciones>
-      </div>
-      <!-- <div *ngFor="let habitacion of habitaciones" class="general">
-        <habitacion [Habitacion]="habitacion">
-          </habitacion>
       </div> -->
+      <div *ngFor="let habitacion of habitaciones" class="general">
+        <habitacion [Habitacion]="habitacion">
+        </habitacion>
+      </div>
     </ion-col>
   </ion-row>
 </ion-content>

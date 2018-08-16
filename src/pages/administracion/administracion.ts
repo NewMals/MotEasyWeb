@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { EstablecimientoProvider } from '../../providers/general/Establecimiento';
 import { DTOHabitacionView, DTOHabitacionItem } from '../../modelos/DTOhabitacion';
 import { HabitacionTipoProvider } from '../../providers/general/habitacion-tipo';
+import { GenerarHabitacionesComponent } from '../../components/administracion/generar-habitaciones/generar-habitaciones';
 
 /**
  * Generated class for the AdministracionPage page.
@@ -23,10 +24,11 @@ export class AdministracionPage {
 
   constructor(public navCtrl: NavController
     , public navParams: NavParams
-    , private ESTservice: EstablecimientoProvider  
+    , private modalCtrl: ModalController
+    , private ESTservice: EstablecimientoProvider
     , private TIHservice: HabitacionTipoProvider
   ) {
-  
+
 
   }
 
@@ -35,16 +37,26 @@ export class AdministracionPage {
     console.log('ionViewDidLoad AdministracionPage');
   }
 
-  cargarTipos(){
+  cargarTipos() {
     this.tiposHabitacion = this.ESTservice.establecimiento.ESThabitacionesTipos;
   }
 
-  mostrarHabitaciones(idTipo){
+  mostrarHabitaciones(idTipo) {
+    // let modal = this.modalCtrl.create(
+    //   GenerarHabitacionesComponent, null, { enableBackdropDismiss: false }
+    // )
+
+    // modal.onDidDismiss(() => {
+    //   this.cargarTipos();
+    // });
+
     this.TIHservice.inicializar(idTipo).then(() => {
-      this.habitaciones = this.TIHservice.habitacionTipo.HTIhabitaciones;
+        this.habitaciones = this.TIHservice.habitacionTipo.HTIhabitaciones;
+      //   if (this.habitaciones === undefined || this.habitaciones.length > 0) {
+      //     modal.present();
+      // }
     });
   }
 
-  
 }
 

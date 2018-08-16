@@ -56,6 +56,8 @@ export class TiposHabitacionesPage {
 
     this.crearVistaHabitacion(VistaHabitacion, objTipoHabitacion);
 
+    objTipoHabitacion.HTIhabitaciones = this.crearHabitaciones(objTipoHabitacion.HTIcantidad);
+
     objEstablecimiento.ESThabitacionesTipos = (objEstablecimiento.ESThabitacionesTipos && objEstablecimiento.ESThabitacionesTipos.length > 0)  ? objEstablecimiento.ESThabitacionesTipos : new Array<DTOHabitacionView>();
     let idTipoHab = objEstablecimiento.ESThabitacionesTipos.findIndex(index => index.HVIid === objTipoHabitacion.HTIid);
 
@@ -80,5 +82,17 @@ export class TiposHabitacionesPage {
     });
   }
 
+  crearHabitaciones(cantidadHab: number): Array<DTOHabitacionItem> {
+    let ArrayHabitaciones = new Array<DTOHabitacionItem>();
+    for (let i = 1; i <= cantidadHab; i++) {
+      let itemHabitacion = new DTOHabitacionItem;
+      itemHabitacion.HITid = Math.random().toString(36).substring(2);
+      itemHabitacion.HITestado = "Disponible";
+      itemHabitacion.HITidentidad = i.toString();
+
+      ArrayHabitaciones.push(itemHabitacion);
+    }
+    return ArrayHabitaciones;
+  }
 
 }

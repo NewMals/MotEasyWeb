@@ -6,10 +6,13 @@
     </ion-card-title>
   </ion-card-header>
   <ion-card-content>
-      <ion-item>
+    <ion-label style="white-space: inherit;">Para el conocimiento de los usuarios y mejorar la calidad de la administracion de su establecimiento, por favor ingrese
+      los valores solicitados
+    </ion-label>
+    <!-- <ion-item>
           <ion-label color="primary"> Id:</ion-label>
           <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTIid" type="number"></ion-input>
-        </ion-item>
+        </ion-item> -->
     <ion-item>
       <ion-label color="primary"> Nombre:</ion-label>
       <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTInombre" type="text"></ion-input>
@@ -19,7 +22,10 @@
       <ion-textarea placeholder="Indica los detalles generales de este tipo de habitación" [(ngModel)]="HabitacionTipo.HTIdescripcion"
         type="number"></ion-textarea>
     </ion-item>
-  
+    <ion-item>
+      <ion-label color="primary" required> Cantidad de habitaciones:</ion-label>
+      <ion-input placeholder="1" clearInput [(ngModel)]="HabitacionTipo.HTIcantidad" type="number" min="1" max="50" (ionBlur)="validarCantidad()" (keypress)="EsNumerico($event)"></ion-input>
+    </ion-item>
     <ion-row>
       <ion-col>
         <complementos [habitacion]="HabitacionTipo"></complementos>
