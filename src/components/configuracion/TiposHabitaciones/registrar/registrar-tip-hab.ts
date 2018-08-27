@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DTOHabitacionTipo } from '../../../../modelos/DTOhabitacion';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { DTOHabitacionTipo, HTIenumEstado } from '../../../../modelos/DTOhabitacion';
 import { HabitacionTipoProvider } from '../../../../providers/general/habitacion-tipo';
 import { AlertController } from 'ionic-angular';
 
@@ -15,15 +15,15 @@ import { AlertController } from 'ionic-angular';
 })
 export class RegistrarTipHabComponent implements OnInit {
 
-  text: string;
+  CantHabilitar: boolean = false;
   HabitacionTipo = new DTOHabitacionTipo;
+  @ViewChild('CantHab') CantHab;
 
   constructor(
     private TIHservice: HabitacionTipoProvider
     , private alertCtrl: AlertController
   ) {
     console.log('Hello RegistarTipHabComponent Component');
-    this.text = 'Hello World';
     //this.HabitacionTipo = obj ? obj : new DTOHabitaciontipo;
     // this.ArrayComplementos = [
     //   {COMid: "" , COMdescripcion: "Parqueadero"}]
@@ -31,14 +31,14 @@ export class RegistrarTipHabComponent implements OnInit {
 
   ngOnInit(): void {
     this.HabitacionTipo = this.TIHservice.habitacionTipo;
+    this.CantHabilitar = (this.HabitacionTipo.HTIestado === HTIenumEstado.Registrando) ? false : true;
   }
 
   validarCantidad() {
-    this.HabitacionTipo.HTIcantidad = (this.HabitacionTipo.HTIcantidad > 50 || this.HabitacionTipo.HTIcantidad === 0) ? 0 : this.HabitacionTipo.HTIcantidad;
-    if(this.HabitacionTipo.HTIcantidad <= 0){
-      this.Alertas("La cantidad de habitaciones, no puede ser menor a 0 o mayor a 50");
-    }
+    this.HabitacionTipo.HTIcantidad = (this.HabitacionTipo.HTIcantidad > 50 || this.HabitacionTipo.HTIcantidad === 0 || this.HabitacionTipo.HTIcantidad === undefined) ? null : this.HabitacionTipo.HTIcantidad;
+    this.controlCantidad();
   }
+
 
   Alertas(message: string) {
     let alert = this.alertCtrl.create({
@@ -50,11 +50,22 @@ export class RegistrarTipHabComponent implements OnInit {
   }
 
   EsNumerico(evt) {
+    let event;
     let charCode = (evt.which) ? evt.which : event.keyCode
-    if (charCode > 31 && (charCode < 48 || charCode > 57)){
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
       return false;
     }
     return true;
+  }
+
+  controlCantidad() {
+    if (this.HabitacionTipo.HTIcantidad <= 0) {
+      document.getElementById("continuar").setAttribute('disabled', 'disabled');
+      this.CantHab.setFocus();
+    }
+    else {
+      document.getElementById("continuar").removeAttribute('disabled');
+    }
   }
 
 }

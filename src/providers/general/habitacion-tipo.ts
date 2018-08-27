@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserProvider } from './user';
 import firebase from 'firebase/app';
-import { DTOHabitacionTipo } from '../../modelos/DTOhabitacion';
+import { DTOHabitacionTipo, HTIenumEstado } from '../../modelos/DTOhabitacion';
 import { Storage } from '@ionic/storage';
 import { EstablecimientoProvider } from './Establecimiento';
 
@@ -50,10 +50,12 @@ export class HabitacionTipoProvider {
   crear(): DTOHabitacionTipo {
     this.habitacionTipo = new DTOHabitacionTipo;
     this.habitacionTipo.HTIid = Math.random().toString(36).substring(2);
+    this.habitacionTipo.HTIestado = HTIenumEstado.Registrando;     
     return this.habitacionTipo;
   }
 
   guardarFb() {
+    this.habitacionTipo.HTIestado = (this.habitacionTipo.HTIestado === HTIenumEstado.Registrando) ? HTIenumEstado.Sincronizado : this.habitacionTipo.HTIestado; 
     let HAB = JSON.stringify(this.habitacionTipo);
     firebase.firestore().collection('Establecimientos')
       .doc(this.USUservice.user.USUestablecimiento)
@@ -68,4 +70,5 @@ export class HabitacionTipoProvider {
   guardarBd() {
     this.storage.set("Hab_" + this.habitacionTipo.HTIid, JSON.stringify(this.habitacionTipo));
   }
+
 }

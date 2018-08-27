@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { EstablecimientoProvider } from '../../providers/general/Establecimiento';
 import { DTOHabitacionView, DTOHabitacionItem } from '../../modelos/DTOhabitacion';
 import { HabitacionTipoProvider } from '../../providers/general/habitacion-tipo';
-import { GenerarHabitacionesComponent } from '../../components/administracion/generar-habitaciones/generar-habitaciones';
 
 /**
  * Generated class for the AdministracionPage page.

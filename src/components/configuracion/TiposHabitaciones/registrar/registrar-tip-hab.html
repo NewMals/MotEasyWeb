@@ -24,8 +24,9 @@
     </ion-item>
     <ion-item>
       <ion-label color="primary" required> Cantidad de habitaciones:</ion-label>
-      <ion-input placeholder="1" clearInput [(ngModel)]="HabitacionTipo.HTIcantidad" type="number" min="1" max="50" (ionBlur)="validarCantidad()" (keypress)="EsNumerico($event)"></ion-input>
+      <ion-input #CantHab placeholder="ingrese un valor entre 1 y 50 " clearInput [(ngModel)]="HabitacionTipo.HTIcantidad" type="number" min="1" max="50" (ionBlur)="validarCantidad()" (keypress)="EsNumerico($event)" [disabled]="CantHabilitar"></ion-input>
     </ion-item>
+    <ion-label class="mjsError" *ngIf="HabitacionTipo.HTIcantidad <= 0">* La cantidad de habitaciones, no puede ser menor a 0 o mayor a 50</ion-label>
     <ion-row>
       <ion-col>
         <complementos [habitacion]="HabitacionTipo"></complementos>

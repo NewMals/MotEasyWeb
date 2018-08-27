@@ -16,8 +16,6 @@ import { TarifasComponent } from './configuracion/tarifas/tarifas';
 import { EntretenimientosComponent } from './configuracion/TiposHabitaciones/entretenimientos/entretenimientos';
 import { ViewEstablecimientoComponent } from './configuracion/establecimiento/view-establecimiento/view-establecimiento';
 import { RegistrarHabitacionComponent } from './administracion/registrar-habitacion/registrar-habitacion';
-import { GenerarHabitacionesComponent } from './administracion/generar-habitaciones/generar-habitaciones';
-
 
 
 
@@ -38,8 +36,7 @@ import { GenerarHabitacionesComponent } from './administracion/generar-habitacio
         TarifasComponent,
         EntretenimientosComponent,
         ViewEstablecimientoComponent,
-        RegistrarHabitacionComponent,
-        GenerarHabitacionesComponent
+        RegistrarHabitacionComponent
     ],
     imports: [
         IonicModule,
@@ -60,8 +57,7 @@ import { GenerarHabitacionesComponent } from './administracion/generar-habitacio
         TarifasComponent,
         EntretenimientosComponent,
         ViewEstablecimientoComponent,
-        RegistrarHabitacionComponent,
-        GenerarHabitacionesComponent
+        RegistrarHabitacionComponent
     ], entryComponents: [
         HabitacionComponent,
         ProgressBarComponent,

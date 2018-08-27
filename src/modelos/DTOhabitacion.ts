@@ -10,6 +10,7 @@ export class DTOHabitacionTipo {
     HTItarifas : Array<DTOtarifa>;
     HTIfotos : Array<DTOfoto>;
     //HTIentretenimiento : Array<DTOentretenimiento>;
+    HTIestado: HTIenumEstado;
     HTIcomplemento : Array<DTOcomplemento>;
     HTIcantidad: number;
     HTIhabitaciones?: Array<DTOHabitacionItem>;
@@ -35,4 +36,10 @@ export class DTOHabitacionGestion {
     HGEhabitacion: string;
     HGEfechaInicio: Date;
     HGEfechaFin: Date;
+}
+
+export enum HTIenumEstado {
+    Registrando = "REG"
+    , Sincronizado = "SIC"
+    , Administrado = "ADM"
 }
