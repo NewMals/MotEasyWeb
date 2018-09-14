@@ -15,9 +15,9 @@
         <ion-label> Valor total</ion-label>
       </ion-col>
     </ion-row>
-    <ion-row align-items-center *ngFor="let tarifa of Arraytarifa">
+    <ion-row align-items-center *ngFor="let tarifa of Arraytarifa; index as i">
       <ion-col align-self-center>
-        <ion-label>{{tarifa.TARid}}</ion-label>
+        <ion-label>{{i+1}}</ion-label>
       </ion-col>
       <ion-col align-self-center>
         <label>{{tarifa.TARcantHoras}} hrs</label>
@@ -30,6 +30,9 @@
         <input id="txtValor_{{tarifa.TARid}}" [(ngModel)]="tarifa.TARvalor" type="number" style="display: none; border: none; width: 100px; margin: auto;"
           (blur)="actualizarValor(tarifa.TARid)" />
         <ion-label id="lblValor_{{tarifa.TARid}}" (click)="cambiarValor(tarifa.TARid)" style="cursor: text">{{ tarifa.TARvalor | currency:'USD':true:'.0'}}</ion-label>
+        <button ion-fab mini style="float: right;" (click)="EliminarTarifa(tarifa)">
+          <ion-icon name="close" color="danger"></ion-icon>
+        </button>
       </ion-col>
     </ion-row>
   </ion-grid>

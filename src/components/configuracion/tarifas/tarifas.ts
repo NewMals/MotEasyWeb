@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DTOtarifa } from '../../../modelos/DTOtarifa';
 import { DTOHabitacionTipo } from '../../../modelos/DTOhabitacion';
 import { HabitacionTipoProvider } from '../../../providers/general/habitacion-tipo';
+import { TarifasProvider } from '../../../providers/general/tarifasService';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the TarifasComponent component.
@@ -11,7 +13,8 @@ import { HabitacionTipoProvider } from '../../../providers/general/habitacion-ti
  */
 @Component({
   selector: 'tarifas',
-  templateUrl: 'tarifas.html'
+  templateUrl: 'tarifas.html',
+  providers: [TarifasProvider]
 })
 export class TarifasComponent implements OnInit, OnDestroy {
 
@@ -19,7 +22,9 @@ export class TarifasComponent implements OnInit, OnDestroy {
   text: string;
 
   constructor(
-    private HABservice: HabitacionTipoProvider
+    private HABservice: HabitacionTipoProvider,
+    private TARservice: TarifasProvider,
+    private alertCtrl: AlertController
   ) {
     console.log('Hello TarifasComponent Component');
     this.text = 'Hello World';
@@ -48,13 +53,27 @@ export class TarifasComponent implements OnInit, OnDestroy {
     document.getElementById('lblValor_' + id).style.display = "block";
   }
 
-  AgregarTarifa() {
-    let tarifa = new DTOtarifa;
-    tarifa.TARid = this.Arraytarifa.length + 1;
-    tarifa.TARcantHoras = 4;
-    tarifa.TARvalor = 50000;
-    this.Arraytarifa.push(tarifa);
+  Alertas(message: string) {
+    let alert = this.alertCtrl.create({
+      title: message,
+      buttons: ['Aceptar']
+    });
 
+    alert.present();
+  }
+
+  AgregarTarifa() {
+    if (this.Arraytarifa.length == 6) {
+      this.Alertas('Ha superado el limite de tarifas');
+      return;
+    }
+
+    this.Arraytarifa = this.TARservice.AgregarTarifa();
+    this.HABservice.habitacionTipo.HTItarifas = this.Arraytarifa;
+  }
+
+  EliminarTarifa(tarifa : DTOtarifa){
+    this.Arraytarifa = this.TARservice.EliminarTarifa(tarifa);
     this.HABservice.habitacionTipo.HTItarifas = this.Arraytarifa;
   }
 }
