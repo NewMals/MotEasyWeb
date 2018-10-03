@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { DTOHabitacionTipo, HTIenumEstado } from '../../../../modelos/DTOhabitacion';
 import { HabitacionTipoProvider } from '../../../../providers/general/habitacion-tipo';
 import { AlertController } from 'ionic-angular';
@@ -32,6 +32,7 @@ export class RegistrarTipHabComponent implements OnInit {
   ngOnInit(): void {
     this.HabitacionTipo = this.TIHservice.habitacionTipo;
     this.CantHabilitar = (this.HabitacionTipo.HTIestado === HTIenumEstado.Registrando) ? false : true;
+    this.validacionCampos();
   }
 
   validarCantidad() {
@@ -65,6 +66,33 @@ export class RegistrarTipHabComponent implements OnInit {
     }
     else {
       document.getElementById("continuar").removeAttribute('disabled');
+    }
+  }
+
+  validacionCampos(){
+    let {
+      HTInombre = "",
+      HTIdescripcion = ""
+    } = this.HabitacionTipo
+
+    document.getElementById("continuar").setAttribute('disabled', 'disabled');
+
+    switch ("") {
+      case HTInombre: {
+        document.getElementById("error").innerHTML = "Registre el nombre de la habitación";
+        break;
+      }
+
+      case HTIdescripcion: {
+        document.getElementById("error").innerHTML = "Registre la descripcion de la habitación";
+        break;
+      }
+
+      default : {
+        document.getElementById("error").innerHTML = "";
+        document.getElementById("continuar").removeAttribute('disabled');
+        break;
+      }
     }
   }
 

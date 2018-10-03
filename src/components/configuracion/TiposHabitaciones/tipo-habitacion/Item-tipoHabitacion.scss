@@ -30,9 +30,18 @@ Item-tipoHabitacion {
         padding: 10px;
     } 
 
+    .lblDescripcion {
+        // color: dodgerblue;
+        // font-weight: bold;
+        // font-size: 16px;
+        margin: auto;
+        padding: 15px;
+        white-space: inherit;
+    } 
+
     .lblValor{
         font-size: 25px;
-        color: limegreen;
+        color: red;
         font-weight: bold;
     }
 

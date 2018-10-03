@@ -36,6 +36,8 @@ export class TarifasComponent implements OnInit, OnDestroy {
       this.Arraytarifa = this.HABservice.habitacionTipo.HTItarifas;
     else
       this.AgregarTarifa();
+
+      this.TARservice.ArrayTarifa = this.Arraytarifa;
   }
 
   ngOnDestroy(): void {

@@ -4,10 +4,10 @@
     <ion-item>
       <ion-row style="margin: auto; ">
         <ion-col *ngFor="let pagina of paginas" style="margin: auto; max-width: 80px;">
-          <label ion-fab [ngStyle]="{'border': (pagina.activo) ? '3px solid blue' : '' }" title="{{pagina.titulo}}" id="btnInfGeneral">
+          <label ion-fab [ngStyle]="{'border': (pagina.activo) ? '3px solid limegreen' : '' }" title="{{pagina.titulo}}" id="btnInfGeneral">
             <ion-icon name="{{pagina.iconName}}" color="primary" style="font-size: 30px;"></ion-icon>
           </label>
-          <label style=" border: 10px solid transparent; border-bottom-color: #5bc0de; margin-left: 15px;"></label>
+          <label style=" border: 10px solid transparent; border-bottom-color: black; margin-left: 15px;"></label>
         </ion-col>
       </ion-row>
     </ion-item>

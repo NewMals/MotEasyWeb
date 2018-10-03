@@ -72,7 +72,8 @@ export class TiposHabitacionesPage {
 
   crearVistaHabitacion(VistaHabitacion: DTOHabitacionView, objTipoHabitacion: DTOHabitacionTipo) {
     VistaHabitacion.HVIid = objTipoHabitacion.HTIid;
-    VistaHabitacion.HVIdescripcion = objTipoHabitacion.HTInombre;
+    VistaHabitacion.HVInombre = objTipoHabitacion.HTInombre;
+    VistaHabitacion.HVIdescripcion = objTipoHabitacion.HTIdescripcion;
     VistaHabitacion.HVIfoto = (objTipoHabitacion.HTIfotos && objTipoHabitacion.HTIfotos.length > 0) ? objTipoHabitacion.HTIfotos.find(foto => foto.FOTactiva === true).FOTurl : "";
     VistaHabitacion.HVItarifaMin = 0;
 

@@ -18,6 +18,7 @@ export class DTOHabitacionTipo {
 
 export class DTOHabitacionView {
     HVIid : string;
+    HVInombre: string;
     HVIdescripcion: string;
     HVIfoto: string;
     HVItarifaMin: number;

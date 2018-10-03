@@ -21,21 +21,23 @@ var DTOusuario = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__habitaciones_habitaciones__ = __webpack_require__(407);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__administracion_habitaciones_habitacion__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__configuracion_progress_bar_progress_bar__ = __webpack_require__(408);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__wizard_wizard__ = __webpack_require__(409);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__configuracion_establecimiento_informacion_general_informacion_general__ = __webpack_require__(350);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__wizard_wizard_directive__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__configuracion_TiposHabitaciones_tipo_habitacion_Item_tipoHabitacion__ = __webpack_require__(410);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__configuracion_establecimiento_ubicacion_ubicacion__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__configuracion_establecimiento_imagenes_imagenes__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__configuracion_imagenes_imagenes__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__configuracion_Sesion_registro_registro__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__configuracion_Sesion_reestablecer_pass_reestablecer_pass__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__configuracion_TiposHabitaciones_registrar_registrar_tip_hab__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__configuracion_TiposHabitaciones_complementos_complementos__ = __webpack_require__(425);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__configuracion_tarifas_tarifas__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__configuracion_TiposHabitaciones_entretenimientos_entretenimientos__ = __webpack_require__(428);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__configuracion_TiposHabitaciones_entretenimientos_entretenimientos__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__configuracion_establecimiento_view_establecimiento_view_establecimiento__ = __webpack_require__(430);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__administracion_registrar_habitacion_registrar_habitacion__ = __webpack_require__(431);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,53 +60,59 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var ComponentsModule = /** @class */ (function () {
     function ComponentsModule() {
     }
     ComponentsModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__habitaciones_habitaciones__["a" /* HabitacionesComponent */],
+                __WEBPACK_IMPORTED_MODULE_1__administracion_habitaciones_habitacion__["a" /* HabitacionComponent */],
                 __WEBPACK_IMPORTED_MODULE_3__configuracion_progress_bar_progress_bar__["a" /* ProgressBarComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__configuracion_TiposHabitaciones_tipo_habitacion_Item_tipoHabitacion__["a" /* ItemTipoHabitacionComponent */],
                 __WEBPACK_IMPORTED_MODULE_4__wizard_wizard__["a" /* WizardComponent */],
                 __WEBPACK_IMPORTED_MODULE_5__configuracion_establecimiento_informacion_general_informacion_general__["a" /* InformacionGeneralComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__configuracion_establecimiento_ubicacion_ubicacion__["a" /* UbicacionComponent */],
                 __WEBPACK_IMPORTED_MODULE_6__wizard_wizard_directive__["a" /* WizardDirective */],
-                __WEBPACK_IMPORTED_MODULE_9__configuracion_establecimiento_imagenes_imagenes__["a" /* ImagenesComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__configuracion_imagenes_imagenes__["a" /* ImagenesComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__configuracion_Sesion_registro_registro__["a" /* RegistroComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__configuracion_Sesion_reestablecer_pass_reestablecer_pass__["a" /* ReestablecerPassComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__configuracion_TiposHabitaciones_registrar_registrar_tip_hab__["a" /* RegistrarTipHabComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__configuracion_TiposHabitaciones_complementos_complementos__["a" /* ComplementosComponent */],
                 __WEBPACK_IMPORTED_MODULE_14__configuracion_tarifas_tarifas__["a" /* TarifasComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__configuracion_TiposHabitaciones_entretenimientos_entretenimientos__["a" /* EntretenimientosComponent */]
+                __WEBPACK_IMPORTED_MODULE_15__configuracion_TiposHabitaciones_entretenimientos_entretenimientos__["a" /* EntretenimientosComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__configuracion_establecimiento_view_establecimiento_view_establecimiento__["a" /* ViewEstablecimientoComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__administracion_registrar_habitacion_registrar_habitacion__["a" /* RegistrarHabitacionComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicPageModule */],
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__habitaciones_habitaciones__["a" /* HabitacionesComponent */],
+                __WEBPACK_IMPORTED_MODULE_1__administracion_habitaciones_habitacion__["a" /* HabitacionComponent */],
                 __WEBPACK_IMPORTED_MODULE_3__configuracion_progress_bar_progress_bar__["a" /* ProgressBarComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__configuracion_TiposHabitaciones_tipo_habitacion_Item_tipoHabitacion__["a" /* ItemTipoHabitacionComponent */],
                 __WEBPACK_IMPORTED_MODULE_4__wizard_wizard__["a" /* WizardComponent */],
                 __WEBPACK_IMPORTED_MODULE_5__configuracion_establecimiento_informacion_general_informacion_general__["a" /* InformacionGeneralComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__configuracion_establecimiento_ubicacion_ubicacion__["a" /* UbicacionComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__configuracion_establecimiento_imagenes_imagenes__["a" /* ImagenesComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__configuracion_imagenes_imagenes__["a" /* ImagenesComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__configuracion_Sesion_registro_registro__["a" /* RegistroComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__configuracion_Sesion_reestablecer_pass_reestablecer_pass__["a" /* ReestablecerPassComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__configuracion_TiposHabitaciones_registrar_registrar_tip_hab__["a" /* RegistrarTipHabComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__configuracion_TiposHabitaciones_complementos_complementos__["a" /* ComplementosComponent */],
                 __WEBPACK_IMPORTED_MODULE_14__configuracion_tarifas_tarifas__["a" /* TarifasComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__configuracion_TiposHabitaciones_entretenimientos_entretenimientos__["a" /* EntretenimientosComponent */]
+                __WEBPACK_IMPORTED_MODULE_15__configuracion_TiposHabitaciones_entretenimientos_entretenimientos__["a" /* EntretenimientosComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__configuracion_establecimiento_view_establecimiento_view_establecimiento__["a" /* ViewEstablecimientoComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__administracion_registrar_habitacion_registrar_habitacion__["a" /* RegistrarHabitacionComponent */]
             ], entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_1__habitaciones_habitaciones__["a" /* HabitacionesComponent */],
+                __WEBPACK_IMPORTED_MODULE_1__administracion_habitaciones_habitacion__["a" /* HabitacionComponent */],
                 __WEBPACK_IMPORTED_MODULE_3__configuracion_progress_bar_progress_bar__["a" /* ProgressBarComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__configuracion_TiposHabitaciones_tipo_habitacion_Item_tipoHabitacion__["a" /* ItemTipoHabitacionComponent */],
                 __WEBPACK_IMPORTED_MODULE_4__wizard_wizard__["a" /* WizardComponent */],
                 __WEBPACK_IMPORTED_MODULE_5__configuracion_establecimiento_informacion_general_informacion_general__["a" /* InformacionGeneralComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__configuracion_establecimiento_ubicacion_ubicacion__["a" /* UbicacionComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__configuracion_establecimiento_imagenes_imagenes__["a" /* ImagenesComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__configuracion_imagenes_imagenes__["a" /* ImagenesComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__configuracion_Sesion_registro_registro__["a" /* RegistroComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__configuracion_Sesion_reestablecer_pass_reestablecer_pass__["a" /* ReestablecerPassComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__configuracion_TiposHabitaciones_registrar_registrar_tip_hab__["a" /* RegistrarTipHabComponent */],
@@ -147,11 +155,11 @@ var map = {
 		270
 	],
 	"../pages/configuracionGeneral/establecimiento/establecimiento.module": [
-		611,
+		614,
 		1
 	],
 	"../pages/configuracionGeneral/tipos-habitaciones/tipos-habitaciones.module": [
-		612,
+		615,
 		0
 	],
 	"../pages/login/login.module": [
@@ -181,7 +189,7 @@ module.exports = webpackAsyncContext;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdministracionPageModule", function() { return AdministracionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__administracion__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(193);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -221,8 +229,9 @@ var AdministracionPageModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdministracionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_general_Establecimiento__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_general_habitacion_tipo__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -235,6 +244,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the AdministracionPage page.
  *
@@ -242,11 +252,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var AdministracionPage = /** @class */ (function () {
-    function AdministracionPage(navCtrl, navParams, ESTservice) {
+    function AdministracionPage(navCtrl, navParams, modalCtrl, ESTservice, TIHservice) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.modalCtrl = modalCtrl;
         this.ESTservice = ESTservice;
+        this.TIHservice = TIHservice;
         this.tiposHabitacion = new Array();
+        this.habitaciones = new Array();
     }
     AdministracionPage.prototype.ionViewDidLoad = function () {
         this.cargarTipos();
@@ -255,14 +268,32 @@ var AdministracionPage = /** @class */ (function () {
     AdministracionPage.prototype.cargarTipos = function () {
         this.tiposHabitacion = this.ESTservice.establecimiento.ESThabitacionesTipos;
     };
+    AdministracionPage.prototype.mostrarHabitaciones = function (idTipo) {
+        // let modal = this.modalCtrl.create(
+        //   GenerarHabitacionesComponent, null, { enableBackdropDismiss: false }
+        // )
+        var _this = this;
+        // modal.onDidDismiss(() => {
+        //   this.cargarTipos();
+        // });
+        this.TIHservice.inicializar(idTipo).then(function () {
+            _this.habitaciones = _this.TIHservice.habitacionTipo.HTIhabitaciones;
+            //   if (this.habitaciones === undefined || this.habitaciones.length > 0) {
+            //     modal.present();
+            // }
+        });
+    };
     AdministracionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-administracion',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\pages\administracion\administracion.html"*/'<!--\n\n  Generated template for the AdministracionPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>administracion</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-row style="height: 100%">\n\n    <ion-col class="panelIzquierdo">\n\n        <ion-row *ngFor="let tipo of tiposHabitacion" >\n\n          <ion-col>\n\n            <button  class="TipoHabitacion">{{tipo.HTIdescripcion}}</button>\n\n          </ion-col>\n\n        </ion-row>\n\n    </ion-col>\n\n    <ion-col class="panelDerecho">\n\n      <habitaciones></habitaciones>\n\n    </ion-col>\n\n  </ion-row>  \n\n</ion-content>\n\n\n\n'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\pages\administracion\administracion.html"*/,
+            selector: 'page-administracion',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\pages\administracion\administracion.html"*/'<!--\n\n  Generated template for the AdministracionPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>administracion</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-row style="height: 100%">\n\n    <ion-col class="panelIzquierdo">\n\n      <ion-row *ngFor="let tipo of tiposHabitacion">\n\n        <ion-col>\n\n          <button class="TipoHabitacion" (click)="mostrarHabitaciones(tipo.HVIid)">{{tipo.HVIdescripcion}}</button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-col>\n\n    <ion-col class="panelDerecho">\n\n      <!-- <div *ngIf="habitaciones.length > 0">\n\n        <generar-habitaciones></generar-habitaciones>\n\n      </div> -->\n\n      <div *ngFor="let habitacion of habitaciones" class="general">\n\n        <habitacion [Habitacion]="habitacion">\n\n        </habitacion>\n\n      </div>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\pages\administracion\administracion.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_general_Establecimiento__["a" /* EstablecimientoProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_general_Establecimiento__["a" /* EstablecimientoProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_general_Establecimiento__["a" /* EstablecimientoProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_general_habitacion_tipo__["a" /* HabitacionTipoProvider */]])
     ], AdministracionPage);
     return AdministracionPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=administracion.js.map
@@ -323,9 +354,9 @@ var DTOposicion = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StorageProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_app__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_app__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user__ = __webpack_require__(67);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -387,7 +418,7 @@ var StorageProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistroComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modelos_DTOusuario__ = __webpack_require__(146);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -442,7 +473,7 @@ var RegistroComponent = /** @class */ (function () {
     };
     RegistroComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'registro',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\Sesion\registro\registro.html"*/'<!-- Generated template for the RegistroComponent component -->\n<ion-content>\n\n  <ion-card padding style="text-align: center;">\n    <button ion-fab mini style="float: right;" (click)="CerrarModal()">\n      <ion-icon name="close"></ion-icon>\n    </button>\n    <ion-card-header>\n      <ion-label>Informacion</ion-label>\n    </ion-card-header>\n    <ion-card-content>\n      <ion-label class="mjsError">Por favor diligenciar los campos obligatorios (*)</ion-label>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked required>Primer nombre *</ion-label>\n            <ion-input [(ngModel)]="usuario.USUprimerNombre" type="text"></ion-input>\n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked required>Segundo nombre</ion-label>\n            <ion-input [(ngModel)]="usuario.USUsegundoNombre" type="text"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked required>Primer apellido *</ion-label>\n            <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text"></ion-input>\n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked required>Segundo apellido</ion-label>\n            <ion-input [(ngModel)]="usuario.USUsegundoApellido" type="text"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked required>Num. identificación *</ion-label>\n            <ion-input [(ngModel)]="usuario.USUidentificacion" type="number"></ion-input>\n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked required>Ciudad</ion-label>\n            <ion-input [(ngModel)]="usuario.USUciudad" type="text"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked required>Correo electronico *</ion-label>\n            <ion-input [(ngModel)]="usuario.USUemail" type="email"></ion-input>\n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked required>Celular *</ion-label>\n            <ion-input [(ngModel)]="usuario.USUcelular" type="number"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked required>Contraseña *</ion-label>\n            <ion-input [(ngModel)]="password" type="password" (keyup)="confirmarPass($event)"></ion-input>\n          </ion-item>\n          <ion-label class="mjsError" *ngIf="sizePass"> * Utiliza una contraseña mayor a 8 caracteres</ion-label>\n        </ion-col>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked required>Confirmar contraseña</ion-label>\n            <ion-input [disabled]="!password" [(ngModel)]="confirPassword" type="password" (keyup)="confirmarPass($event)"></ion-input>\n          </ion-item>\n          <ion-label class="mjsError" *ngIf="confirPassword && password != confirPassword"> * La contraseña no es igual</ion-label>\n        </ion-col>\n      </ion-row>\n    </ion-card-content>\n    <ion-label color="danger">{{mensajeError}}</ion-label>\n    <button [disabled]="!Habilitar" ion-button icon-left color="primary" style="bottom: 5px" (click)="RegistrarUsuario()">\n      Registrarme\n    </button>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\Sesion\registro\registro.html"*/
+            selector: 'registro',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\Sesion\registro\registro.html"*/'<!-- Generated template for the RegistroComponent component -->\n\n<ion-content>\n\n\n\n  <ion-card padding style="text-align: center;">\n\n    <button ion-fab mini style="float: right;" (click)="CerrarModal()">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n    <ion-card-header>\n\n      <ion-label>Informacion</ion-label>\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-label class="mjsError">Por favor diligenciar los campos obligatorios (*)</ion-label>\n\n      <ion-row>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label stacked required>Primer nombre *</ion-label>\n\n            <ion-input [(ngModel)]="usuario.USUprimerNombre" type="text"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label stacked required>Segundo nombre</ion-label>\n\n            <ion-input [(ngModel)]="usuario.USUsegundoNombre" type="text"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label stacked required>Primer apellido *</ion-label>\n\n            <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label stacked required>Segundo apellido</ion-label>\n\n            <ion-input [(ngModel)]="usuario.USUsegundoApellido" type="text"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label stacked required>Num. identificación *</ion-label>\n\n            <ion-input [(ngModel)]="usuario.USUidentificacion" type="number"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label stacked required>Ciudad</ion-label>\n\n            <ion-input [(ngModel)]="usuario.USUciudad" type="text"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label stacked required>Correo electronico *</ion-label>\n\n            <ion-input [(ngModel)]="usuario.USUemail" type="email"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label stacked required>Celular *</ion-label>\n\n            <ion-input [(ngModel)]="usuario.USUcelular" type="number"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label stacked required>Contraseña *</ion-label>\n\n            <ion-input [(ngModel)]="password" type="password" (keyup)="confirmarPass($event)"></ion-input>\n\n          </ion-item>\n\n          <ion-label class="mjsError" *ngIf="sizePass"> * Utiliza una contraseña mayor a 8 caracteres</ion-label>\n\n        </ion-col>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label stacked required>Confirmar contraseña</ion-label>\n\n            <ion-input [disabled]="!password" [(ngModel)]="confirPassword" type="password" (keyup)="confirmarPass($event)"></ion-input>\n\n          </ion-item>\n\n          <ion-label class="mjsError" *ngIf="confirPassword && password != confirPassword"> * La contraseña no es igual</ion-label>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-card-content>\n\n    <ion-label color="danger">{{mensajeError}}</ion-label>\n\n    <button [disabled]="!Habilitar" ion-button icon-left color="primary" style="bottom: 5px" (click)="RegistrarUsuario()">\n\n      Registrarme\n\n    </button>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\Sesion\registro\registro.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]])
@@ -460,7 +491,7 @@ var RegistroComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReestablecerPassComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -489,7 +520,7 @@ var ReestablecerPassComponent = /** @class */ (function () {
     };
     ReestablecerPassComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'reestablecer-pass',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\Sesion\reestablecer-pass\reestablecer-pass.html"*/'<!-- Generated template for the ReestablecerPassComponent component -->\n<ion-card padding style="height: 100%; text-align: center; margin: auto">\n  <button ion-fab mini style="float: right;" (click)="CerrarModal()">\n    <ion-icon name="close"></ion-icon>\n  </button>\n  <ion-card-header>\n  </ion-card-header>\n</ion-card>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\Sesion\reestablecer-pass\reestablecer-pass.html"*/
+            selector: 'reestablecer-pass',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\Sesion\reestablecer-pass\reestablecer-pass.html"*/'<!-- Generated template for the ReestablecerPassComponent component -->\n\n<ion-card padding style="height: 100%; text-align: center; margin: auto">\n\n  <button ion-fab mini style="float: right;" (click)="CerrarModal()">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n  <ion-card-header>\n\n  </ion-card-header>\n\n</ion-card>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\Sesion\reestablecer-pass\reestablecer-pass.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */]])
     ], ReestablecerPassComponent);
@@ -508,7 +539,7 @@ var ReestablecerPassComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOcomplemento__ = __webpack_require__(426);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase_app__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -588,7 +619,7 @@ var ComplementoProvider = /** @class */ (function () {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfiguracionPageModule", function() { return ConfiguracionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__configuracion__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_general_complemento__ = __webpack_require__(269);
@@ -636,10 +667,10 @@ var ConfiguracionPageModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfiguracionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_general_Establecimiento__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modelos_DTOestablecimiento__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_general_habitacion_tipo__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_general_habitacion_tipo__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -661,11 +692,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ConfiguracionPage = /** @class */ (function () {
-    function ConfiguracionPage(navCtrl, navParams, ESTservice, HABservice) {
+    function ConfiguracionPage(navCtrl, navParams, ESTservice, TIHservice) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.ESTservice = ESTservice;
-        this.HABservice = HABservice;
+        this.TIHservice = TIHservice;
         this.text = 'progress-bar';
         this.est = new __WEBPACK_IMPORTED_MODULE_3__modelos_DTOestablecimiento__["a" /* DTOEstablecimiento */];
         console.log("Hello Configuracion");
@@ -673,34 +704,24 @@ var ConfiguracionPage = /** @class */ (function () {
     ConfiguracionPage.prototype.ionViewDidEnter = function () {
         this.obtenerEstablecimiento();
     };
-    ConfiguracionPage.prototype.configurarEstablecimiento = function () {
-        var ArrayFotos = new Array();
-        if (this.ESTservice.establecimiento.ESTfotos) {
-            ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
-        }
-        this.navCtrl.push("EstablecimientoPage", {
-            objFotos: ArrayFotos,
-            file: "sitio",
-            marca: "EST"
-        });
-    };
-    // configurarHabitacion(id: number) {
-    //   this.HABservice.inicializar(id).then(() => {
-    //     this.navCtrl.setRoot("TiposHabitacionesPage");
-    //   });
-    // }
     ConfiguracionPage.prototype.obtenerEstablecimiento = function () {
         this.est.ESThabitacionesTipos = this.ESTservice.establecimiento.ESThabitacionesTipos;
     };
     ConfiguracionPage.prototype.AgregarTipHab = function () {
-        var _this = this;
-        this.HABservice.crear().then(function () {
-            _this.navCtrl.setRoot("TiposHabitacionesPage");
+        this.TIHservice.crear();
+        var ArrayFotos = new Array();
+        if (this.TIHservice.habitacionTipo.HTIfotos) {
+            ArrayFotos = this.TIHservice.habitacionTipo.HTIfotos;
+        }
+        this.navCtrl.setRoot("TiposHabitacionesPage", {
+            objFotos: ArrayFotos,
+            file: "habitacion_" + this.TIHservice.habitacionTipo.HTIid,
+            marca: "HAB"
         });
     };
     ConfiguracionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-configuracion',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\pages\configuracionGeneral\configuracion\configuracion.html"*/'<!--\n\n  Generated template for the ConfiguracionPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>configuracion</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <!-- <div class="general"> -->\n\n    <ion-card>\n\n      <progress-bar></progress-bar>\n\n    </ion-card>\n\n    <ion-row>\n\n      <ion-col class="establecimiento">\n\n        <ion-card>\n\n          <ion-card-header>\n\n            <ion-card-title>Motel</ion-card-title>\n\n          </ion-card-header>\n\n          <ion-card-content>\n\n            <ion-item (click)="configurarEstablecimiento()">\n\n              Ver informacion\n\n              <ion-icon name="ios-arrow-forward" item-end></ion-icon>\n\n            </ion-item>\n\n          </ion-card-content>\n\n        </ion-card>\n\n      </ion-col>\n\n      <ion-col>\n\n        <!-- <ion-card> -->\n\n        <ion-card-header>\n\n          <ion-card-title>Tipos de habitación\n\n            <button ion-fab mini style="float: right; height: 30px; width: 30px; " (click)="AgregarTipHab()">\n\n              <ion-icon name="add"></ion-icon>\n\n            </button>\n\n          </ion-card-title>\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <div *ngFor="let hab of est.ESThabitacionesTipos">\n\n            <Item-tipoHabitacion [Tipohabitacion]="hab"></Item-tipoHabitacion>\n\n            <!-- <ion-item (click)="configurarHabitacion(hab.HTIid)">\n\n            {{hab.HTIdescripcion}}\n\n            <ion-icon name="ios-arrow-forward" item-end></ion-icon>\n\n          </ion-item> -->\n\n          </div>\n\n        </ion-card-content>\n\n        <!-- </ion-card> -->\n\n      </ion-col>\n\n    </ion-row>\n\n  <!-- </div> -->\n\n</ion-content>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\pages\configuracionGeneral\configuracion\configuracion.html"*/,
+            selector: 'page-configuracion',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\pages\configuracionGeneral\configuracion\configuracion.html"*/'<!--\n\n  Generated template for the ConfiguracionPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>configuracion</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <!-- <div class="general"> -->\n\n    <!-- <ion-card>\n\n      <progress-bar></progress-bar>\n\n    </ion-card> -->\n\n    <ion-row>\n\n      <ion-col class="establecimiento">\n\n        <view-establecimiento></view-establecimiento>\n\n        <!-- <ion-card>\n\n          <ion-card-header>\n\n            <ion-card-title>Motel</ion-card-title>\n\n          </ion-card-header>\n\n          <ion-card-content>\n\n            <ion-item (click)="configurarEstablecimiento()">\n\n              Ver informacion\n\n              <ion-icon name="ios-arrow-forward" item-end></ion-icon>\n\n            </ion-item>\n\n          </ion-card-content>\n\n        </ion-card> -->\n\n      </ion-col>\n\n      <ion-col>\n\n        <!-- <ion-card> -->\n\n        <ion-card-header>\n\n          <ion-card-title>Tipos de habitación\n\n            <button ion-fab mini style="float: right; height: 30px; width: 30px; " (click)="AgregarTipHab()">\n\n              <ion-icon name="add"></ion-icon>\n\n            </button>\n\n          </ion-card-title>\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <div *ngFor="let hab of est.ESThabitacionesTipos">\n\n            <Item-tipoHabitacion [Tipohabitacion]="hab"></Item-tipoHabitacion>\n\n            <!-- <ion-item (click)="configurarHabitacion(hab.HTIid)">\n\n            {{hab.HTIdescripcion}}\n\n            <ion-icon name="ios-arrow-forward" item-end></ion-icon>\n\n          </ion-item> -->\n\n          </div>\n\n        </ion-card-content>\n\n        <!-- </ion-card> -->\n\n      </ion-col>\n\n    </ion-row>\n\n  <!-- </div> -->\n\n</ion-content>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\pages\configuracionGeneral\configuracion\configuracion.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
@@ -721,8 +742,8 @@ var ConfiguracionPage = /** @class */ (function () {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(432);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -759,10 +780,10 @@ var LoginPageModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ImagenesComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOfoto__ = __webpack_require__(411);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_general_Establecimiento__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_general_storage__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_general_habitacion_tipo__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_general_habitacion_tipo__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -917,7 +938,7 @@ var ImagenesComponent = /** @class */ (function () {
     ], ImagenesComponent.prototype, "fileInput", void 0);
     ImagenesComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'imagenes',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\establecimiento\imagenes\imagenes.html"*/'<!-- Generated template for the ImagenesComponent component -->\n\n<div>\n\n  <h1 style="text-align: center">Fotos del establecimiento</h1>\n\n  <ion-card padding style="height: 30% ; width: 40%; margin: auto;">\n\n    <button ion-fab title="Eliminar foto" style="top: -10px ; float: right; height: 30px; width: 30px;" (click)="EliminarFoto()">\n\n      <ion-icon name="close" color="primary"></ion-icon>\n\n    </button>\n\n    <div *ngIf="FotoSeleccionada">\n\n      <img  src="{{FotoSeleccionada.FOTurl}}" width="100" height="250"/>\n\n    </div>\n\n  </ion-card>\n\n  <br>\n\n  <ion-card padding>\n\n    <button ion-fab title="Agregar foto" style="top: -10px ; float: right; height: 30px; width: 30px;" (click)="AgregarFoto()">\n\n      <input type="file" accept="image/jpeg" #fileInput style="display:none; " class="form-control" (change)="ProcessImage($event)"\n\n      />\n\n      <ion-icon name="add" color="primary"></ion-icon>\n\n    </button>\n\n    <ion-label style="text-align: center"> {{ArrayFotos.length}} de 6</ion-label>\n\n    <div class="general" *ngFor="let foto of ArrayFotos">\n\n      <ion-card style="height: 70%; width: 70%; margin: auto" padding (click)="SeleccionarFoto(foto);" [ngStyle]="{\'border\': (foto.FOTactiva) ? \'3px solid blue\' : \'\' }">\n\n        <img src="{{foto.FOTurl}}" width="70" height="70" />\n\n      </ion-card>\n\n    </div>\n\n  </ion-card>\n\n\n\n\n\n</div>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\establecimiento\imagenes\imagenes.html"*/
+            selector: 'imagenes',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\imagenes\imagenes.html"*/'<!-- Generated template for the ImagenesComponent component -->\n\n<div>\n\n  <h1 style="text-align: center">Fotos del establecimiento</h1>\n\n  <ion-card padding style="height: 30% ; width: 40%; margin: auto;">\n\n    <button ion-fab title="Eliminar foto" style="top: -10px ; float: right; height: 30px; width: 30px;" (click)="EliminarFoto()">\n\n      <ion-icon name="close" color="primary"></ion-icon>\n\n    </button>\n\n    <div *ngIf="FotoSeleccionada">\n\n      <img class="imagen" src="{{FotoSeleccionada.FOTurl}}" onerror="this.src=\'assets/icon/picture.svg\';"/>\n\n    </div>\n\n  </ion-card>\n\n  <br>\n\n  <ion-card padding>\n\n    <button ion-fab title="Agregar foto" style="top: -10px ; float: right; height: 30px; width: 30px;" (click)="AgregarFoto()">\n\n      <input type="file" accept="image/jpeg" #fileInput style="display:none; " class="form-control" (change)="ProcessImage($event)"\n\n      />\n\n      <ion-icon name="add" color="primary"></ion-icon>\n\n    </button>\n\n    <ion-label style="text-align: center"> {{ArrayFotos.length}} de 6</ion-label>\n\n    <div class="general" *ngFor="let foto of ArrayFotos">\n\n      <ion-card style="height: 70%; width: 70%; margin: auto" padding (click)="SeleccionarFoto(foto);" [ngStyle]="{\'border\': (foto.FOTactiva) ? \'3px solid blue\' : \'\' }">\n\n        <img src="{{foto.FOTurl}}" width="70" height="70" onerror="this.src=\'assets/icon/picture.svg\';" />\n\n      </ion-card>\n\n    </div>\n\n  </ion-card>\n\n\n\n\n\n</div>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\imagenes\imagenes.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavParams */],
@@ -941,7 +962,7 @@ var ImagenesComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOusuario__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_general_Establecimiento__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modelos_DTOestablecimiento__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_general_user__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_general_user__ = __webpack_require__(67);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -989,7 +1010,7 @@ var InformacionGeneralComponent = /** @class */ (function () {
     };
     InformacionGeneralComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'informacion-general',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\establecimiento\informacion-general\informacion-general.html"*/'<!-- Generated template for the InformaconGeneralComponent component -->\n\n<ion-card>\n\n  <ion-card-title style="text-align: center;">\n\n    Informacion General\n\n  </ion-card-title>\n\n  <ion-card-content>\n\n    <ion-row>\n\n      <ion-col>\n\n        <h2 style="text-align: center">Establecimiento</h2>\n\n        <ion-item>\n\n          <ion-label stacked required>Nit</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTnit" type="number" required (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label stacked required>Nombre del establecimiento</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTnombre" type="text" required (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label stacked required>Telefono recepción</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTtelefono" type="text" required (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col>\n\n        <h2 style="text-align: center">Contacto</h2>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Primer nombre *</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUprimerNombre" type="text" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Segundo nombre</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUsegundoNombre" type="text" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Primer apellido *</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Segundo apellido</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUsegundoApellido" type="text" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Num. identificación *</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUidentificacion" type="number" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Ciudad</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUciudad" type="text" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Correo electronico *</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUemail" type="email"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Celular *</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUcelular" type="number" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card-content>\n\n</ion-card>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\establecimiento\informacion-general\informacion-general.html"*/
+            selector: 'informacion-general',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\establecimiento\informacion-general\informacion-general.html"*/'<!-- Generated template for the InformaconGeneralComponent component -->\n\n<ion-card>\n\n  <ion-card-title style="text-align: center;">\n\n    Informacion General\n\n  </ion-card-title>\n\n  <ion-card-content>\n\n    <ion-row>\n\n      <ion-col>\n\n        <h2 style="text-align: center">Establecimiento</h2>\n\n        <ion-item>\n\n          <ion-label stacked required>Nit</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTnit" type="number" required (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label stacked required>Nombre del establecimiento</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTnombre" type="text" required (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label stacked required>Telefono recepción</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTtelefono" type="text" required (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col>\n\n        <h2 style="text-align: center">Contacto</h2>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Primer nombre *</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUprimerNombre" type="text" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Segundo nombre</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUsegundoNombre" type="text" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Primer apellido *</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Segundo apellido</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUsegundoApellido" type="text" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Num. identificación *</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUidentificacion" type="number" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Ciudad</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUciudad" type="text" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Correo electronico *</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUemail" type="email"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col>\n\n            <ion-item>\n\n              <ion-label stacked required>Celular *</ion-label>\n\n              <ion-input [(ngModel)]="usuario.USUcelular" type="number" (blur)="GuardarUSU()"></ion-input>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card-content>\n\n</ion-card>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\establecimiento\informacion-general\informacion-general.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_general_Establecimiento__["a" /* EstablecimientoProvider */],
             __WEBPACK_IMPORTED_MODULE_4__providers_general_user__["a" /* UserProvider */]])
@@ -1063,7 +1084,7 @@ var UbicacionComponent = /** @class */ (function () {
     ], UbicacionComponent.prototype, "mapElement", void 0);
     UbicacionComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'ubicacion',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\establecimiento\ubicacion\ubicacion.html"*/'<!-- Generated template for the UbicacionComponent component -->\n\n\n\n<ion-row>\n\n  <ion-col style="max-width: 500px">\n\n    <ion-card >\n\n      <ion-card-header style="text-align: center">\n\n        Ubicacion\n\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <ion-item>\n\n          <ion-label floating>Ciudad</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTciudad"  type="text" (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label floating> Localidad</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTlocalidad" type="text" (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label floating>Direccion</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTdireccion" type="text" (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </ion-col>\n\n  <ion-col style="height: 350px">\n\n    <div #map id="map"></div>\n\n  </ion-col>\n\n</ion-row>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\establecimiento\ubicacion\ubicacion.html"*/
+            selector: 'ubicacion',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\establecimiento\ubicacion\ubicacion.html"*/'<!-- Generated template for the UbicacionComponent component -->\n\n\n\n<ion-row>\n\n  <ion-col style="max-width: 500px">\n\n    <ion-card >\n\n      <ion-card-header style="text-align: center">\n\n        Ubicacion\n\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <ion-item>\n\n          <ion-label floating>Ciudad</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTciudad"  type="text" (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label floating> Localidad</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTlocalidad" type="text" (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label floating>Direccion</ion-label>\n\n          <ion-input [(ngModel)]="establecimiento.ESTdireccion" type="text" (blur)="GuardarEST()"></ion-input>\n\n        </ion-item>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </ion-col>\n\n  <ion-col style="height: 350px">\n\n    <div #map id="map"></div>\n\n  </ion-col>\n\n</ion-row>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\establecimiento\ubicacion\ubicacion.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_mapa_mapa__["a" /* MapaProvider */],
             __WEBPACK_IMPORTED_MODULE_3__providers_general_Establecimiento__["a" /* EstablecimientoProvider */]])
@@ -1081,7 +1102,7 @@ var UbicacionComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapaProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modelos_DTOposicion__ = __webpack_require__(257);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1257,8 +1278,9 @@ var MapaProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistrarTipHabComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_general_habitacion_tipo__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_general_habitacion_tipo__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1271,6 +1293,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the RegistarTipHabComponent component.
  *
@@ -1278,23 +1301,78 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Components.
  */
 var RegistrarTipHabComponent = /** @class */ (function () {
-    function RegistrarTipHabComponent(HABservice) {
-        this.HABservice = HABservice;
-        this.HabitacionTipo = new __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__["a" /* DTOHabitaciontipo */];
+    function RegistrarTipHabComponent(TIHservice, alertCtrl) {
+        this.TIHservice = TIHservice;
+        this.alertCtrl = alertCtrl;
+        this.CantHabilitar = false;
+        this.HabitacionTipo = new __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__["b" /* DTOHabitacionTipo */];
         console.log('Hello RegistarTipHabComponent Component');
-        this.text = 'Hello World';
         //this.HabitacionTipo = obj ? obj : new DTOHabitaciontipo;
         // this.ArrayComplementos = [
         //   {COMid: "" , COMdescripcion: "Parqueadero"}]
     }
     RegistrarTipHabComponent.prototype.ngOnInit = function () {
-        this.HabitacionTipo = this.HABservice.habitacionTipo;
+        this.HabitacionTipo = this.TIHservice.habitacionTipo;
+        this.CantHabilitar = (this.HabitacionTipo.HTIestado === __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__["d" /* HTIenumEstado */].Registrando) ? false : true;
+        this.validacionCampos();
     };
+    RegistrarTipHabComponent.prototype.validarCantidad = function () {
+        this.HabitacionTipo.HTIcantidad = (this.HabitacionTipo.HTIcantidad > 50 || this.HabitacionTipo.HTIcantidad === 0 || this.HabitacionTipo.HTIcantidad === undefined) ? null : this.HabitacionTipo.HTIcantidad;
+        this.controlCantidad();
+    };
+    RegistrarTipHabComponent.prototype.Alertas = function (message) {
+        var alert = this.alertCtrl.create({
+            title: message,
+            buttons: ['Aceptar']
+        });
+        alert.present();
+    };
+    RegistrarTipHabComponent.prototype.EsNumerico = function (evt) {
+        var event;
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    };
+    RegistrarTipHabComponent.prototype.controlCantidad = function () {
+        if (this.HabitacionTipo.HTIcantidad <= 0) {
+            document.getElementById("continuar").setAttribute('disabled', 'disabled');
+            this.CantHab.setFocus();
+        }
+        else {
+            document.getElementById("continuar").removeAttribute('disabled');
+        }
+    };
+    RegistrarTipHabComponent.prototype.validacionCampos = function () {
+        var _a = this.HabitacionTipo, _b = _a.HTInombre, HTInombre = _b === void 0 ? "" : _b, _c = _a.HTIdescripcion, HTIdescripcion = _c === void 0 ? "" : _c;
+        document.getElementById("continuar").setAttribute('disabled', 'disabled');
+        switch ("") {
+            case HTInombre: {
+                document.getElementById("error").innerHTML = "Registre el nombre de la habitación";
+                break;
+            }
+            case HTIdescripcion: {
+                document.getElementById("error").innerHTML = "Registre la descripcion de la habitación";
+                break;
+            }
+            default: {
+                document.getElementById("error").innerHTML = "";
+                document.getElementById("continuar").removeAttribute('disabled');
+                break;
+            }
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('CantHab'),
+        __metadata("design:type", Object)
+    ], RegistrarTipHabComponent.prototype, "CantHab", void 0);
     RegistrarTipHabComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'registrar-tip-hab',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\TiposHabitaciones\registrar\registrar-tip-hab.html"*/'<!-- Generated template for the RegistarTipHabComponent component -->\n<ion-card>\n  <ion-card-header>\n    <ion-card-title>\n      Registrar tipo de habitación\n    </ion-card-title>\n  </ion-card-header>\n  <ion-card-content>\n      <ion-item>\n          <ion-label color="primary"> Id:</ion-label>\n          <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTIid" type="number"></ion-input>\n        </ion-item>\n    <ion-item>\n      <ion-label color="primary"> Nombre:</ion-label>\n      <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTInombre" type="text"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label color="primary"> Descripción:</ion-label>\n      <ion-textarea placeholder="Indica los detalles generales de este tipo de habitación" [(ngModel)]="HabitacionTipo.HTIdescripcion"\n        type="number"></ion-textarea>\n    </ion-item>\n    <ion-item>\n      <ion-label color="primary"> Cantidad de habitaciones:</ion-label>\n      <ion-input placeholder="1" [(ngModel)]="HabitacionTipo.HTIcantidad" type="number" min="1"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col>\n        <complementos [habitacion]="HabitacionTipo"></complementos>\n      </ion-col>\n      <ion-col>\n        <entretenimientos [habitacion]="HabitacionTipo"></entretenimientos>\n      </ion-col>\n    </ion-row>\n  </ion-card-content>\n</ion-card>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\TiposHabitaciones\registrar\registrar-tip-hab.html"*/
+            selector: 'registrar-tip-hab',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\TiposHabitaciones\registrar\registrar-tip-hab.html"*/'<!-- Generated template for the RegistarTipHabComponent component -->\n\n<ion-card style="width: 60%; margin:auto;">\n\n  <ion-card-header>\n\n    <ion-card-title color="principal" style="text-align: center;">\n\n      Registrar tipo de habitación\n\n    </ion-card-title>\n\n  </ion-card-header>\n\n  <ion-card-content>\n\n    <label style="white-space: inherit; color: darkgrey">Para el conocimiento de los usuarios y mejorar la calidad de la\n\n      administracion de su establecimiento, por favor ingrese\n\n      los valores solicitados\n\n    </label>\n\n    <!-- <ion-item>\n\n          <ion-label color="primary"> Id:</ion-label>\n\n          <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTIid" type="number"></ion-input>\n\n        </ion-item> -->\n\n    <ion-item>\n\n      <ion-label color="principal"> Nombre:</ion-label>\n\n      <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTInombre" type="text" (ionBlur)="validacionCampos()"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label color="principal"> Descripción:</ion-label>\n\n      <ion-textarea placeholder="Indica los detalles generales de este tipo de habitación" [(ngModel)]="HabitacionTipo.HTIdescripcion" maxlength="200" (ionBlur)="validacionCampos()" rows="4"></ion-textarea>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label color="principal" required> Cantidad de habitaciones:</ion-label>\n\n      <ion-input #CantHab placeholder="ingrese un valor entre 1 y 50 " clearInput [(ngModel)]="HabitacionTipo.HTIcantidad"\n\n        type="number" min="1" max="50" (ionBlur)="validarCantidad()" (keypress)="EsNumerico($event)" [disabled]="CantHabilitar"></ion-input>\n\n    </ion-item>\n\n    <ion-label class="mjsError" id="error"></ion-label>\n\n    <!-- * La cantidad de habitaciones, no puede ser menor a 0 o mayor a 50 -->\n\n    <ion-row>\n\n      <ion-col>\n\n        <complementos [habitacion]="HabitacionTipo"></complementos>\n\n      </ion-col>\n\n      <ion-col>\n\n        <entretenimientos [habitacion]="HabitacionTipo"></entretenimientos>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card-content>\n\n</ion-card>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\TiposHabitaciones\registrar\registrar-tip-hab.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_general_habitacion_tipo__["a" /* HabitacionTipoProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_general_habitacion_tipo__["a" /* HabitacionTipoProvider */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]])
     ], RegistrarTipHabComponent);
     return RegistrarTipHabComponent;
 }());
@@ -1309,8 +1387,9 @@ var RegistrarTipHabComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TarifasComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOtarifa__ = __webpack_require__(427);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_general_habitacion_tipo__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_general_habitacion_tipo__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_general_tarifasService__ = __webpack_require__(427);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1323,6 +1402,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the TarifasComponent component.
  *
@@ -1330,8 +1410,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Components.
  */
 var TarifasComponent = /** @class */ (function () {
-    function TarifasComponent(HABservice) {
+    function TarifasComponent(HABservice, TARservice, alertCtrl) {
         this.HABservice = HABservice;
+        this.TARservice = TARservice;
+        this.alertCtrl = alertCtrl;
         this.Arraytarifa = new Array();
         console.log('Hello TarifasComponent Component');
         this.text = 'Hello World';
@@ -1341,6 +1423,7 @@ var TarifasComponent = /** @class */ (function () {
             this.Arraytarifa = this.HABservice.habitacionTipo.HTItarifas;
         else
             this.AgregarTarifa();
+        this.TARservice.ArrayTarifa = this.Arraytarifa;
     };
     TarifasComponent.prototype.ngOnDestroy = function () {
     };
@@ -1353,19 +1436,33 @@ var TarifasComponent = /** @class */ (function () {
         document.getElementById('txtValor_' + id).style.display = "none";
         document.getElementById('lblValor_' + id).style.display = "block";
     };
+    TarifasComponent.prototype.Alertas = function (message) {
+        var alert = this.alertCtrl.create({
+            title: message,
+            buttons: ['Aceptar']
+        });
+        alert.present();
+    };
     TarifasComponent.prototype.AgregarTarifa = function () {
-        var tarifa = new __WEBPACK_IMPORTED_MODULE_1__modelos_DTOtarifa__["a" /* DTOtarifa */];
-        tarifa.TARid = this.Arraytarifa.length + 1;
-        tarifa.TARcantHoras = 4;
-        tarifa.TARvalor = 50000;
-        this.Arraytarifa.push(tarifa);
+        if (this.Arraytarifa.length == 6) {
+            this.Alertas('Ha superado el limite de tarifas');
+            return;
+        }
+        this.Arraytarifa = this.TARservice.AgregarTarifa();
+        this.HABservice.habitacionTipo.HTItarifas = this.Arraytarifa;
+    };
+    TarifasComponent.prototype.EliminarTarifa = function (tarifa) {
+        this.Arraytarifa = this.TARservice.EliminarTarifa(tarifa);
         this.HABservice.habitacionTipo.HTItarifas = this.Arraytarifa;
     };
     TarifasComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'tarifas',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\tarifas\tarifas.html"*/'<!-- Generated template for the TarifasComponent component -->\n\n<ion-card class="content">\n\n  <button ion-fab mini style="float: right;" (click)="AgregarTarifa()">\n\n    <ion-icon name="add" color="primary"></ion-icon>\n\n  </button>\n\n  <ion-grid class="col">\n\n    <ion-row align-items-center>\n\n      <ion-col align-self-center>\n\n        <ion-label> Tarifas</ion-label>\n\n      </ion-col>\n\n      <ion-col align-self-center>\n\n        <ion-label> Cantidad de horas</ion-label>\n\n      </ion-col>\n\n      <ion-col align-self-center>\n\n        <ion-label> Valor total</ion-label>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row align-items-center *ngFor="let tarifa of Arraytarifa">\n\n      <ion-col align-self-center>\n\n        <ion-label>{{tarifa.TARid}}</ion-label>\n\n      </ion-col>\n\n      <ion-col align-self-center>\n\n        <label>{{tarifa.TARcantHoras}} hrs</label>\n\n        <ion-range min="1" max="24" [(ngModel)]="tarifa.TARcantHoras">\n\n          <ion-label range-left> 1</ion-label>\n\n          <ion-label range-right>24</ion-label>\n\n        </ion-range>\n\n      </ion-col>\n\n      <ion-col align-self-center>\n\n        <input id="txtValor_{{tarifa.TARid}}" [(ngModel)]="tarifa.TARvalor" type="number" style="display: none; border: none; width: 100px; margin: auto;"\n\n          (blur)="actualizarValor(tarifa.TARid)" />\n\n        <ion-label id="lblValor_{{tarifa.TARid}}" (click)="cambiarValor(tarifa.TARid)" style="cursor: text">{{ tarifa.TARvalor | currency:\'USD\':true:\'.0\'}}</ion-label>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-card>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\tarifas\tarifas.html"*/
+            selector: 'tarifas',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\tarifas\tarifas.html"*/'<!-- Generated template for the TarifasComponent component -->\n\n<ion-card class="content">\n\n  <button ion-fab mini style="float: right;" (click)="AgregarTarifa()">\n\n    <ion-icon name="add" color="primary"></ion-icon>\n\n  </button>\n\n  <ion-grid class="col">\n\n    <ion-row align-items-center>\n\n      <ion-col align-self-center>\n\n        <ion-label> Tarifas</ion-label>\n\n      </ion-col>\n\n      <ion-col align-self-center>\n\n        <ion-label> Cantidad de horas</ion-label>\n\n      </ion-col>\n\n      <ion-col align-self-center>\n\n        <ion-label> Valor total</ion-label>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row align-items-center *ngFor="let tarifa of Arraytarifa; index as i">\n\n      <ion-col align-self-center>\n\n        <ion-label>{{i+1}}</ion-label>\n\n      </ion-col>\n\n      <ion-col align-self-center>\n\n        <label>{{tarifa.TARcantHoras}} hrs</label>\n\n        <ion-range min="1" max="24" [(ngModel)]="tarifa.TARcantHoras">\n\n          <ion-label range-left> 1</ion-label>\n\n          <ion-label range-right>24</ion-label>\n\n        </ion-range>\n\n      </ion-col>\n\n      <ion-col align-self-center>\n\n        <input id="txtValor_{{tarifa.TARid}}" [(ngModel)]="tarifa.TARvalor" type="number" style="display: none; border: none; width: 100px; margin: auto;"\n\n          (blur)="actualizarValor(tarifa.TARid)" />\n\n        <ion-label id="lblValor_{{tarifa.TARid}}" (click)="cambiarValor(tarifa.TARid)" style="cursor: text">{{ tarifa.TARvalor | currency:\'USD\':true:\'.0\'}}</ion-label>\n\n        <button ion-fab mini style="float: right;" (click)="EliminarTarifa(tarifa)">\n\n          <ion-icon name="close" color="danger"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-card>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\tarifas\tarifas.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_2__providers_general_tarifasService__["a" /* TarifasProvider */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_general_habitacion_tipo__["a" /* HabitacionTipoProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_general_habitacion_tipo__["a" /* HabitacionTipoProvider */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_general_tarifasService__["a" /* TarifasProvider */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]])
     ], TarifasComponent);
     return TarifasComponent;
 }());
@@ -1394,25 +1491,25 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 "use strict";
 /* unused harmony export firebaseConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(312);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(454);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(458);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login_module__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_administracion_administracion_module__ = __webpack_require__(250);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_configuracionGeneral_configuracion_configuracion_module__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_auth_auth__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angularfire2__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angularfire2_auth__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angularfire2_firestore__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angularfire2_storage__ = __webpack_require__(502);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angularfire2_firestore__ = __webpack_require__(459);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angularfire2_storage__ = __webpack_require__(505);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_storage__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_general_Establecimiento__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_general_user__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_general_habitacion_tipo__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_general_user__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_general_habitacion_tipo__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_general_storage__ = __webpack_require__(258);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1440,6 +1537,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+// import { HabitacionProvider } from '../providers/general/habitacion';
 var firebaseConfig = {
     apiKey: "AIzaSyASR-VQFfepVIDxJz_tLRzK7mrJNz_MtB0",
     authDomain: "mote-e0df6.firebaseapp.com",
@@ -1493,7 +1591,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_16__providers_general_Establecimiento__["a" /* EstablecimientoProvider */],
                 __WEBPACK_IMPORTED_MODULE_17__providers_general_user__["a" /* UserProvider */],
                 __WEBPACK_IMPORTED_MODULE_18__providers_general_habitacion_tipo__["a" /* HabitacionTipoProvider */],
-                __WEBPACK_IMPORTED_MODULE_19__providers_general_storage__["a" /* StorageProvider */]
+                __WEBPACK_IMPORTED_MODULE_19__providers_general_storage__["a" /* StorageProvider */],
             ]
         })
     ], AppModule);
@@ -1508,8 +1606,9 @@ var AppModule = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HabitacionesComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HabitacionComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__ = __webpack_require__(62);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1520,28 +1619,62 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 /**
  * Generated class for the HabitacionesComponent component.
  *
  * See https://angular.io/api/core/Component for more info on Angular
  * Components.
  */
-var HabitacionesComponent = /** @class */ (function () {
-    function HabitacionesComponent() {
-        this.heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado', 'superman', 'spiderman', 'ironman'];
+var HabitacionComponent = /** @class */ (function () {
+    // heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado', 'superman', 'spiderman', 'ironman'];
+    function HabitacionComponent() {
         console.log('Hello HabitacionesComponent Component');
         this.text = 'Hello World';
     }
-    HabitacionesComponent = __decorate([
+    HabitacionComponent.prototype.carga = function () {
+        var _this = this;
+        var contador_s = 5;
+        var contador_m = 0;
+        var contador_h = 1;
+        var segundos = document.getElementById("segundos_" + this.Habitacion.HITid);
+        var minutos = document.getElementById("minutos_" + this.Habitacion.HITid);
+        var horas = document.getElementById("horas_" + this.Habitacion.HITid);
+        horas.innerText = contador_h.toString();
+        minutos.innerText = contador_m.toString();
+        this.cronometro = setInterval(function () {
+            if (contador_s <= 0) {
+                contador_s = 60;
+                if (contador_m == 0 && contador_h == 0) {
+                    clearInterval(_this.cronometro);
+                    return;
+                }
+                else if (contador_m <= 0) {
+                    contador_m = 60;
+                    contador_h--;
+                    horas.innerText = contador_h.toString();
+                }
+                contador_m--;
+                minutos.innerText = contador_m.toString();
+            }
+            contador_s--;
+            segundos.innerText = contador_s.toString();
+        }, 1000);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__["a" /* DTOHabitacionItem */])
+    ], HabitacionComponent.prototype, "Habitacion", void 0);
+    HabitacionComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'habitaciones',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\habitaciones\habitaciones.html"*/'<!-- Generated template for the HabitacionesComponent component -->\n\n<div class="general" *ngFor="let hero of heroes">\n\n      <!-- <div class="habitacion">\n\n          {{hero}}\n\n      </div> -->\n\n      <ion-card>\n\n            <ion-card-header>\n\n                  {{hero}}\n\n            </ion-card-header>\n\n            <ion-card-content>\n\n                  <ion-item style="text-align: center; background-color: #d0cccc; border-radius: 25px">\n\n                        Ocupado\n\n                        <ion-icon name="radio-button-on" color="danger"></ion-icon>\n\n                  </ion-item>\n\n                  <ion-label>Tiempo</ion-label>\n\n            </ion-card-content>\n\n      </ion-card>\n\n</div>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\habitaciones\habitaciones.html"*/
+            selector: 'habitacion',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\administracion\habitaciones\habitacion.html"*/'<ion-card class="habitacion">\n\n      <ion-card-header style="margin-left: -15px; margin-top: -20px">\n\n            <ion-label class="estado semantica">\n\n                  {{Habitacion.HITestado}}\n\n            </ion-label>\n\n      </ion-card-header>\n\n      <ion-card-content>\n\n            <ion-label>{{Habitacion.HITidentidad}}</ion-label>\n\n            <!-- <ion-item style="text-align: center; background-color: #d0cccc; border-radius: 25px">\n\n                  <ion-icon name="radio-button-on" color="danger"></ion-icon>\n\n            </ion-item> -->\n\n            \n\n            Tiempo restante\n\n            <ion-label>\n\n                  <label id="horas_{{Habitacion.HITid}}">0</label>:\n\n                  <label id="minutos_{{Habitacion.HITid}}">0</label>:\n\n                  <label id="segundos_{{Habitacion.HITid}}">0</label>\n\n            </ion-label>\n\n            <button (click)="carga()"></button>\n\n      </ion-card-content>\n\n</ion-card>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\administracion\habitaciones\habitacion.html"*/
         }),
         __metadata("design:paramtypes", [])
-    ], HabitacionesComponent);
-    return HabitacionesComponent;
+    ], HabitacionComponent);
+    return HabitacionComponent;
 }());
 
-//# sourceMappingURL=habitaciones.js.map
+//# sourceMappingURL=habitacion.js.map
 
 /***/ }),
 
@@ -1574,7 +1707,7 @@ var ProgressBarComponent = /** @class */ (function () {
     }
     ProgressBarComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'progress-bar',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\progress-bar\progress-bar.html"*/'<!-- Generated template for the ProgressBarComponent component -->\n\n<div>\n\n  <ion-item></ion-item>\n\n</div>\n\n'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\progress-bar\progress-bar.html"*/
+            selector: 'progress-bar',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\progress-bar\progress-bar.html"*/'<!-- Generated template for the ProgressBarComponent component -->\n\n<div>\n\n  <ion-item></ion-item>\n\n</div>\n\n'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\progress-bar\progress-bar.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], ProgressBarComponent);
@@ -1592,7 +1725,7 @@ var ProgressBarComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WizardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wizard_directive__ = __webpack_require__(256);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1620,8 +1753,6 @@ var WizardComponent = /** @class */ (function () {
     }
     WizardComponent.prototype.ngOnInit = function () {
         this.ComponenteInicial();
-        //this.loadComponent();
-        //this.getAds();
     };
     WizardComponent.prototype.ngOnDestroy = function () {
         clearInterval(this.interval);
@@ -1659,13 +1790,11 @@ var WizardComponent = /** @class */ (function () {
         this.navCtrl.setRoot("ConfiguracionPage");
     };
     WizardComponent.prototype.cargarComponente = function (ComponenteActual) {
-        // this.currentAdIndex = (this.currentAdIndex + 1) % this.paginas.length;
-        // let adItem = this.paginas[this.currentAdIndex];
         var componentFactory = this.componentFactoryResolver.resolveComponentFactory(ComponenteActual.component);
         var viewContainerRef = this.adHost.viewContainerRef;
         viewContainerRef.clear();
-        var componentRef = viewContainerRef.createComponent(componentFactory);
-        componentRef.instance.data = ComponenteActual.data;
+        this.componentRef = viewContainerRef.createComponent(componentFactory);
+        // (<any>componentRef.instance).data = ComponenteActual.data;
     };
     WizardComponent.prototype.getAds = function () {
         // this.interval = setInterval(() => {
@@ -1682,7 +1811,7 @@ var WizardComponent = /** @class */ (function () {
     ], WizardComponent.prototype, "adHost", void 0);
     WizardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'wizard',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\wizard\wizard.html"*/'<!-- Generated template for the WizardComponent component -->\n\n<div>\n\n  <ion-list>\n\n    <ion-item>\n\n      <ion-row style="margin: auto; ">\n\n        <ion-col *ngFor="let pagina of paginas" style="margin: auto; max-width: 80px;">\n\n          <label ion-fab [ngStyle]="{\'border\': (pagina.activo) ? \'3px solid blue\' : \'\' }" title="{{pagina.titulo}}" id="btnInfGeneral">\n\n            <ion-icon name="{{pagina.iconName}}" color="primary" style="font-size: 30px;"></ion-icon>\n\n          </label>\n\n          <label style=" border: 10px solid transparent; border-bottom-color: #5bc0de; margin-left: 15px;"></label>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n  <ion-row>\n\n    <ion-col>\n\n      <button ion-button (click)="Regresar()" round *ngIf="posicion > 0">\n\n        Regresar\n\n      </button>\n\n    </ion-col>\n\n    <ion-col style="text-align: right">\n\n      <button ion-button (click)="Continuar()" round *ngIf="!finalizar">\n\n        Continuar\n\n      </button>\n\n      <button ion-button (click)="Finalizar()" round *ngIf="finalizar">\n\n        Finalizar\n\n      </button>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ng-template paso-paso></ng-template>\n\n</div>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\wizard\wizard.html"*/
+            selector: 'wizard',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\wizard\wizard.html"*/'<!-- Generated template for the WizardComponent component -->\n\n<div>\n\n  <ion-list>\n\n    <ion-item>\n\n      <ion-row style="margin: auto; ">\n\n        <ion-col *ngFor="let pagina of paginas" style="margin: auto; max-width: 80px;">\n\n          <label ion-fab [ngStyle]="{\'border\': (pagina.activo) ? \'3px solid #32db64\' : \'\' }" title="{{pagina.titulo}}" id="btnInfGeneral">\n\n            <ion-icon name="{{pagina.iconName}}" color="principal" style="font-size: 30px;"></ion-icon>\n\n          </label>\n\n          <label style=" border: 10px solid transparent; border-bottom-color: #5bc0de; margin-left: 15px;"></label>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n  <ion-row>\n\n    <ion-col>\n\n      <button ion-button (click)="Regresar()" round *ngIf="posicion > 0">\n\n        Regresar\n\n      </button>\n\n    </ion-col>\n\n    <ion-col style="text-align: right">\n\n      <button id="continuar" ion-button color="secondary" (click)="Continuar()" round *ngIf="!finalizar">\n\n        Continuar\n\n      </button>\n\n      <button ion-button (click)="Finalizar()" round *ngIf="finalizar">\n\n        Finalizar\n\n      </button>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ng-template paso-paso></ng-template>\n\n</div>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\wizard\wizard.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* ComponentFactoryResolver */]])
@@ -1700,9 +1829,9 @@ var WizardComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemTipoHabitacionComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_general_habitacion_tipo__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_general_habitacion_tipo__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1723,37 +1852,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Components.
  */
 var ItemTipoHabitacionComponent = /** @class */ (function () {
-    function ItemTipoHabitacionComponent(navCtrl, HABservice) {
+    function ItemTipoHabitacionComponent(navCtrl, TIHservice) {
         this.navCtrl = navCtrl;
-        this.HABservice = HABservice;
-        this.Tipohabitacion = new __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__["b" /* DTOhabitaciones */];
+        this.TIHservice = TIHservice;
+        this.Tipohabitacion = new __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__["c" /* DTOHabitacionView */];
         console.log('Hello TipoHabitacionComponent Component');
         this.text = 'Hello World';
-        this.obtenerFoto();
     }
-    ItemTipoHabitacionComponent.prototype.obtenerFoto = function () {
-        //   if (this.Tipohabitacion.HTIfoto)
-        //     this.foto = this.Tipohabitacion.HTIfotos.find(elem => elem.FOTprincipal === true).FOTurl;
-        //     console.log("antes de las tarifas");
-        //   if (this.Tipohabitacion.HTItarifas) {
-        //     this.Tipohabitacion.HTItarifas.forEach(tar => {
-        //       let valor = tar.TARvalor;
-        //       this.tarifaMinima = (valor <= this.tarifaMinima || this.tarifaMinima == 0) ? valor : this.tarifaMinima;
-        //       console.log("tarifas", tar);
-        //     });
-        //   }
-        //   console.log("despues de las tarifas");
-    };
     ItemTipoHabitacionComponent.prototype.configurarHabitacion = function (id) {
         var _this = this;
-        this.HABservice.inicializar(id).then(function () {
+        this.TIHservice.inicializar(id).then(function () {
             var ArrayFotos = new Array();
-            if (_this.HABservice.habitacionTipo.HTIfotos) {
-                ArrayFotos = _this.HABservice.habitacionTipo.HTIfotos;
+            if (_this.TIHservice.habitacionTipo.HTIfotos) {
+                ArrayFotos = _this.TIHservice.habitacionTipo.HTIfotos;
             }
-            _this.navCtrl.push("TiposHabitacionesPage", {
+            _this.navCtrl.setRoot("TiposHabitacionesPage", {
                 objFotos: ArrayFotos,
-                file: "habitacion_" + _this.HABservice.habitacionTipo.HTInombre,
+                file: "habitacion_" + _this.TIHservice.habitacionTipo.HTIid,
                 marca: "HAB"
             });
         });
@@ -1764,7 +1879,7 @@ var ItemTipoHabitacionComponent = /** @class */ (function () {
     ], ItemTipoHabitacionComponent.prototype, "Tipohabitacion", void 0);
     ItemTipoHabitacionComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'Item-tipoHabitacion',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\TiposHabitaciones\tipo-habitacion\Item-tipoHabitacion.html"*/'<ion-card>\n\n  <ion-row>\n\n    <ion-col class="contenedorImg">\n\n      <img class="imagen" src="{{Tipohabitacion.HTIfoto}}" class="imagen" onerror="this.src=\'assets/icon/picture.svg\';" />\n\n    </ion-col>\n\n    <ion-col class="contenedorDescripcion">\n\n      <label class="lblName">{{Tipohabitacion.HTIdescripcion}}</label>\n\n      <!-- <div class="contenedorStart">\n\n        <div class="lblStart" >\n\n          <label class="icon-start" [ngStyle]="{\'width\' : itemHotel.stars * 2 + \'0px\' , \'background-repeat\': \'space\' , \'background-size\': \'20px\' , \'height\': \'20px\' }" ></label>\n\n        </div>\n\n      </div> -->\n\n      <!-- <div class="contenedorAmenitie">\n\n        <div class="amenitie" *ngFor="let amenitie of itemHotel.amenities">\n\n          <img src="assets/amenities/{{amenitie}}.svg" />\n\n        </div>\n\n      </div> -->\n\n    </ion-col>\n\n    <ion-col class="contenedorValor">\n\n      <label>Tarifa minima</label>\n\n      <ion-label class="lblValor">{{Tipohabitacion.HTItarifaMin | currency:\'USD\':true:\'.0\'}}</ion-label>\n\n      <button ion-button (click)="configurarHabitacion(Tipohabitacion.HTIid)">\n\n        Ver\n\n      </button>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-card>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\TiposHabitaciones\tipo-habitacion\Item-tipoHabitacion.html"*/
+            selector: 'Item-tipoHabitacion',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\TiposHabitaciones\tipo-habitacion\Item-tipoHabitacion.html"*/'<ion-card>\n\n  <ion-row>\n\n    <ion-col class="contenedorImg">\n\n      <img class="imagen" src="{{Tipohabitacion.HVIfoto}}" class="imagen" onerror="this.src=\'assets/icon/picture.svg\';" />\n\n    </ion-col>\n\n    <ion-col class="contenedorDescripcion">\n\n      <label class="lblName">{{Tipohabitacion.HVInombre}}</label>\n\n      <ion-label class="lblDescripcion">{{Tipohabitacion.HVIdescripcion}}</ion-label>\n\n      <!-- <div class="contenedorStart">\n\n        <div class="lblStart" >\n\n          <label class="icon-start" [ngStyle]="{\'width\' : itemHotel.stars * 2 + \'0px\' , \'background-repeat\': \'space\' , \'background-size\': \'20px\' , \'height\': \'20px\' }" ></label>\n\n        </div>\n\n      </div> -->\n\n      <!-- <div class="contenedorAmenitie">\n\n        <div class="amenitie" *ngFor="let amenitie of itemHotel.amenities">\n\n          <img src="assets/amenities/{{amenitie}}.svg" />\n\n        </div>\n\n      </div> -->\n\n    </ion-col>\n\n    <ion-col class="contenedorValor">\n\n      <label>Tarifa minima</label>\n\n      <ion-label class="lblValor">{{Tipohabitacion.HVItarifaMin | currency:\'USD\':true:\'.0\'}}</ion-label>\n\n      <button ion-button (click)="configurarHabitacion(Tipohabitacion.HVIid)">\n\n        Ver\n\n      </button>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-card>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\TiposHabitaciones\tipo-habitacion\Item-tipoHabitacion.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_general_habitacion_tipo__["a" /* HabitacionTipoProvider */]])
@@ -1798,7 +1913,7 @@ var DTOfoto = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComplementosComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_general_complemento__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modelos_DTOhabitacion__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modelos_DTOhabitacion__ = __webpack_require__(62);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1834,11 +1949,11 @@ var ComplementosComponent = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__modelos_DTOhabitacion__["a" /* DTOHabitaciontipo */])
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__modelos_DTOhabitacion__["b" /* DTOHabitacionTipo */])
     ], ComplementosComponent.prototype, "habitacion", void 0);
     ComplementosComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'complementos',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\TiposHabitaciones\complementos\complementos.html"*/'<!-- Generated template for the ComplementosComponent component -->\n<div>\n  <ion-label color="primary">Complementos</ion-label>\n  <ion-list>\n    <ion-item *ngFor="let complemento of ArrayComplementos">\n      <ion-label style="display: flex ; align-items: center;">\n        <img style="width: 25px; height: 25px;" src="{{complemento.COMicon}}" />\n        <label style="padding-left: 15px;">{{complemento.COMdescripcion}}</label>\n      </ion-label>\n      <ion-checkbox [(ngModel)]="complemento.COMactivo" (ionChange)="checkComplemento()"></ion-checkbox>\n    </ion-item>\n  </ion-list>\n</div>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\TiposHabitaciones\complementos\complementos.html"*/
+            selector: 'complementos',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\TiposHabitaciones\complementos\complementos.html"*/'<!-- Generated template for the ComplementosComponent component -->\n\n<div>\n\n  <ion-label color="principal">Complementos</ion-label>\n\n  <ion-list>\n\n    <ion-item *ngFor="let complemento of ArrayComplementos">\n\n      <ion-label style="display: flex ; align-items: center;">\n\n        <img style="width: 25px; height: 25px; background: #800000; padding: 2px; border-radius: 2px" src="{{complemento.COMicon}}" />\n\n        <label style="padding-left: 15px;">{{complemento.COMdescripcion}}</label>\n\n      </ion-label>\n\n      <ion-checkbox [(ngModel)]="complemento.COMactivo" (ionChange)="checkComplemento()"></ion-checkbox>\n\n    </ion-item>\n\n  </ion-list>\n\n</div>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\TiposHabitaciones\complementos\complementos.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_general_complemento__["a" /* ComplementoProvider */]])
     ], ComplementosComponent);
@@ -1868,6 +1983,60 @@ var DTOcomplemento = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TarifasProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOtarifa__ = __webpack_require__(428);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/*
+  Generated class for the TarifasProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var TarifasProvider = /** @class */ (function () {
+    function TarifasProvider() {
+        this.ArrayTarifa = new Array();
+        console.log('Hello TarifasProvider Provider');
+    }
+    TarifasProvider.prototype.EliminarTarifa = function (tarifa) {
+        var posicion;
+        posicion = this.ArrayTarifa.findIndex(function (index) { return index === tarifa; });
+        this.ArrayTarifa.splice(posicion, 1);
+        return this.ArrayTarifa;
+    };
+    TarifasProvider.prototype.AgregarTarifa = function () {
+        var tarifa = new __WEBPACK_IMPORTED_MODULE_1__modelos_DTOtarifa__["a" /* DTOtarifa */];
+        tarifa.TARid = this.ArrayTarifa.length + 1;
+        tarifa.TARcantHoras = 4;
+        tarifa.TARvalor = 50000;
+        this.ArrayTarifa.push(tarifa);
+        return this.ArrayTarifa;
+    };
+    TarifasProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], TarifasProvider);
+    return TarifasProvider;
+}());
+
+//# sourceMappingURL=tarifasService.js.map
+
+/***/ }),
+
+/***/ 428:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DTOtarifa; });
 var DTOtarifa = /** @class */ (function () {
     function DTOtarifa() {
@@ -1879,13 +2048,13 @@ var DTOtarifa = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 428:
+/***/ 429:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntretenimientosComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__ = __webpack_require__(62);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1910,11 +2079,11 @@ var EntretenimientosComponent = /** @class */ (function () {
     }
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__["a" /* DTOHabitaciontipo */])
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__modelos_DTOhabitacion__["b" /* DTOHabitacionTipo */])
     ], EntretenimientosComponent.prototype, "habitacion", void 0);
     EntretenimientosComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'entretenimientos',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\components\configuracion\TiposHabitaciones\entretenimientos\entretenimientos.html"*/'<!-- Generated template for the EntretenimientosComponent component -->\n<div>\n  <ion-label color="primary">Entretenimiento</ion-label>\n  <ion-list>\n    <ion-item *ngFor="let complemento of ArrayComplementos">\n      <ion-label style="display: flex ; align-items: center;">\n        <img style="width: 25px; height: 25px;" src="{{complemento.COMicon}}" />\n        <label style="padding-left: 15px;">{{complemento.COMdescripcion}}</label>\n      </ion-label>\n      <ion-checkbox [(ngModel)]="complemento.COMactivo" (ionChange)="checkComplemento()"></ion-checkbox>\n    </ion-item>\n  </ion-list>\n</div>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\components\configuracion\TiposHabitaciones\entretenimientos\entretenimientos.html"*/
+            selector: 'entretenimientos',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\TiposHabitaciones\entretenimientos\entretenimientos.html"*/'<!-- Generated template for the EntretenimientosComponent component -->\n\n<div>\n\n  <ion-label color="principal">Entretenimiento</ion-label>\n\n  <ion-list>\n\n    <ion-item *ngFor="let complemento of ArrayComplementos">\n\n      <ion-label style="display: flex ; align-items: center;">\n\n        <img style="width: 25px; height: 25px;" src="{{complemento.COMicon}}" />\n\n        <label style="padding-left: 15px;">{{complemento.COMdescripcion}}</label>\n\n      </ion-label>\n\n      <ion-checkbox [(ngModel)]="complemento.COMactivo" (ionChange)="checkComplemento()"></ion-checkbox>\n\n    </ion-item>\n\n  </ion-list>\n\n</div>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\TiposHabitaciones\entretenimientos\entretenimientos.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], EntretenimientosComponent);
@@ -1925,13 +2094,116 @@ var EntretenimientosComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 429:
+/***/ 430:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewEstablecimientoComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_general_Establecimiento__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the ViewEstablecimientoComponent component.
+ *
+ * See https://angular.io/api/core/Component for more info on Angular
+ * Components.
+ */
+var ViewEstablecimientoComponent = /** @class */ (function () {
+    function ViewEstablecimientoComponent(navCtrl, ESTservice) {
+        this.navCtrl = navCtrl;
+        this.ESTservice = ESTservice;
+        console.log('Hello ViewEstablecimientoComponent Component');
+        this.text = 'Hello World';
+        this.obtenerEstablecimiento();
+    }
+    ViewEstablecimientoComponent.prototype.obtenerEstablecimiento = function () {
+        this.establecimiento = this.ESTservice.establecimiento;
+        this.foto = (this.ESTservice.establecimiento.ESTfotos && this.ESTservice.establecimiento.ESTfotos.length) ? this.ESTservice.establecimiento.ESTfotos.find(function (foto) { return foto.FOTactiva === true; }).FOTurl : "";
+    };
+    ViewEstablecimientoComponent.prototype.configurarEstablecimiento = function () {
+        var ArrayFotos = new Array();
+        if (this.ESTservice.establecimiento.ESTfotos) {
+            ArrayFotos = this.ESTservice.establecimiento.ESTfotos;
+        }
+        this.navCtrl.setRoot("EstablecimientoPage", {
+            objFotos: ArrayFotos,
+            file: "sitio",
+            marca: "EST"
+        });
+    };
+    ViewEstablecimientoComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'view-establecimiento',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\configuracion\establecimiento\view-establecimiento\view-establecimiento.html"*/'<ion-card>\n\n  <ion-card-header>\n\n    <div class="contenedorImg">\n\n      <img class="imagen" src="{{foto}}" class="imagen" onerror="this.src=\'assets/icon/picture.svg\';" />\n\n    </div>\n\n    <!-- <ion-col class="contenedorDescripcion">\n\n      <label class="lblName">{{Tipohabitacion.HTIdescripcion}}</label>\n\n      <div class="contenedorStart">\n\n        <div class="lblStart" >\n\n          <label class="icon-start" [ngStyle]="{\'width\' : itemHotel.stars * 2 + \'0px\' , \'background-repeat\': \'space\' , \'background-size\': \'20px\' , \'height\': \'20px\' }" ></label>\n\n        </div>\n\n      </div>\n\n       <div class="contenedorAmenitie">\n\n        <div class="amenitie" *ngFor="let amenitie of itemHotel.amenities">\n\n          <img src="assets/amenities/{{amenitie}}.svg" />\n\n        </div>\n\n      </div>\n\n    </ion-col>\n\n    <ion-col class="contenedorValor">\n\n      <label>Tarifa minima</label>\n\n      <ion-label class="lblValor">{{Tipohabitacion.HTItarifaMin | currency:\'USD\':true:\'.0\'}}</ion-label>\n\n      <button ion-button (click)="configurarHabitacion(Tipohabitacion.HTIid)">\n\n        Ver\n\n      </button>\n\n    </ion-col> -->\n\n  </ion-card-header>\n\n  <ion-card-content>\n\n    <ion-label>{{establecimiento.ESTnombre}}</ion-label>\n\n    <button ion-button (click)="configurarEstablecimiento()">\n\n      Ver\n\n    </button>\n\n  </ion-card-content>\n\n</ion-card>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\configuracion\establecimiento\view-establecimiento\view-establecimiento.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1__providers_general_Establecimiento__["a" /* EstablecimientoProvider */]])
+    ], ViewEstablecimientoComponent);
+    return ViewEstablecimientoComponent;
+}());
+
+//# sourceMappingURL=view-establecimiento.js.map
+
+/***/ }),
+
+/***/ 431:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistrarHabitacionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+/**
+ * Generated class for the RegistrarHabitacionComponent component.
+ *
+ * See https://angular.io/api/core/Component for more info on Angular
+ * Components.
+ */
+var RegistrarHabitacionComponent = /** @class */ (function () {
+    function RegistrarHabitacionComponent() {
+        console.log('Hello RegistrarHabitacionComponent Component');
+        this.text = 'Hello World';
+    }
+    RegistrarHabitacionComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'registrar-habitacion',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\components\administracion\registrar-habitacion\registrar-habitacion.html"*/'<!-- Generated template for the RegistrarHabitacionComponent component -->\n\n<div>\n\n  {{text}}\n\n</div>\n\n'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\components\administracion\registrar-habitacion\registrar-habitacion.html"*/
+        }),
+        __metadata("design:paramtypes", [])
+    ], RegistrarHabitacionComponent);
+    return RegistrarHabitacionComponent;
+}());
+
+//# sourceMappingURL=registrar-habitacion.js.map
+
+/***/ }),
+
+/***/ 432:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_configuracion_Sesion_reestablecer_pass_reestablecer_pass__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_configuracion_Sesion_registro_registro__ = __webpack_require__(259);
@@ -1986,7 +2258,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-card style="background: transparent; text-align: center; margin: auto; width: 500px">\n\n    <ion-card-header>\n\n      <ion-card-title>\n\n        Bienvenido a MotEasy\n\n      </ion-card-title>\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <label>Ingresa con</label>\n\n      <br>\n\n      <button ion-button icon-left (click)="signInWithFacebook()">\n\n        <ion-icon name="logo-facebook"></ion-icon>\n\n        facebook\n\n      </button>\n\n      <button ion-button icon-left color="danger" (click)="loginGoogle()">\n\n        <ion-icon name="logo-google"></ion-icon>\n\n        Google\n\n      </button>\n\n      <ion-item style="text-align: center">\n\n        <p class="separador"></p>\n\n      </ion-item>\n\n      <label>o</label>\n\n      <ion-row>\n\n        <ion-col style="margin-top: 30px; max-width: 40px; font-size: 25px;">\n\n          <ion-icon name="mail" ></ion-icon>\n\n        </ion-col>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label floating required>Correo electronico</ion-label>\n\n            <ion-input [(ngModel)]="email" type="email"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col style="margin-top: 30px; max-width: 40px; font-size: 25px;">\n\n          <ion-icon name="lock"></ion-icon>\n\n        </ion-col>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label floating>Contraseña</ion-label>\n\n            <ion-input [(ngModel)]="password" type="password"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n      <button ion-button icon-left color="primary" [disabled]="(!email || !password)" (click)="SignWithEmail()">\n\n        Iniciar sesión\n\n      </button>\n\n      <ion-label color="danger">{{mensajeError}}</ion-label>\n\n      <ion-label color="primary" class="Registrarse" (click)="Reestablecer()">¿Olvidaste tu contraseña?</ion-label>\n\n      <ion-label color="primary" class="Registrarse" (click)="Crear()">Registrate</ion-label>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-card style="background: transparent; text-align: center; margin: auto; width: 500px">\n\n    <ion-card-header>\n\n      <ion-card-title>\n\n        Bienvenido a MotEasy\n\n      </ion-card-title>\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <label>Ingresa con</label>\n\n      <br>\n\n      <button ion-button icon-left (click)="signInWithFacebook()">\n\n        <ion-icon name="logo-facebook"></ion-icon>\n\n        facebook\n\n      </button>\n\n      <button ion-button icon-left color="danger" (click)="loginGoogle()">\n\n        <ion-icon name="logo-google"></ion-icon>\n\n        Google\n\n      </button>\n\n      <ion-item style="text-align: center">\n\n        <p class="separador"></p>\n\n      </ion-item>\n\n      <label>o</label>\n\n      <ion-row>\n\n        <ion-col style="margin-top: 30px; max-width: 40px; font-size: 25px;">\n\n          <ion-icon name="mail" ></ion-icon>\n\n        </ion-col>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label floating required>Correo electronico</ion-label>\n\n            <ion-input [(ngModel)]="email" type="email"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col style="margin-top: 30px; max-width: 40px; font-size: 25px;">\n\n          <ion-icon name="lock"></ion-icon>\n\n        </ion-col>\n\n        <ion-col>\n\n          <ion-item>\n\n            <ion-label floating>Contraseña</ion-label>\n\n            <ion-input [(ngModel)]="password" type="password"></ion-input>\n\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n      <button ion-button icon-left color="primary" [disabled]="(!email || !password)" (click)="SignWithEmail()">\n\n        Iniciar sesión\n\n      </button>\n\n      <ion-label color="danger">{{mensajeError}}</ion-label>\n\n      <ion-label color="primary" class="Registrarse" (click)="Reestablecer()">¿Olvidaste tu contraseña?</ion-label>\n\n      <ion-label color="primary" class="Registrarse" (click)="Crear()">Registrate</ion-label>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */],
@@ -2006,10 +2278,10 @@ var LoginPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EstablecimientoProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_app__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modelos_DTOestablecimiento__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__user__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__user__ = __webpack_require__(67);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2101,13 +2373,13 @@ var EstablecimientoProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 454:
+/***/ 457:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(315);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(312);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_administracion_administracion__ = __webpack_require__(251);
@@ -2163,7 +2435,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\app\app.html"*/'<ion-menu [content]="content">\n\n    <ion-header>\n\n      <ion-toolbar>\n\n        <ion-title>Pages</ion-title>\n\n      </ion-toolbar>\n\n    </ion-header>\n\n  \n\n    <ion-content>\n\n      <ion-list>\n\n        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n  \n\n  </ion-menu>\n\n<ion-nav #content [root]="rootPage" swipeBackEnabled="true"></ion-nav>\n\n'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\app\app.html"*/'<ion-menu [content]="content">\n\n    <ion-header>\n\n      <ion-toolbar>\n\n        <ion-title>Pages</ion-title>\n\n      </ion-toolbar>\n\n    </ion-header>\n\n  \n\n    <ion-content>\n\n      <ion-list>\n\n        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n  \n\n  </ion-menu>\n\n<ion-nav #content [root]="rootPage" swipeBackEnabled="true"></ion-nav>\n\n'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
@@ -2177,13 +2449,13 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 455:
+/***/ 458:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2201,7 +2473,7 @@ var HomePage = /** @class */ (function () {
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"D:\MotEasy\MotEasyWeb\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n      <button ion-button menuToggle>\n\n          <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n    <ion-title>\n\n      Ionic Blank\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  The world is your oyster.\n\n  <p>\n\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n\n  </p>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\MotEasy\MotEasyWeb\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"D:\Proyecto\MotEasyWeb\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n      <button ion-button menuToggle>\n\n          <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n    <ion-title>\n\n      Ionic Blank\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  The world is your oyster.\n\n  <p>\n\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n\n  </p>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Proyecto\MotEasyWeb\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
     ], HomePage);
@@ -2212,18 +2484,17 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 61:
+/***/ 52:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HabitacionTipoProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modelos_DTOhabitacion__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modelos_DTOhabitacion__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Establecimiento__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2238,32 +2509,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var HabitacionTipoProvider = /** @class */ (function () {
-    function HabitacionTipoProvider(storage, USUservice, ESTservice) {
+    function HabitacionTipoProvider(storage, USUservice) {
         this.storage = storage;
         this.USUservice = USUservice;
-        this.ESTservice = ESTservice;
         this.ArrayTipoHAB = new Array();
-        this.habitacionTipo = new __WEBPACK_IMPORTED_MODULE_3__modelos_DTOhabitacion__["a" /* DTOHabitaciontipo */];
+        this.habitacionTipo = new __WEBPACK_IMPORTED_MODULE_3__modelos_DTOhabitacion__["b" /* DTOHabitacionTipo */];
         console.log('Hello HabitacionTipoProvider Provider');
     }
-    // inicializar() {
-    //   this.USUservice.consultarBd().then(data => {
-    //     firebase.firestore().collection('Establecimientos')
-    //       .doc(data.USUestablecimiento)
-    //       .collection("HabitacionTipos")
-    //       .get()
-    //       .then(data =>{
-    //         data.forEach(doc => {
-    //           let tipoHab = new DTOHabitaciontipo;
-    //           tipoHab = doc.data() as DTOHabitaciontipo;
-    //           this.ArrayTipoHAB.push(tipoHab);
-    //         });
-    //         this.guardarBd();
-    //       });
-    //   });
-    // }
     HabitacionTipoProvider.prototype.inicializar = function (id) {
         var _this = this;
         return this.consultarBd(id).then(function (data) {
@@ -2279,69 +2532,38 @@ var HabitacionTipoProvider = /** @class */ (function () {
             .then(function (data) {
             _this.habitacionTipo = JSON.parse(data);
             return _this.habitacionTipo;
-            // return this.ArrayTipoHAB.forEach(Hab =>{
-            //   if(Hab.HTIid == id)
-            //     this.habitacionTipo = Hab;
-            //     return this.habitacionTipo;
-            // });
         });
     };
     HabitacionTipoProvider.prototype.consultaFb = function (id) {
-        // this.USUservice.consultarBd().then(data => {
-        //   firebase.firestore().collection('Establecimientos')
-        //     .doc(data.USUestablecimiento)
-        //     .collection("HabitacionTipos")
-        //     .doc(id)
-        //     .get()
-        //     .then(data => {
-        //       this.habitacionTipo = data.data() as DTOHabitaciontipo;
-        //       this.ArrayTipoHAB.push(this.habitacionTipo);
-        //       this.guardarBd();
-        //     });
-        // });
         var _this = this;
-        return this.USUservice.consultarBd().then(function (data) {
-            return __WEBPACK_IMPORTED_MODULE_2_firebase_app___default.a.firestore().collection('Establecimientos')
-                .doc(data.USUestablecimiento)
-                .collection("HabitacionTipos")
-                .doc(id.toString())
-                .get()
-                .then(function (data) {
-                _this.habitacionTipo = data.data();
-                //this.ArrayTipoHAB =  new Array<DTOHabitaciontipo>();
-                // data.forEach(doc => {
-                //   let tipoHab = new DTOHabitaciontipo;
-                //   tipoHab = doc.data() as DTOHabitaciontipo;
-                //   this.ArrayTipoHAB.push(tipoHab);
-                //});
-                _this.guardarBd();
-                return _this.habitacionTipo;
-            });
+        return __WEBPACK_IMPORTED_MODULE_2_firebase_app___default.a.firestore().collection('Establecimientos')
+            .doc(this.USUservice.user.USUestablecimiento)
+            .collection("HabitacionTipos")
+            .doc(id.toString())
+            .get()
+            .then(function (data) {
+            _this.habitacionTipo = data.data();
+            _this.guardarBd();
+            return _this.habitacionTipo;
         });
     };
     HabitacionTipoProvider.prototype.crear = function () {
-        var _this = this;
-        return this.ESTservice.consultarBd().then(function (est) {
-            _this.habitacionTipo = new __WEBPACK_IMPORTED_MODULE_3__modelos_DTOhabitacion__["a" /* DTOHabitaciontipo */];
-            return _this.habitacionTipo;
-            //this.habitacionTipo.HTIid = est.ESThabitacionesTipos ? est.ESThabitacionesTipos.length : 0;  
-        });
-        // this.habitacionTipo.HTIid = this.ArrayTipoHAB.length;
-        // this.ArrayTipoHAB.push(this.habitacionTipo);
+        this.habitacionTipo = new __WEBPACK_IMPORTED_MODULE_3__modelos_DTOhabitacion__["b" /* DTOHabitacionTipo */];
+        this.habitacionTipo.HTIid = Math.random().toString(36).substring(2);
+        this.habitacionTipo.HTIestado = __WEBPACK_IMPORTED_MODULE_3__modelos_DTOhabitacion__["d" /* HTIenumEstado */].Registrando;
+        return this.habitacionTipo;
     };
     HabitacionTipoProvider.prototype.guardarFb = function () {
         var _this = this;
+        this.habitacionTipo.HTIestado = (this.habitacionTipo.HTIestado === __WEBPACK_IMPORTED_MODULE_3__modelos_DTOhabitacion__["d" /* HTIenumEstado */].Registrando) ? __WEBPACK_IMPORTED_MODULE_3__modelos_DTOhabitacion__["d" /* HTIenumEstado */].Sincronizado : this.habitacionTipo.HTIestado;
         var HAB = JSON.stringify(this.habitacionTipo);
-        this.USUservice.consultarBd().then(function (data) {
-            __WEBPACK_IMPORTED_MODULE_2_firebase_app___default.a.firestore().collection('Establecimientos')
-                .doc(data.USUestablecimiento)
-                .collection("HabitacionTipos")
-                .doc(_this.habitacionTipo.HTIid.toString())
-                .set(JSON.parse(HAB))
-                .then(function () {
-                //this.ArrayTipoHAB.push(JSON.parse(HAB));
-                _this.guardarBd();
-            });
+        __WEBPACK_IMPORTED_MODULE_2_firebase_app___default.a.firestore().collection('Establecimientos')
+            .doc(this.USUservice.user.USUestablecimiento)
+            .collection("HabitacionTipos")
+            .doc(this.habitacionTipo.HTIid.toString())
+            .set(JSON.parse(HAB))
+            .then(function () {
+            _this.guardarBd();
         });
     };
     HabitacionTipoProvider.prototype.guardarBd = function () {
@@ -2350,8 +2572,7 @@ var HabitacionTipoProvider = /** @class */ (function () {
     HabitacionTipoProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_1__user__["a" /* UserProvider */],
-            __WEBPACK_IMPORTED_MODULE_5__Establecimiento__["a" /* EstablecimientoProvider */]])
+            __WEBPACK_IMPORTED_MODULE_1__user__["a" /* UserProvider */]])
     ], HabitacionTipoProvider);
     return HabitacionTipoProvider;
 }());
@@ -2360,7 +2581,50 @@ var HabitacionTipoProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 66:
+/***/ 62:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DTOHabitacionTipo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DTOHabitacionView; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DTOHabitacionItem; });
+/* unused harmony export DTOHabitacionGestion */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return HTIenumEstado; });
+var DTOHabitacionTipo = /** @class */ (function () {
+    function DTOHabitacionTipo() {
+    }
+    return DTOHabitacionTipo;
+}());
+
+var DTOHabitacionView = /** @class */ (function () {
+    function DTOHabitacionView() {
+    }
+    return DTOHabitacionView;
+}());
+
+var DTOHabitacionItem = /** @class */ (function () {
+    function DTOHabitacionItem() {
+    }
+    return DTOHabitacionItem;
+}());
+
+var DTOHabitacionGestion = /** @class */ (function () {
+    function DTOHabitacionGestion() {
+    }
+    return DTOHabitacionGestion;
+}());
+
+var HTIenumEstado;
+(function (HTIenumEstado) {
+    HTIenumEstado["Registrando"] = "REG";
+    HTIenumEstado["Sincronizado"] = "SIC";
+    HTIenumEstado["Administrado"] = "ADM";
+})(HTIenumEstado || (HTIenumEstado = {}));
+//# sourceMappingURL=DTOhabitacion.js.map
+
+/***/ }),
+
+/***/ 67:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2368,7 +2632,7 @@ var HabitacionTipoProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modelos_DTOusuario__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase_app__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2446,28 +2710,6 @@ var UserProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 71:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DTOHabitaciontipo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DTOhabitaciones; });
-var DTOHabitaciontipo = /** @class */ (function () {
-    function DTOHabitaciontipo() {
-    }
-    return DTOHabitaciontipo;
-}());
-
-var DTOhabitaciones = /** @class */ (function () {
-    function DTOhabitaciones() {
-    }
-    return DTOhabitaciones;
-}());
-
-//# sourceMappingURL=DTOhabitacion.js.map
-
-/***/ }),
-
 /***/ 96:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2489,11 +2731,11 @@ var DTOEstablecimiento = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_app__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__general_user__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__general_user__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__general_Establecimiento__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2520,14 +2762,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AuthProvider = /** @class */ (function () {
     function AuthProvider(app, afAuth, 
         //private fb: Facebook,
-        platform, loadingCtrl, 
+        loadingCtrl, 
         //private googlePlus: GooglePlus,
         toastCtrl, 
         //public firebaseAng: AngularFirestore
         USUservice, USUestablecimiento) {
         this.app = app;
         this.afAuth = afAuth;
-        this.platform = platform;
         this.loadingCtrl = loadingCtrl;
         this.toastCtrl = toastCtrl;
         this.USUservice = USUservice;
@@ -2729,7 +2970,6 @@ var AuthProvider = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
             __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_4__general_user__["a" /* UserProvider */],
