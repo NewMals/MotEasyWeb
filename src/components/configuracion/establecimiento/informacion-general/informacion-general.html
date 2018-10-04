@@ -1,84 +1,94 @@
 <!-- Generated template for the InformaconGeneralComponent component -->
-<ion-card>
-  <ion-card-title style="text-align: center;">
-    Informacion General
-  </ion-card-title>
-  <ion-card-content>
-    <ion-row>
-      <ion-col>
-        <h2 style="text-align: center">Establecimiento</h2>
-        <ion-item>
-          <ion-label stacked required>Nit</ion-label>
-          <ion-input [(ngModel)]="establecimiento.ESTnit" type="number" required (blur)="GuardarEST()"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label stacked required>Nombre del establecimiento</ion-label>
-          <ion-input [(ngModel)]="establecimiento.ESTnombre" type="text" required (blur)="GuardarEST()"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label stacked required>Telefono recepción</ion-label>
-          <ion-input [(ngModel)]="establecimiento.ESTtelefono" type="text" required (blur)="GuardarEST()"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <h2 style="text-align: center">Contacto</h2>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label stacked required>Primer nombre *</ion-label>
-              <ion-input [(ngModel)]="usuario.USUprimerNombre" type="text" (blur)="GuardarUSU()"></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label stacked required>Segundo nombre</ion-label>
-              <ion-input [(ngModel)]="usuario.USUsegundoNombre" type="text" (blur)="GuardarUSU()"></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label stacked required>Primer apellido *</ion-label>
-              <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text" (blur)="GuardarUSU()"></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label stacked required>Segundo apellido</ion-label>
-              <ion-input [(ngModel)]="usuario.USUsegundoApellido" type="text" (blur)="GuardarUSU()"></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label stacked required>Num. identificación *</ion-label>
-              <ion-input [(ngModel)]="usuario.USUidentificacion" type="number" (blur)="GuardarUSU()"></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label stacked required>Ciudad</ion-label>
-              <ion-input [(ngModel)]="usuario.USUciudad" type="text" (blur)="GuardarUSU()"></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label stacked required>Correo electronico *</ion-label>
-              <ion-input [(ngModel)]="usuario.USUemail" type="email"></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label stacked required>Celular *</ion-label>
-              <ion-input [(ngModel)]="usuario.USUcelular" type="number" (blur)="GuardarUSU()"></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-col>
-    </ion-row>
-  </ion-card-content>
-</ion-card>
+<div>
+  <h1 style="text-align: center; color: #800000;">Informacion General</h1>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-header color="principal">
+          Establecimiento
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label floating required>Nit</ion-label>
+            <ion-input [(ngModel)]="establecimiento.ESTnit" type="number" required (blur)="GuardarEST()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating required>Nombre del establecimiento</ion-label>
+            <ion-input [(ngModel)]="establecimiento.ESTnombre" type="text" required (blur)="GuardarEST()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating required>Telefono recepción</ion-label>
+            <ion-input [(ngModel)]="establecimiento.ESTtelefono" type="text" required (blur)="GuardarEST()"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-card-header color="principal">
+          Contacto
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label stacked required>Primer nombre *</ion-label>
+                <ion-input [(ngModel)]="usuario.USUprimerNombre" type="text" (blur)="GuardarUSU()"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label stacked required>Segundo nombre</ion-label>
+                <ion-input [(ngModel)]="usuario.USUsegundoNombre" type="text" (blur)="GuardarUSU()"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label stacked required>Primer apellido *</ion-label>
+                <ion-input [(ngModel)]="usuario.USUprimerApellido" type="text" (blur)="GuardarUSU()"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label stacked required>Segundo apellido</ion-label>
+                <ion-input [(ngModel)]="usuario.USUsegundoApellido" type="text" (blur)="GuardarUSU()"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label stacked required>Num. identificación *</ion-label>
+                <ion-input [(ngModel)]="usuario.USUidentificacion" type="number" (blur)="GuardarUSU()"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label stacked required>Ciudad</ion-label>
+                <ion-input [(ngModel)]="usuario.USUciudad" type="text" (blur)="GuardarUSU()"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label stacked required>Correo electronico *</ion-label>
+                <ion-input [(ngModel)]="usuario.USUemail" type="email"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label stacked required>Celular *</ion-label>
+                <ion-input [(ngModel)]="usuario.USUcelular" type="number" (blur)="GuardarUSU()"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <!-- </ion-col> -->
+          <!-- </ion-row> -->
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</div>

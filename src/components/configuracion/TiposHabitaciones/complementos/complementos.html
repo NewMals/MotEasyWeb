@@ -1,10 +1,10 @@
 <!-- Generated template for the ComplementosComponent component -->
 <div>
-  <ion-label color="principal">Complementos</ion-label>
+  <ion-label color="primary">Complementos</ion-label>
   <ion-list>
     <ion-item *ngFor="let complemento of ArrayComplementos">
       <ion-label style="display: flex ; align-items: center;">
-        <img style="width: 25px; height: 25px; padding: 2px; border-radius: 3px; background: #800000" src="{{complemento.COMicon}}" />
+        <img style="width: 25px; height: 25px; padding: 2px; border-radius: 3px; background: #800000" src="assets/complementos/{{complemento.COMicon}}" />
         <label style="padding-left: 15px;">{{complemento.COMdescripcion}}</label>
       </ion-label>
       <ion-checkbox [(ngModel)]="complemento.COMactivo" (ionChange)="checkComplemento()"></ion-checkbox>

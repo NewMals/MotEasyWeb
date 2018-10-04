@@ -1,41 +1,51 @@
 <!-- Generated template for the RegistarTipHabComponent component -->
-<ion-card style="width: 60%; margin:auto;">
-  <ion-card-header>
-    <ion-card-title color="principal" style="text-align: center;">
-      Registrar tipo de habitación
-    </ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <label style="white-space: inherit; color: darkgrey">Para el conocimiento de los usuarios y mejorar la calidad de la
-      administracion de su establecimiento, por favor ingrese
-      los valores solicitados
-    </label>
-    <!-- <ion-item>
-          <ion-label color="primary"> Id:</ion-label>
-          <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTIid" type="number"></ion-input>
-        </ion-item> -->
-    <ion-item>
-      <ion-label color="principal"> Nombre:</ion-label>
-      <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTInombre" type="text" (ionBlur)="validacionCampos()"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="principal"> Descripción:</ion-label>
-      <ion-textarea placeholder="Indica los detalles generales de este tipo de habitación" [(ngModel)]="HabitacionTipo.HTIdescripcion" maxlength="200" (ionBlur)="validacionCampos()" rows="4"></ion-textarea>
-    </ion-item>
-    <ion-item>
-      <ion-label color="principal" required> Cantidad de habitaciones:</ion-label>
-      <ion-input #CantHab placeholder="ingrese un valor entre 1 y 50 " clearInput [(ngModel)]="HabitacionTipo.HTIcantidad"
-        type="number" min="1" max="50" (ionBlur)="validarCantidad()" (keypress)="EsNumerico($event)" [disabled]="CantHabilitar"></ion-input>
-    </ion-item>
-    <ion-label class="mjsError" id="error"></ion-label>
-    <!-- * La cantidad de habitaciones, no puede ser menor a 0 o mayor a 50 -->
-    <ion-row>
-      <ion-col>
-        <complementos [habitacion]="HabitacionTipo"></complementos>
-      </ion-col>
-      <ion-col>
-        <entretenimientos [habitacion]="HabitacionTipo"></entretenimientos>
-      </ion-col>
-    </ion-row>
-  </ion-card-content>
-</ion-card>
+<div>
+  <h1 style="text-align: center; color: #800000;">Registrar tipo de habitación</h1>
+  <label style="text-align: center; color: darkgrey">Para el conocimiento de los usuarios y mejorar la calidad de la
+    administracion de su establecimiento, por favor ingrese
+    los valores solicitados
+  </label>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+
+          <!-- <ion-item>
+                  <ion-label color="primary"> Id:</ion-label>
+                  <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTIid" type="number"></ion-input>
+                </ion-item> -->
+          <ion-item>
+            <ion-label color="primary"> Nombre:</ion-label>
+            <ion-input placeholder="ej: Suite, Sencilla" [(ngModel)]="HabitacionTipo.HTInombre" type="text" (ionBlur)="validacionCampos()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary"> Descripción:</ion-label>
+            <ion-textarea placeholder="Indica los detalles generales de este tipo de habitación" [(ngModel)]="HabitacionTipo.HTIdescripcion"
+              maxlength="200" (ionBlur)="validacionCampos()" rows="4"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" required> Cantidad de habitaciones:</ion-label>
+            <ion-input #CantHab placeholder="ingrese un valor entre 1 y 50 " clearInput [(ngModel)]="HabitacionTipo.HTIcantidad"
+              type="number" min="1" max="50" (ionBlur)="validarCantidad()" (keypress)="EsNumerico($event)" [disabled]="CantHabilitar"></ion-input>
+          </ion-item>
+          <ion-label class="mjsError" id="error"></ion-label>
+          <!-- * La cantidad de habitaciones, no puede ser menor a 0 o mayor a 50 -->
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-row>
+          <ion-col style="text-align: center">
+            <complementos [habitacion]="HabitacionTipo"></complementos>
+          </ion-col>
+          <ion-col style="text-align: center">
+            <entretenimientos [habitacion]="HabitacionTipo"></entretenimientos>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+</div>
