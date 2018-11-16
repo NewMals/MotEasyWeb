@@ -41,8 +41,8 @@ export class MyApp {
 
   cargarMenu(){
     this.pages = [
-      {title: "Administrar habitaciones", component: AdministracionPage, icon: "speedometer", id: 1}
-      , {title: "Configuracion", component: ConfiguracionPage, icon: "speedometer", id: 2}
+      {title: "Administrar habitaciones", component: AdministracionPage, icon: "albums", id: 1}
+      , {title: "Configuracion", component: ConfiguracionPage, icon: "settings", id: 2}
     ]
   }
 

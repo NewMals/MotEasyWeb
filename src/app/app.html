@@ -1,17 +1,10 @@
-<ion-menu [content]="content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Pages</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content>
-      <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          {{p.title}}
-        </button>
-      </ion-list>
-    </ion-content>
-  
-  </ion-menu>
+<ion-menu [content]="content" type="reveal">
+  <ion-label style="cursor: pointer;">
+    <ion-icon style="font-size: 30px; float: right;" menuClose name="ios-arrow-dropleft"></ion-icon>
+  </ion-label>
+  <button ion-item style="text-align: center;" *ngFor="let p of pages" (click)="openPage(p)">
+    <ion-icon style="font-size: 25px;" name="{{p.icon}}"></ion-icon>
+    <!-- <label>{{p.title}}</label> -->
+  </button>
+</ion-menu>
 <ion-nav #content [root]="rootPage" swipeBackEnabled="true"></ion-nav>

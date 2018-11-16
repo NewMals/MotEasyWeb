@@ -7,7 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>configuracion</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Configuracion</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,13 +18,13 @@
 
 <ion-content padding>
   <!-- <div class="general"> -->
-    <!-- <ion-card>
+  <!-- <ion-card>
       <progress-bar></progress-bar>
     </ion-card> -->
-    <ion-row>
-      <ion-col class="establecimiento">
-        <view-establecimiento></view-establecimiento>
-        <!-- <ion-card>
+  <ion-row>
+    <ion-col class="establecimiento">
+      <view-establecimiento></view-establecimiento>
+      <!-- <ion-card>
           <ion-card-header>
             <ion-card-title>Motel</ion-card-title>
           </ion-card-header>
@@ -32,27 +35,27 @@
             </ion-item>
           </ion-card-content>
         </ion-card> -->
-      </ion-col>
-      <ion-col>
-        <!-- <ion-card> -->
-        <ion-card-header>
-          <ion-card-title>Tipos de habitación
-            <button ion-fab mini style="float: right; height: 30px; width: 30px; " (click)="AgregarTipHab()">
-              <ion-icon name="add"></ion-icon>
-            </button>
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <div *ngFor="let hab of est.ESThabitacionesTipos">
-            <Item-tipoHabitacion [Tipohabitacion]="hab"></Item-tipoHabitacion>
-            <!-- <ion-item (click)="configurarHabitacion(hab.HTIid)">
+    </ion-col>
+    <ion-col>
+      <!-- <ion-card> -->
+      <ion-card-header>
+        <ion-card-title>Tipos de habitación
+          <button ion-fab mini style="float: right; height: 30px; width: 30px; " (click)="AgregarTipHab()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngFor="let hab of est.ESThabitacionesTipos">
+          <Item-tipoHabitacion [Tipohabitacion]="hab"></Item-tipoHabitacion>
+          <!-- <ion-item (click)="configurarHabitacion(hab.HTIid)">
             {{hab.HTIdescripcion}}
             <ion-icon name="ios-arrow-forward" item-end></ion-icon>
           </ion-item> -->
-          </div>
-        </ion-card-content>
-        <!-- </ion-card> -->
-      </ion-col>
-    </ion-row>
+        </div>
+      </ion-card-content>
+      <!-- </ion-card> -->
+    </ion-col>
+  </ion-row>
   <!-- </div> -->
 </ion-content>

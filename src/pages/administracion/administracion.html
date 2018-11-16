@@ -7,7 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>administracion</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Administracion</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,7 +20,7 @@
     <ion-col class="panelIzquierdo">
       <ion-row *ngFor="let tipo of tiposHabitacion">
         <ion-col>
-          <button class="TipoHabitacion" (click)="mostrarHabitaciones(tipo.HVIid)">{{tipo.HVIdescripcion}}</button>
+          <button class="TipoHabitacion" (click)="mostrarHabitaciones(tipo.HVIid)">{{tipo.HVInombre}}</button>
         </ion-col>
       </ion-row>
     </ion-col>
